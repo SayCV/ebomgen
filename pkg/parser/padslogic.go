@@ -12,10 +12,10 @@ import (
 )
 
 // parse ascii text file to retrieve parts
-func parseTextParts(filename string) ([]types.EBOMItem, error) {
+func parseTextParts(filename string) (map[string]types.EBOMItem, error) {
 	// Load a PADS Logic file and extract the part information
 
-	var partsList []types.EBOMItem
+	partsList := make(map[string]types.EBOMItem)
 	var partName string
 	var partDesc string
 	var part types.EBOMItem
@@ -75,7 +75,8 @@ func parseTextParts(filename string) ([]types.EBOMItem, error) {
 						//part.Attributes["Manufacturer Part Number"] = strings.Replace(strings.ToUpper(strVal), "\"PART NUMBER\"","", -1)
 					}
 				}
-				partsList = append(partsList, part)
+				//partsList = append(partsList, part)
+				partsList[partName] = part
 				//log.Infof("partName - %v", partName)
 				partName = ""
 			}
