@@ -142,6 +142,9 @@ func ExtractPADSLogicComponents(filename string) ([]types.EBOMItem, error) {
 		propclass["Description"] = propclass["part"]
 
 		part.Attributes = propclass
+		if part.Quantity == 0 {
+			part.Quantity = 1
+		}
 
 		components = append(components, part)
 

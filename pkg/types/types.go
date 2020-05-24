@@ -32,6 +32,13 @@ type EBOMSheet struct {
 	CustomHeaders []string
 }
 
+func NewBOM(bomParts []EBOMItem) (*EBOMSheet, error) {
+	res := &EBOMSheet{}
+	res.Items = bomParts
+
+	return res, nil
+}
+
 func (b *EBOMSheet) appendField(fieldName string) {
 	for _, f := range b.Headers {
 		if f == fieldName {
