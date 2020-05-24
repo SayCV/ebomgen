@@ -8,8 +8,10 @@ import (
 
 	"path/filepath"
 
-	//"github.com/saycv/ebomgen"
+	"github.com/saycv/ebomgen"
+	"github.com/saycv/ebomgen/pkg/configuration"
 	logsupport "github.com/saycv/ebomgen/pkg/log"
+	"github.com/saycv/ebomgen/pkg/utils"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -18,14 +20,16 @@ import (
 // NewRootCmd returns the root command
 func NewRootCmd() *cobra.Command {
 
-	var noHeaderFooter bool
-	var outputName string
+	var verbose bool
+	var writeCSV bool
+	var writeXLSX bool
+	var input string
+	var output string
+	var edaTool string
 	var logLevel string
-	var css string
-	var attributes []string
 
 	rootCmd := &cobra.Command{
-		Use:   "ebomgen [flags] FILE",
+		Use:   "ebomgen -i infile -o outfile -t [eagle|kicad|orcad|padslogic] [-w] [-v]",
 		Short: `ebomgen is a tool to auto generate bom from EDA design file, it support Orcad, Altium or Mentor Graphics`,
 		Args:  cobra.ArbitraryArgs,
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
@@ -40,28 +44,44 @@ func NewRootCmd() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			if len(args) == 0 {
-				return helpCommand.RunE(cmd, args)
-			}
+			//if len(args) == 0 {
+			//	return helpCommand.RunE(cmd, args)
+			//}
 			//attrs := parseAttributes(attributes)
-			for _, sourcePath := range args {
-				out, close := getOut(cmd, sourcePath, outputName)
-				if out != nil {
-					defer close()
-					path, _ := filepath.Abs(sourcePath)
-					log.Debugf("Starting to process file %v", path)
+
+			//for _, sourcePath := range args {
+			//}
+			out, close := getOut(cmd, input, output)
+			if out != nil {
+				defer close()
+				path, _ := filepath.Abs(input)
+				path = filepath.ToSlash(path)
+				log.Debugf("Starting to process file %v", path)
+				config := configuration.NewConfiguration(
+					configuration.WithInputFile(input),
+					configuration.WithOutputFile(output),
+					configuration.WithEDATool(edaTool))
+
+				val := utils.GetFValFromEVal("1.2uF")
+				log.Debugf("GetFloatValue %f", val)
+				_, err := ebomgen.ExtractComponents(config)
+				if err != nil {
+					return err
 				}
+				log.Infof("finished!!!")
 			}
 			return nil
 		},
 	}
 	rootCmd.SilenceUsage = true
 	flags := rootCmd.Flags()
-	flags.BoolVarP(&noHeaderFooter, "no-header-footer", "s", false, "do not render header/footer (default: false)")
-	flags.StringVarP(&outputName, "out-file", "o", "", "output file (default: based on path of input file); use - to output to STDOUT")
-	flags.StringVar(&logLevel, "log", "warning", "log level to set [debug|info|warning|error|fatal|panic]")
-	flags.StringVar(&css, "css", "", "the path to the CSS file to link to the document")
-	flags.StringArrayVarP(&attributes, "attribute", "a", []string{}, "a document attribute to set in the form of name, name!, or name=value pair")
+	flags.BoolVarP(&verbose, "verbose", "v", true, "verbose")
+	flags.BoolVarP(&writeCSV, "writeCSV", "w", true, "Write BOM to CSV file")
+	flags.BoolVarP(&writeXLSX, "writeXLSX", "x", true, "Write BOM to XLSX file")
+	flags.StringVarP(&input, "input", "i", "../../test/padslogic/SCH/ex1.txt", "The path to the input schematic or netlist file")
+	flags.StringVarP(&output, "output", "o", "../../test/padslogic/BOM/ex1", "The path for the output file")
+	flags.StringVarP(&edaTool, "edaTool", "t", "", "Define what EDA tool created the input file")
+	flags.StringVarP(&logLevel, "log", "l", "debug", "log level to set [debug|info|warning|error|fatal|panic]")
 	return rootCmd
 }
 
