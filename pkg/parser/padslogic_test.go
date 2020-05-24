@@ -17,7 +17,7 @@ func TestExtractPADSLogicComponents(t *testing.T) {
 	exfile := "../../test/padslogic/SCH/ex1.txt"
 
 	t.Logf("Testing PADS Logic Ascii Text Parser")
-	if e := ExtractPADSLogicComponents(exfile); !e {
+	if _, e := ExtractPADSLogicComponents(exfile); e != nil {
 		t.Errorf("ExtractPADSLogicComponents error: %v", e)
 	}
 	t.Logf("ExtractPADSLogicComponents test done.")

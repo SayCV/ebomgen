@@ -22,7 +22,7 @@ type EBOMItem struct {
 	Library    string
 	Footprint  string
 	Desc       string
-	Attributes []string //map[string]string
+	Attributes map[string]string
 }
 
 // EBOMSheet include all parts

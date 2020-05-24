@@ -11,7 +11,6 @@ import (
 	"github.com/saycv/ebomgen"
 	"github.com/saycv/ebomgen/pkg/configuration"
 	logsupport "github.com/saycv/ebomgen/pkg/log"
-	"github.com/saycv/ebomgen/pkg/utils"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -56,15 +55,13 @@ func NewRootCmd() *cobra.Command {
 				defer close()
 				path, _ := filepath.Abs(input)
 				path = filepath.ToSlash(path)
-				log.Debugf("Starting to process file %v", path)
+
 				config := configuration.NewConfiguration(
 					configuration.WithInputFile(input),
 					configuration.WithOutputFile(output),
 					configuration.WithEDATool(edaTool))
 
-				val := utils.GetFValFromEVal("1.2uF")
-				log.Debugf("GetFloatValue %f", val)
-				_, err := ebomgen.ExtractComponents(config)
+				err := ebomgen.ExtractComponents(config)
 				if err != nil {
 					return err
 				}
@@ -79,8 +76,8 @@ func NewRootCmd() *cobra.Command {
 	flags.BoolVarP(&writeCSV, "writeCSV", "w", true, "Write BOM to CSV file")
 	flags.BoolVarP(&writeXLSX, "writeXLSX", "x", true, "Write BOM to XLSX file")
 	flags.StringVarP(&input, "input", "i", "../../test/padslogic/SCH/ex1.txt", "The path to the input schematic or netlist file")
-	flags.StringVarP(&output, "output", "o", "../../test/padslogic/BOM/ex1", "The path for the output file")
-	flags.StringVarP(&edaTool, "edaTool", "t", "", "Define what EDA tool created the input file")
+	flags.StringVarP(&output, "output", "o", "../../test/padslogic/BOM/", "The path for the output file")
+	flags.StringVarP(&edaTool, "edaTool", "t", "padslogic", "Define what EDA tool created the input file")
 	flags.StringVarP(&logLevel, "log", "l", "debug", "log level to set [debug|info|warning|error|fatal|panic]")
 	return rootCmd
 }
@@ -111,7 +108,7 @@ func getOut(cmd *cobra.Command, sourcePath, outputName string) (io.Writer, close
 	} else if sourcePath != "" {
 		// outfile is based on sourcePath
 		path, _ := filepath.Abs(sourcePath)
-		outname := strings.TrimSuffix(path, filepath.Ext(path)) + ".html"
+		outname := path
 		outfile, err := os.Create(outname)
 		if err != nil {
 			log.Warnf("Cannot create output file - %v, skipping", outname)

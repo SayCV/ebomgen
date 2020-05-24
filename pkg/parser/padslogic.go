@@ -4,9 +4,9 @@ import (
 	"bufio"
 	"bytes"
 	"io/ioutil"
+	"os"
 	"strings"
 
-	"github.com/prometheus/common/log"
 	"github.com/saycv/ebomgen/pkg/types"
 	"github.com/saycv/ebomgen/pkg/utils"
 )
@@ -28,10 +28,11 @@ func parseTextParts(filename string) ([]types.EBOMItem, error) {
 	newspacelines := 0
 	partName = ""
 
-	log.Debugf("Starting process: %v", filename)
+	//log.Debugf("Starting process: %v", filename)
 	for {
 		byteVal, _, err = reader.ReadLine()
 		strVal = strings.TrimSpace(string(byteVal))
+		//log.Infof("ext - %s", strVal)
 		if err == nil && strVal == "*PART*       ITEMS" {
 			byteVal, _, err = reader.ReadLine()
 			byteVal, _, err = reader.ReadLine()
@@ -59,6 +60,7 @@ func parseTextParts(filename string) ([]types.EBOMItem, error) {
 				for {
 					byteVal, _, err = reader.ReadLine()
 					strVal = strings.TrimSpace(string(byteVal))
+					//log.Infof("line - %s", strVal)
 					if strVal == "\n" || strVal == "" {
 						break
 					}
@@ -74,14 +76,14 @@ func parseTextParts(filename string) ([]types.EBOMItem, error) {
 					}
 				}
 				partsList = append(partsList, part)
-				log.Infof("partName - %v", partName)
+				//log.Infof("partName - %v", partName)
 				partName = ""
 			}
 		} else if err == nil && strVal == "*BUSSES*" {
-			log.Infof("*BUSSES*")
+			//log.Infof("*BUSSES*")
 			continue
 		} else if err == nil && strings.HasPrefix(strings.ToUpper(strVal), "*END*") {
-			log.Infof("*END*")
+			//log.Infof("*END*")
 			break
 		}
 	}
@@ -90,13 +92,19 @@ func parseTextParts(filename string) ([]types.EBOMItem, error) {
 }
 
 // ExtractPADSLogicComponents Load a PADS Logic file and extract the part information
-func ExtractPADSLogicComponents(filename string) bool {
+func ExtractPADSLogicComponents(filename string) ([]types.EBOMItem, error) {
 	var propclass = map[string]string{
 		"Description": "unkownDesc",
 		"part":        "unkownPart",
 		"group":       "unkownGroup",
 	}
-	//var components []types.EBOMItem
+	var components []types.EBOMItem
+
+	input, err := os.Open(filename)
+	if err != nil {
+		return components, err
+	}
+	defer input.Close()
 
 	parts, _ := parseTextParts(filename)
 
@@ -131,8 +139,12 @@ func ExtractPADSLogicComponents(filename string) bool {
 		// Build BOMpart and append to list
 		propclass["Description"] = propclass["part"]
 
-		log.Infof("Add Part - %v", part)
-		log.Infof("  propclass - %v", propclass)
+		part.Attributes = propclass
+
+		components = append(components, part)
+
+		//log.Infof("Add Part - %v", part)
+		//log.Infof("  propclass - %v", propclass)
 	}
-	return true
+	return components, err
 }
