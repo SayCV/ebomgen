@@ -39,12 +39,12 @@ func parseTextParts(filename string) ([]types.EBOMItem, error) {
 			// byteVal, _, err = reader.ReadLine()
 			newspacelines = 0
 			for {
-				if newspacelines > 1 {
+				if err != nil || newspacelines > 1 {
 					break
 				}
 				byteVal, _, err = reader.ReadLine()
 				strVal = strings.TrimSpace(string(byteVal))
-				if strVal == "\n" || strVal == "" {
+				if err != nil || strVal == "\n" || strVal == "" {
 					newspacelines = newspacelines + 1
 					continue
 				}
@@ -61,7 +61,7 @@ func parseTextParts(filename string) ([]types.EBOMItem, error) {
 					byteVal, _, err = reader.ReadLine()
 					strVal = strings.TrimSpace(string(byteVal))
 					//log.Infof("line - %s", strVal)
-					if strVal == "\n" || strVal == "" {
+					if err != nil || strVal == "\n" || strVal == "" {
 						break
 					}
 					if strings.HasPrefix(strings.ToUpper(strVal), "\"PCB DECAL\"") {
@@ -84,6 +84,8 @@ func parseTextParts(filename string) ([]types.EBOMItem, error) {
 			continue
 		} else if err == nil && strings.HasPrefix(strings.ToUpper(strVal), "*END*") {
 			//log.Infof("*END*")
+			break
+		} else if err != nil {
 			break
 		}
 	}
