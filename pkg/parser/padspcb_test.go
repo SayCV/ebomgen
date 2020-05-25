@@ -13,13 +13,13 @@ import ( //"flag"
 
 // https://stackoverflow.com/questions/23205419/how-do-you-print-in-a-go-test-using-the-testing-package
 // vscode: "go.testFlags": ["-v"]
-func TestExtractPADSLogicComponents(t *testing.T) {
-	exfile := "../../test/pads/SCH/ex1.txt"
+func TestExtractPADSPCBComponents(t *testing.T) {
+	exfile := "../../test/pads/PCB/ex2.asc"
 
-	t.Logf("Testing PADS Logic Ascii Text Parser")
-	if _, e := ExtractPADSLogicComponents(exfile); e != nil {
-		t.Errorf("ExtractPADSLogicComponents error: %v", e)
+	t.Logf("Testing PADS PCB Ascii Text Parser")
+	if _, e := ExtractPADSPCBComponents(exfile); e != nil {
+		t.Errorf("ExtractPADSPCBComponents error: %v", e)
 	}
-	t.Logf("ExtractPADSLogicComponents test done.")
+	t.Logf("ExtractPADSPCBComponents test done.")
 
 }

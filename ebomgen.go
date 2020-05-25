@@ -51,8 +51,17 @@ func ExtractComponents(config configuration.Configuration) error {
 
 	if strings.ToUpper(config.EDATool) == "PADSLOGIC" {
 		bomParts, err = parser.ExtractPADSLogicComponents(config.InputFile)
+		if err != nil {
+			return err
+		}
+	} else if strings.ToUpper(config.EDATool) == "PADSPCB" {
+		bomParts, err = parser.ExtractPADSPCBComponents(config.InputFile)
+		if err != nil {
+			return err
+		}
 	} else {
 		err = errors.Errorf("unknown tools %v", config.EDATool)
+		return err
 	}
 	numberofparts := len(bomParts)
 	log.Infof("numberofparts %d", numberofparts)
