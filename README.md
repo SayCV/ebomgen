@@ -29,4 +29,10 @@ ebomgen -t padspcb -i test/pads/PCB/ex2.asc -o test/pads/BOM
 - [ ] Process Kicad file
 - [ ] Process OrCAD file
 - [x] Process PADSLogic or PADSPCB file
-- [ ] Calc MTBF
+- [x] Export CSV file
+- [ ] Export Exls file
+- [ ] Sorted Components
+- [x] Sorted References
+- [ ] Calc MTBF based PCP
+- [ ] More humane
+- [ ] More smart
