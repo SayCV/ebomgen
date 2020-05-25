@@ -9,6 +9,8 @@ import (
 
 	"github.com/saycv/ebomgen/pkg/types"
 	"github.com/saycv/ebomgen/pkg/utils"
+
+	log "github.com/sirupsen/logrus"
 )
 
 // parse ascii text file to retrieve parts
@@ -27,6 +29,13 @@ func parseTextParts(filename string) (map[string]types.EBOMItem, error) {
 	reader := bufio.NewReader(bytes.NewBuffer(byteAll))
 	newspacelines := 0
 	partName = ""
+	part.Value = ""
+	part.Attributes = map[string]string{
+		"Manufacturer Part Number": "",
+		"Description":              "unkownDesc",
+		"part":                     "unkownPart",
+		"group":                    "unkownGroup",
+	}
 
 	//log.Debugf("Starting process: %v", filename)
 	for {
@@ -50,11 +59,14 @@ func parseTextParts(filename string) (map[string]types.EBOMItem, error) {
 				}
 				// f_ = sch_f.readline().strip()
 				if partName == "" && newspacelines == 1 {
-					kv := strings.Split(strVal, " ")
+					kv := strings.Fields(strVal)
 					partName = strings.Split(kv[0], "-")[0]
 					partDesc = kv[1]
 					part.References = []string{partName}
 					part.Desc = partDesc
+					//if partName == "P1" {
+					//	log.Infof("Add Part - %s， %s", part.Value, part.Desc)
+					//}
 					continue
 				}
 				for {
@@ -71,14 +83,29 @@ func parseTextParts(filename string) (map[string]types.EBOMItem, error) {
 						//part.Value = strings.Replace(strings.ToUpper(strVal), "\"VALUE\"", "", -1)
 						part.Value = strings.TrimSpace(strVal[7:])
 					}
-					if strings.HasPrefix(strings.ToUpper(strVal), "\"CVPART NUMBER\"") {
-						//part.Attributes["Manufacturer Part Number"] = strings.Replace(strings.ToUpper(strVal), "\"PART NUMBER\"","", -1)
+					if strings.HasPrefix(strings.ToUpper(strVal), "\"PART NUMBER\"") {
+						part.Attributes["Manufacturer Part Number"] = strings.Replace(strings.ToUpper(strVal), "\"PART NUMBER\"", "", -1)
+					}
+				}
+
+				if part.Value == "" {
+					if part.Desc != "" {
+						part.Value = part.Desc
+					} else if part.Attributes["Manufacturer Part Number"] != "" {
+						part.Value = part.Attributes["Manufacturer Part Number"]
 					}
 				}
 				//partsList = append(partsList, part)
 				partsList[partName] = part
 				//log.Infof("partName - %v", partName)
 				partName = ""
+				part.Value = ""
+				part.Attributes = map[string]string{
+					"Manufacturer Part Number": "",
+					"Description":              "unkownDesc",
+					"part":                     "unkownPart",
+					"group":                    "unkownGroup",
+				}
 			}
 		} else if err == nil && strVal == "*BUSSES*" {
 			//log.Infof("*BUSSES*")
@@ -91,6 +118,7 @@ func parseTextParts(filename string) (map[string]types.EBOMItem, error) {
 		}
 	}
 	//print(part in partsList)
+	log.Debugf("Parse Done.")
 	return partsList, err
 }
 

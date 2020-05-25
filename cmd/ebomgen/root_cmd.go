@@ -95,26 +95,9 @@ func newCloseFileFunc(c io.Closer) closeFunc {
 }
 
 func getOut(cmd *cobra.Command, sourcePath, outputName string) (io.Writer, closeFunc) {
-	if outputName == "-" {
-		// outfile is STDOUT
+	// Create the mod cache so we can rename it later, even if we don't need it.
+	if err := os.MkdirAll(outputName, 0755); err != nil {
 		return cmd.OutOrStdout(), defaultCloseFunc()
-	} else if outputName != "" {
-		// outfile is specified in the command line
-		outfile, e := os.Create(outputName)
-		if e != nil {
-			log.Warnf("Cannot create output file - %v, skipping", outputName)
-		}
-		return outfile, newCloseFileFunc(outfile)
-	} else if sourcePath != "" {
-		// outfile is based on sourcePath
-		path, _ := filepath.Abs(sourcePath)
-		outname := path
-		outfile, err := os.Create(outname)
-		if err != nil {
-			log.Warnf("Cannot create output file - %v, skipping", outname)
-			return nil, nil
-		}
-		return outfile, newCloseFileFunc(outfile)
 	}
 	return cmd.OutOrStdout(), defaultCloseFunc()
 }

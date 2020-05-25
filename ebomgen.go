@@ -47,19 +47,19 @@ func ExtractComponents(config configuration.Configuration) error {
 	filenameWithSuffix := path.Base(config.InputFile)
 	fileSuffix := path.Ext(filenameWithSuffix)
 	prjname := strings.TrimSuffix(filenameWithSuffix, fileSuffix)
-	log.Infof("Project Name { %s", prjname)
+	log.Infof("Project Name %s", prjname)
 
 	if strings.ToUpper(config.EDATool) == "PADSLOGIC" {
 		bomParts, err = parser.ExtractPADSLogicComponents(config.InputFile)
 	} else {
-		err = errors.Errorf("unknown tools { %v", config.EDATool)
+		err = errors.Errorf("unknown tools %v", config.EDATool)
 	}
 	numberofparts := len(bomParts)
-	log.Infof("numberofparts { %d", numberofparts)
+	log.Infof("numberofparts %d", numberofparts)
 
 	combinedBOMparts, _ := combineBOMparts(bomParts)
 	outputFilename := filepath.ToSlash(filepath.Join(config.OutputFile, prjname+"_BOM.csv"))
-	log.Infof("CSV Output File { %s", outputFilename)
+	log.Infof("CSV Output File %s", outputFilename)
 
 	for k, ipart := range combinedBOMparts {
 		combinedBOMparts[k].References = sortComponentRef(ipart)
@@ -135,17 +135,16 @@ func (items *Items) Less(i, j int) bool {
 	}
 	reRef := regexp.MustCompile("[A-Z\\.]+")
 	reVal := regexp.MustCompile("\\d*\\d+")
-	log.Infof("a -- ", a)
-	log.Infof("a.FieldByName -- ", a.FieldByName(items.field))
-	log.Infof("b -- ", b)
-	log.Infof("b.FieldByName -- ", b.FieldByName(items.field))
+	// log.Infof("a -- ", a)
+	// log.Infof("a.FieldByName -- ", a.FieldByName(items.field))
+	// log.Infof("b -- ", b)
+	// log.Infof("b.FieldByName -- ", b.FieldByName(items.field))
 
 	refVal1 := string(reRef.FindAll([]byte(strings.ToUpper(a.FieldByName(items.field).String())), -1)[0])
 	numVal1, _ := strconv.Atoi(string(reVal.FindAll([]byte(a.FieldByName(items.field).String()), -1)[0]))
 	refVal2 := string(reRef.FindAll([]byte(strings.ToUpper(b.FieldByName(items.field).String())), -1)[0])
 	numVal2, _ := strconv.Atoi(string(reVal.FindAll([]byte(b.FieldByName(items.field).String()), -1)[0]))
-	//va := a.FieldByName(items.field).Int()
-	//vb := b.FieldByName(items.field).Int()
+
 	return refVal1 < refVal2 || numVal1 < numVal2
 }
 
@@ -177,7 +176,7 @@ func sortComponentRef(self types.EBOMItem) []string {
 
 	SortItems(sortItems, "References")
 	for _, v := range sortItems {
-		log.Infof("after sorted ps -- ", v)
+		//log.Infof("after sorted ref -- ", v)
 		ret = append(ret, v.References)
 	}
 	return ret
