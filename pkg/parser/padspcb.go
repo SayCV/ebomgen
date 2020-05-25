@@ -105,7 +105,7 @@ func parsePCBTextParts(filename string) (map[string]types.EBOMItem, error) {
 					continue
 				}
 				// f_ = sch_f.readline().strip()
-				if partName == "" && newspacelines == 1 {
+				if partName == "" && newspacelines == 0 {
 					kv := strings.Fields(strVal)
 					partName = strings.Split(kv[0], "-")[0]
 					// Deal with partDesc reference is "FPG@FPA" for PCB hard hack
@@ -121,6 +121,7 @@ func parsePCBTextParts(filename string) (map[string]types.EBOMItem, error) {
 						kv := strings.Fields(strVal)
 						//log.Infof("line - %s", strVal)
 						if err != nil || len(kv) == 12 || strVal == "\n" || strVal == "" {
+							singlelines = 1
 							break
 						}
 					}
