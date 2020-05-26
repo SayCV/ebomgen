@@ -2,6 +2,8 @@ package types
 
 import (
 	"io"
+	"strconv"
+
 	//"bytes"
 	"fmt"
 	//"net/url"
@@ -219,7 +221,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 		}
 		if current_confidence > highest_confidence {
 			highest_confidence = current_confidence
-			self.Group = []string{definition.GroupType + " " + definition.PartType, string(definition.Precedence)}
+			self.Group = []string{definition.GroupType + " " + definition.PartType, strconv.Itoa(definition.Precedence)}
 
 		}
 		if current_confidence >= confidence_threshold {

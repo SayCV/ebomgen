@@ -555,17 +555,15 @@ func (items *ComponentItems) Less(i, j int) bool {
 	_vb := b.FieldByName(items.field).Interface()
 	objA := _va.(types.EBOMItem)
 	objB := _vb.(types.EBOMItem)
-	log.Infof("a -- ", _va, _va.(types.EBOMItem))
-	log.Infof("b -- ", _vb, _vb.(types.EBOMItem))
 
-	groupA := objA.Group[1]
-	groupB := objB.Group[1]
-	log.Infof("a -- ", objA, groupA)
-	log.Infof("b -- ", objB, groupB)
+	groupA, _ := strconv.Atoi(objA.Group[1])
+	groupB, _ := strconv.Atoi(objB.Group[1])
 
 	fvalueA := objA.FValue
 	fvalueB := objB.FValue
 
+	log.Infof("compare1 -- ", groupA, groupB)
+	log.Infof("compare2 -- ", fvalueA, fvalueB)
 	return groupA < groupB || fvalueA < fvalueB
 }
 
