@@ -41,17 +41,20 @@ var (
 
 var partgroups []types.EBOMGroup
 
-func AddGroup3(groupdeflist []types.EBOMGroup, reference string, pt string, gt string) {
+func AddGroup3(groupdeflist []types.EBOMGroup, reference string, pt string, gt string) []types.EBOMGroup {
 	groupdeflist = append(groupdeflist,
 		types.EBOMGroup{reference, pt, gt, 0, "?"})
+	return groupdeflist
 }
 
-func AddGroup(groupdeflist []types.EBOMGroup, reference string, pt string, gt string, unt string) {
+func AddGroup(groupdeflist []types.EBOMGroup, reference string, pt string, gt string, unt string) []types.EBOMGroup {
 	groupdeflist = append(groupdeflist,
 		types.EBOMGroup{reference, pt, gt, 0, unt})
+	return groupdeflist
 }
 
-func SetPrecedence(groupdeflist []types.EBOMGroup) {
+func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
+	var ret []types.EBOMGroup
 
 	GRPID_FACTOR := 1000
 	PASSIVE_GRPID := 0 * GRPID_FACTOR
@@ -68,40 +71,40 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) {
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	CAPGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	CAPSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	CAPSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//CAPSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//CAPSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
 	CAPSM8_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	CAPSMPOL_PARTID := BASE_PARTID + 3*PARTID_FACTOR
-	CAPTM_PARTID := BASE_PARTID + 4*PARTID_FACTOR
-	CAPTM3_PARTID := BASE_PARTID + 5*PARTID_FACTOR
-	CAPTM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
-	CAPTMPOL_PARTID := BASE_PARTID + 7*PARTID_FACTOR
+	//CAPSMPOL_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//CAPTM_PARTID := BASE_PARTID + 4*PARTID_FACTOR
+	//CAPTM3_PARTID := BASE_PARTID + 5*PARTID_FACTOR
+	//CAPTM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
+	//CAPTMPOL_PARTID := BASE_PARTID + 7*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	RESGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	RESSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	RESSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//RESSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//RESSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
 	RESSM8_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	RESSMPOL_PARTID := BASE_PARTID + 3*PARTID_FACTOR
-	RESTM_PARTID := BASE_PARTID + 4*PARTID_FACTOR
-	RESTM3_PARTID := BASE_PARTID + 5*PARTID_FACTOR
-	RESTM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
-	RESTMPOL_PARTID := BASE_PARTID + 7*PARTID_FACTOR
+	//RESSMPOL_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//RESTM_PARTID := BASE_PARTID + 4*PARTID_FACTOR
+	//RESTM3_PARTID := BASE_PARTID + 5*PARTID_FACTOR
+	//RESTM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
+	//RESTMPOL_PARTID := BASE_PARTID + 7*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	INDGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	INDSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	INDSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
-	INDSM8_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	INDXFRM_PARTID := BASE_PARTID + 2*PARTID_FACTOR + 1
+	//INDSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//INDSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//INDSM8_PARTID := BASE_PARTID + 2*PARTID_FACTOR
+	//INDXFRM_PARTID := BASE_PARTID + 2*PARTID_FACTOR + 1
 	INDFBSM_PARTID := BASE_PARTID + 3*PARTID_FACTOR
 	INDFUSESM_PARTID := BASE_PARTID + 4*PARTID_FACTOR
-	INDTM_PARTID := BASE_PARTID + 5*PARTID_FACTOR
-	INDTM3_PARTID := BASE_PARTID + 6*PARTID_FACTOR
-	INDTM8_PARTID := BASE_PARTID + 7*PARTID_FACTOR
-	INDXFRM_PARTID = BASE_PARTID + 7*PARTID_FACTOR + 1
-	INDFBTM_PARTID := BASE_PARTID + 8*PARTID_FACTOR
-	INDFUSETM_PARTID := BASE_PARTID + 9*PARTID_FACTOR
+	//INDTM_PARTID := BASE_PARTID + 5*PARTID_FACTOR
+	//INDTM3_PARTID := BASE_PARTID + 6*PARTID_FACTOR
+	//INDTM8_PARTID := BASE_PARTID + 7*PARTID_FACTOR
+	//INDXFRM_PARTID = BASE_PARTID + 7*PARTID_FACTOR + 1
+	//INDFBTM_PARTID := BASE_PARTID + 8*PARTID_FACTOR
+	//INDFUSETM_PARTID := BASE_PARTID + 9*PARTID_FACTOR
 
 	PARTID_FACTOR = 10
 	PARTID_NBRS = 10
@@ -109,51 +112,51 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) {
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	DIODEGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	DIODESM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	DIODESM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
-	DIODESM8_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	DIODESMPOL_PARTID := BASE_PARTID + 3*PARTID_FACTOR
-	DIODETM_PARTID := BASE_PARTID + 4*PARTID_FACTOR
-	DIODETM3_PARTID := BASE_PARTID + 5*PARTID_FACTOR
-	DIODETM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
-	DIODETMPOL_PARTID := BASE_PARTID + 7*PARTID_FACTOR
+	//DIODESM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//DIODESM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//DIODESM8_PARTID := BASE_PARTID + 2*PARTID_FACTOR
+	//DIODESMPOL_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//DIODETM_PARTID := BASE_PARTID + 4*PARTID_FACTOR
+	//DIODETM3_PARTID := BASE_PARTID + 5*PARTID_FACTOR
+	//DIODETM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
+	//DIODETMPOL_PARTID := BASE_PARTID + 7*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
-	ZENERGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	ZENERSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	ZENERSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
-	ZENERTM_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	ZENERTM3_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//ZENERGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//ZENERSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//ZENERSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//ZENERTM_PARTID := BASE_PARTID + 2*PARTID_FACTOR
+	//ZENERTM3_PARTID := BASE_PARTID + 3*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
-	TVSGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	TVSSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	TVSSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
-	TVSTM_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	TVSTM3_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//TVSGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//TVSSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//TVSSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//TVSTM_PARTID := BASE_PARTID + 2*PARTID_FACTOR
+	//TVSTM3_PARTID := BASE_PARTID + 3*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	LEDGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	LEDSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	LEDSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
-	LEDTM_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	LEDTM3_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//LEDSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//LEDSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//LEDTM_PARTID := BASE_PARTID + 2*PARTID_FACTOR
+	//LEDTM3_PARTID := BASE_PARTID + 3*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	TRANSGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	TRANSSM3_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	MOSSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
-	TRANSTM3_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	MOSTM3_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//TRANSSM3_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//MOSSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//TRANSTM3_PARTID := BASE_PARTID + 2*PARTID_FACTOR
+	//MOSTM3_PARTID := BASE_PARTID + 3*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	CLKGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	CLKSM2_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//CLKSM2_PARTID := BASE_PARTID + 0*PARTID_FACTOR
 	CLKSM4_PARTID := BASE_PARTID + 1*PARTID_FACTOR
-	CLKSM6_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	CLKTM2_PARTID := BASE_PARTID + 3*PARTID_FACTOR
-	CLKTM4_PARTID := BASE_PARTID + 4*PARTID_FACTOR
-	CLKTM6_PARTID := BASE_PARTID + 5*PARTID_FACTOR
+	//CLKSM6_PARTID := BASE_PARTID + 2*PARTID_FACTOR
+	//CLKTM2_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//CLKTM4_PARTID := BASE_PARTID + 4*PARTID_FACTOR
+	//CLKTM6_PARTID := BASE_PARTID + 5*PARTID_FACTOR
 
 	PARTID_FACTOR = 10
 	PARTID_NBRS = 10
@@ -161,14 +164,14 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) {
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	ICGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	MCU_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	CPU_PARTID := BASE_PARTID + 0*PARTID_FACTOR + 1
-	DSP_PARTID := BASE_PARTID + 0*PARTID_FACTOR + 2
+	//MCU_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//CPU_PARTID := BASE_PARTID + 0*PARTID_FACTOR + 1
+	//DSP_PARTID := BASE_PARTID + 0*PARTID_FACTOR + 2
 	REG_PARTID := BASE_PARTID + 1*PARTID_FACTOR
-	TXRX_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	COMP_PARTID := BASE_PARTID + 3*PARTID_FACTOR
-	OPAMP_PARTID := BASE_PARTID + 4*PARTID_FACTOR
-	IC_PARTID := BASE_PARTID + 5*PARTID_FACTOR
+	//TXRX_PARTID := BASE_PARTID + 2*PARTID_FACTOR
+	//COMP_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//OPAMP_PARTID := BASE_PARTID + 4*PARTID_FACTOR
+	//IC_PARTID := BASE_PARTID + 5*PARTID_FACTOR
 	XFRM_PARTID := BASE_PARTID + 6*PARTID_FACTOR
 
 	PARTID_FACTOR = 10
@@ -177,13 +180,13 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) {
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	CONGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	CONSM_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//CONSM_PARTID := BASE_PARTID + 1*PARTID_FACTOR
 	CONTM_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	CONSW_PARTID := BASE_PARTID + 3*PARTID_FACTOR
-	CONSD_PARTID := BASE_PARTID + 4*PARTID_FACTOR
+	//CONSW_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	//CONSD_PARTID := BASE_PARTID + 4*PARTID_FACTOR
 	CONUSB_PARTID := BASE_PARTID + 5*PARTID_FACTOR
-	CONDB_PARTID := BASE_PARTID + 6*PARTID_FACTOR
-	CONLEMO_PARTID := BASE_PARTID + 7*PARTID_FACTOR
+	//CONDB_PARTID := BASE_PARTID + 6*PARTID_FACTOR
+	//CONLEMO_PARTID := BASE_PARTID + 7*PARTID_FACTOR
 
 	PARTID_FACTOR = 10
 	PARTID_NBRS = 10
@@ -200,9 +203,9 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) {
 	BASE_PARTID = MECH_GRPID
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
-	MECHGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	MECHSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	MECHTM_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//MECHGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//MECHSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//MECHTM_PARTID := BASE_PARTID + 1*PARTID_FACTOR
 
 	PARTID_FACTOR = 10
 	PARTID_NBRS = 10
@@ -210,15 +213,15 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) {
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	MNTGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	MNTSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
-	MNTTM_PARTID := BASE_PARTID + 1*PARTID_FACTOR
+	//MNTSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	//MNTTM_PARTID := BASE_PARTID + 1*PARTID_FACTOR
 	MNTTP_PARTID := BASE_PARTID + 2*PARTID_FACTOR
 	MNTNETSHORT_PARTID := BASE_PARTID + 2*PARTID_FACTOR + 1
 	MNTDNP_PARTID := BASE_PARTID + 3*PARTID_FACTOR
 
 	DFLT_PARTID := BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 
-	for index, groupdef := range groupdeflist {
+	for _, groupdef := range groupdeflist {
 		groupdef.Precedence = DFLT_PARTID
 
 		if groupdef.GroupType == "IC" {
@@ -278,85 +281,89 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) {
 		} else if groupdef.PartType == "Other" {
 			groupdef.Precedence = DFLT_PARTID
 		}
+
+		ret = append(ret, groupdef)
 	}
+	return ret
 }
 
-func createGroupsList(partgroups []types.EBOMGroup) {
+func createGroupsList(partgroups []types.EBOMGroup) []types.EBOMGroup {
 
 	// Passive Parts
-	AddGroup(partgroups, "C", "Capacitor", "Passive", "f")
-	AddGroup(partgroups, "CP", "CapacitorArray", "Passive", "f")
-	AddGroup(partgroups, "R", "Resistor", "Passive", "R")
-	AddGroup(partgroups, "R", "Resistor", "Passive", "K")
-	AddGroup(partgroups, "R", "Resistor", "Passive", "M")
-	AddGroup(partgroups, "R", "Resistor", "Passive", "ohm")
-	AddGroup(partgroups, "RP", "ResistorArray", "Passive", "R")
-	AddGroup(partgroups, "RP", "ResistorArray", "Passive", "K")
-	AddGroup(partgroups, "RP", "ResistorArray", "Passive", "M")
-	AddGroup(partgroups, "RP", "ResistorArray", "Passive", "ohm")
-	AddGroup(partgroups, "R", "Potentiometer", "Passive", "ohm")
-	AddGroup3(partgroups, "L", "Inductor", "Passive")
-	AddGroup3(partgroups, "FB", "FerritBead", "Passive")
-	AddGroup3(partgroups, "D", "Diode", "Passive")
-	AddGroup3(partgroups, "TVS", "TVS", "Passive")
-	AddGroup3(partgroups, "LED", "LED", "Passive")
-	AddGroup3(partgroups, "F", "Fuse", "Passive")
+	partgroups = AddGroup(partgroups, "C", "Capacitor", "Passive", "f")
+	partgroups = AddGroup(partgroups, "CP", "CapacitorArray", "Passive", "f")
+	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "R")
+	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "K")
+	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "M")
+	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "ohm")
+	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "R")
+	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "K")
+	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "M")
+	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "ohm")
+	partgroups = AddGroup(partgroups, "R", "Potentiometer", "Passive", "ohm")
+	partgroups = AddGroup3(partgroups, "L", "Inductor", "Passive")
+	partgroups = AddGroup3(partgroups, "FB", "FerritBead", "Passive")
+	partgroups = AddGroup3(partgroups, "D", "Diode", "Passive")
+	partgroups = AddGroup3(partgroups, "TVS", "TVS", "Passive")
+	partgroups = AddGroup3(partgroups, "LED", "LED", "Passive")
+	partgroups = AddGroup3(partgroups, "F", "Fuse", "Passive")
 	// Transistors
-	AddGroup3(partgroups, "U", "FET", "Transistor")
-	AddGroup3(partgroups, "U", "Transistor", "General")
-	AddGroup3(partgroups, "U", "NPN", "Transistor")
-	AddGroup3(partgroups, "U", "PNP", "Transistor")
+	partgroups = AddGroup3(partgroups, "U", "FET", "Transistor")
+	partgroups = AddGroup3(partgroups, "U", "Transistor", "General")
+	partgroups = AddGroup3(partgroups, "U", "NPN", "Transistor")
+	partgroups = AddGroup3(partgroups, "U", "PNP", "Transistor")
 	// MCUs
-	AddGroup3(partgroups, "U", "atmega", "mcu")
-	AddGroup3(partgroups, "U", "pic", "mcu")
+	partgroups = AddGroup3(partgroups, "U", "atmega", "mcu")
+	partgroups = AddGroup3(partgroups, "U", "pic", "mcu")
 	// ICs
-	AddGroup3(partgroups, "U", "Device", "IC")
-	AddGroup3(partgroups, "IC", "Device", "IC")
-	AddGroup3(partgroups, "REG", "Reg", "IC")
-	AddGroup3(partgroups, "U", "Reg", "IC")
-	AddGroup3(partgroups, "U", "Transceiver", "IC")
-	AddGroup3(partgroups, "U", "Comparator", "IC")
-	AddGroup3(partgroups, "U", "ESD", "IC")
+	partgroups = AddGroup3(partgroups, "U", "Device", "IC")
+	partgroups = AddGroup3(partgroups, "IC", "Device", "IC")
+	partgroups = AddGroup3(partgroups, "REG", "Reg", "IC")
+	partgroups = AddGroup3(partgroups, "U", "Reg", "IC")
+	partgroups = AddGroup3(partgroups, "U", "Transceiver", "IC")
+	partgroups = AddGroup3(partgroups, "U", "Comparator", "IC")
+	partgroups = AddGroup3(partgroups, "U", "ESD", "IC")
 	// Mechanical
-	AddGroup3(partgroups, "SW", "Switch", "Mech")
-	AddGroup3(partgroups, "K", "Switch", "Mech")
-	AddGroup3(partgroups, "S", "Switch", "Mech")
+	partgroups = AddGroup3(partgroups, "SW", "Switch", "Mech")
+	partgroups = AddGroup3(partgroups, "K", "Switch", "Mech")
+	partgroups = AddGroup3(partgroups, "S", "Switch", "Mech")
 	// Crystals
-	AddGroup3(partgroups, "Q", "Crystal", "Clock")
-	AddGroup3(partgroups, "X", "Crystal", "Clock")
-	AddGroup(partgroups, "X", "Crystal", "Clock", "HZ")
-	AddGroup3(partgroups, "Y", "Crystal", "Clock")
-	AddGroup3(partgroups, "OSC", "Oscillator", "Clock")
+	partgroups = AddGroup3(partgroups, "Q", "Crystal", "Clock")
+	partgroups = AddGroup3(partgroups, "X", "Crystal", "Clock")
+	partgroups = AddGroup(partgroups, "X", "Crystal", "Clock", "HZ")
+	partgroups = AddGroup3(partgroups, "Y", "Crystal", "Clock")
+	partgroups = AddGroup3(partgroups, "OSC", "Oscillator", "Clock")
 
 	// Mechanical
-	AddGroup3(partgroups, "J", "Connector", "Connector")
-	AddGroup3(partgroups, "J", "ConnRJ", "Connector")
-	AddGroup3(partgroups, "J", "ConnUSB", "Connector")
-	AddGroup3(partgroups, "JP", "Connector", "Connector")
-	AddGroup3(partgroups, "JP", "ConnRJ", "Connector")
-	AddGroup3(partgroups, "JP", "ConnUSB", "Connector")
+	partgroups = AddGroup3(partgroups, "J", "Connector", "Connector")
+	partgroups = AddGroup3(partgroups, "J", "ConnRJ", "Connector")
+	partgroups = AddGroup3(partgroups, "J", "ConnUSB", "Connector")
+	partgroups = AddGroup3(partgroups, "JP", "Connector", "Connector")
+	partgroups = AddGroup3(partgroups, "JP", "ConnRJ", "Connector")
+	partgroups = AddGroup3(partgroups, "JP", "ConnUSB", "Connector")
 
-	AddGroup3(partgroups, "BT", "BATT", "BATT")
-	3
-	AddGroup3(partgroups, "T", "XFRM", "XFRM")
-	3
-	AddGroup3(partgroups, "*", "unkownPart", "unkownGroup")
-	3
-	AddGroup3(partgroups, "TP", "TestPoint", "MOUNT")
-	AddGroup3(partgroups, "*", "NET_SHORT", "MOUNT")
+	partgroups = AddGroup3(partgroups, "BT", "BATT", "BATT")
 
-	AddGroup(partgroups, "H", "MOUNT", "MOUNT", "HOLE")
-	AddGroup(partgroups, "TH", "MOUNT", "MOUNT", "HOLE")
-	AddGroup(partgroups, "HOLE", "MOUNT", "MOUNT", "HOLE")
-	AddGroup(partgroups, "P", "MOUNT", "MOUNT", "PAD")
-	AddGroup(partgroups, "*", "*", "DNP", "NF")
+	partgroups = AddGroup3(partgroups, "T", "XFRM", "XFRM")
+
+	partgroups = AddGroup3(partgroups, "*", "unkownPart", "unkownGroup")
+
+	partgroups = AddGroup3(partgroups, "TP", "TestPoint", "MOUNT")
+	partgroups = AddGroup3(partgroups, "*", "NET_SHORT", "MOUNT")
+
+	partgroups = AddGroup(partgroups, "H", "MOUNT", "MOUNT", "HOLE")
+	partgroups = AddGroup(partgroups, "TH", "MOUNT", "MOUNT", "HOLE")
+	partgroups = AddGroup(partgroups, "HOLE", "MOUNT", "MOUNT", "HOLE")
+	partgroups = AddGroup(partgroups, "P", "MOUNT", "MOUNT", "PAD")
+	partgroups = AddGroup(partgroups, "*", "*", "DNP", "NF")
 
 	// Set Precedence
-	SetPrecedence(partgroups)
+	partgroups = SetPrecedence(partgroups)
+	return partgroups
 }
 
-func init() {
-	createGroupsList()
+func componentGroupInit() {
+	partgroups = createGroupsList(partgroups)
 
 	log.Infof("Init partgroups.")
 
@@ -395,10 +402,15 @@ func ExtractComponents(config configuration.Configuration) error {
 	outputFilename := filepath.ToSlash(filepath.Join(config.OutputFile, prjname+"_BOM.csv"))
 	log.Infof("CSV Output File %s", outputFilename)
 
+	componentGroupInit()
+
 	for k, ipart := range combinedBOMparts {
-		combinedBOMparts[k].References = sortComponentRef(ipart)
 		combinedBOMparts[k].FValue = utils.GetFValFromEVal(combinedBOMparts[k].Value)
+		combinedBOMparts[k].References = sortComponentRef(ipart)
+		combinedBOMparts[k].SetComponentGroup(partgroups, true)
 	}
+
+	combinedBOMparts = sortComponentList(combinedBOMparts)
 
 	BOM, err := types.NewBOM(combinedBOMparts)
 	if err != nil {
@@ -448,19 +460,19 @@ func combineBOMparts(bomparts []types.EBOMItem) ([]types.EBOMItem, error) {
 	return combinedparts, nil
 }
 
-type Items struct {
+type RefItems struct {
 	data  interface{}
 	field string
 }
 
-func (items *Items) Len() int {
+func (items *RefItems) Len() int {
 	if reflect.ValueOf(items.data).Kind() != reflect.Slice {
 		return -1
 	}
 	return reflect.ValueOf(items.data).Len()
 }
 
-func (items *Items) Less(i, j int) bool {
+func (items *RefItems) Less(i, j int) bool {
 	a := reflect.ValueOf(items.data).Index(i)
 	b := reflect.ValueOf(items.data).Index(j)
 	if a.Kind() == reflect.Ptr {
@@ -484,7 +496,7 @@ func (items *Items) Less(i, j int) bool {
 	return refVal1 < refVal2 || numVal1 < numVal2
 }
 
-func (items *Items) Swap(i, j int) {
+func (items *RefItems) Swap(i, j int) {
 	reflect.Swapper(items.data)(i, j)
 }
 
@@ -492,7 +504,7 @@ func sortRefItems(i interface{}, str string) {
 	if reflect.ValueOf(i).Kind() != reflect.Slice {
 		return
 	}
-	a := &Items{
+	a := &RefItems{
 		data:  i,
 		field: str,
 	}
@@ -518,21 +530,75 @@ func sortComponentRef(self types.EBOMItem) []string {
 	return ret
 }
 
-func sortComponentList(self types.EBOMItem) []string {
+type ComponentItems struct {
+	data  interface{}
+	field string
+}
+
+func (items *ComponentItems) Len() int {
+	if reflect.ValueOf(items.data).Kind() != reflect.Slice {
+		return -1
+	}
+	return reflect.ValueOf(items.data).Len()
+}
+
+func (items *ComponentItems) Less(i, j int) bool {
+	a := reflect.ValueOf(items.data).Index(i)
+	b := reflect.ValueOf(items.data).Index(j)
+	if a.Kind() == reflect.Ptr {
+		a = a.Elem()
+	}
+	if b.Kind() == reflect.Ptr {
+		b = b.Elem()
+	}
+	_va := a.FieldByName(items.field).Interface()
+	_vb := b.FieldByName(items.field).Interface()
+	objA := _va.(types.EBOMItem)
+	objB := _vb.(types.EBOMItem)
+	log.Infof("a -- ", _va, _va.(types.EBOMItem))
+	log.Infof("b -- ", _vb, _vb.(types.EBOMItem))
+
+	groupA := objA.Group[1]
+	groupB := objB.Group[1]
+	log.Infof("a -- ", objA, groupA)
+	log.Infof("b -- ", objB, groupB)
+
+	fvalueA := objA.FValue
+	fvalueB := objB.FValue
+
+	return groupA < groupB || fvalueA < fvalueB
+}
+
+func (items *ComponentItems) Swap(i, j int) {
+	reflect.Swapper(items.data)(i, j)
+}
+
+func sortComponentItems(i interface{}, str string) {
+	if reflect.ValueOf(i).Kind() != reflect.Slice {
+		return
+	}
+	a := &ComponentItems{
+		data:  i,
+		field: str,
+	}
+	sort.Sort(a)
+}
+
+func sortComponentList(self []types.EBOMItem) []types.EBOMItem {
 	type sortItem struct {
-		References string
+		EBOMItem types.EBOMItem
 	}
 	var sortItems []sortItem
-	var ret []string
+	var ret []types.EBOMItem
 
-	for _, v := range self.References {
+	for _, v := range self {
 		sortItems = append(sortItems, sortItem{v})
 	}
 
-	sortRefItems(sortItems, "References")
+	sortComponentItems(sortItems, "EBOMItem")
 	for _, v := range sortItems {
 		//log.Infof("after sorted ref -- ", v)
-		ret = append(ret, v.References)
+		ret = append(ret, v.EBOMItem)
 	}
 	return ret
 }
