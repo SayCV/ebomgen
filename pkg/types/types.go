@@ -14,15 +14,24 @@ import (
 	//yaml "gopkg.in/yaml.v2"
 )
 
-// EBOMItem part propery
 type EBOMItem struct {
 	Quantity   int
 	References []string
 	Value      string
+	FValue     float64
 	Library    string
 	Footprint  string
 	Desc       string
 	Attributes map[string]string
+}
+
+// EBOMGroup part group
+type EBOMGroup struct {
+	Ref        string
+	PartType   string
+	GroupType  string
+	Precedence int
+	Unit       string
 }
 
 // EBOMSheet include all parts
