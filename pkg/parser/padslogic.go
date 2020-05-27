@@ -118,7 +118,7 @@ func parseTextParts(filename string) (map[string]types.EBOMItem, error) {
 		}
 	}
 	//print(part in partsList)
-	log.Debugf("Parse Done.")
+	log.Infof("Parse Done.")
 	return partsList, err
 }
 

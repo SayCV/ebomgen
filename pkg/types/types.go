@@ -82,8 +82,10 @@ func (b *EBOMSheet) writeItem(w io.Writer, k int, i EBOMItem) error {
 	res = append(res, `"`+i.Value+`"`)
 	res = append(res, `"`+i.Footprint+`"`)
 	res = append(res, `"`+i.Attributes["Description"]+`"`)
-	res = append(res, `"`+i.Group[0]+`"`)
-	res = append(res, `"`+i.Group[1]+`"`)
+	if false ｛
+		res = append(res, `"`+i.Group[0]+`"`)
+		res = append(res, `"`+i.Group[1]+`"`)
+	}
 	//for _, f := range i.Attributes {
 	//	res = append(res, `"`+f+`"`)
 	//}
