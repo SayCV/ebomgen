@@ -50,7 +50,9 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		if !strings.Contains(_capVAL, "MHZ") &&
 			!strings.Contains(_capVAL, "M") &&
 			!strings.Contains(_capVAL, "KHZ") &&
-			!strings.Contains(_capVAL, "PPM") {
+			!strings.Contains(_capVAL, "PPM") &&
+			!strings.Contains(_capVAL, "XTAL") &&
+			!strings.Contains(_capVAL, "OSC") {
 			propclass["part"] = "Connector"
 			propclass["group"] = "Connector"
 		}
@@ -60,7 +62,9 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		if !strings.Contains(_capVAL, "MHZ") &&
 			!strings.Contains(_capVAL, "M") &&
 			!strings.Contains(_capVAL, "KHZ") &&
-			!strings.Contains(_capVAL, "PPM") {
+			!strings.Contains(_capVAL, "PPM") &&
+			!strings.Contains(_capVAL, "XTAL") &&
+			!strings.Contains(_capVAL, "OSC") {
 			propclass["part"] = "Connector"
 			propclass["group"] = "Connector"
 		}
