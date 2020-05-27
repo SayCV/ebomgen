@@ -82,8 +82,8 @@ func (b *EBOMSheet) writeItem(w io.Writer, k int, i EBOMItem) error {
 	res = append(res, `"`+i.Value+`"`)
 	res = append(res, `"`+i.Footprint+`"`)
 	res = append(res, `"`+i.Attributes["Description"]+`"`)
-	//res = append(res, `"`+i.Group[0]+`"`)
-	//res = append(res, `"`+i.Group[1]+`"`)
+	res = append(res, `"`+i.Group[0]+`"`)
+	res = append(res, `"`+i.Group[1]+`"`)
 	//for _, f := range i.Attributes {
 	//	res = append(res, `"`+f+`"`)
 	//}
@@ -159,6 +159,18 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 			if verbose_p {
 				log.Infof("{%s} mached in {%s}", definition.Unit,
 					self.Value)
+			}
+		}
+
+		if true && (self.Attributes["part"] == "CapacitorTan") {
+			if definition.PartType == "CapacitorTan" {
+				current_confidence += 100
+				if verbose_p {
+					log.Infof("{%s} mached in {%s}",
+						definition.Unit, self.Value)
+				}
+			} else {
+				current_confidence = 0
 			}
 		}
 		if true && (self.Attributes["part"] == "IC" ||

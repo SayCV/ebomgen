@@ -75,7 +75,7 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 	//CAPSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
 	//CAPSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
 	CAPSM8_PARTID := BASE_PARTID + 2*PARTID_FACTOR
-	//CAPSMPOL_PARTID := BASE_PARTID + 3*PARTID_FACTOR
+	CAPSMPOL_PARTID := BASE_PARTID + 3*PARTID_FACTOR
 	//CAPTM_PARTID := BASE_PARTID + 4*PARTID_FACTOR
 	//CAPTM3_PARTID := BASE_PARTID + 5*PARTID_FACTOR
 	//CAPTM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
@@ -235,6 +235,8 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 			groupdef.Precedence = CAPGEN_PARTID
 		} else if groupdef.PartType == "CapacitorArray" {
 			groupdef.Precedence = CAPSM8_PARTID
+		} else if groupdef.PartType == "CapacitorTan" {
+			groupdef.Precedence = CAPSMPOL_PARTID
 		} else if groupdef.PartType == "Resistor" {
 			groupdef.Precedence = RESGEN_PARTID
 		} else if groupdef.PartType == "ResistorArray" {
@@ -293,6 +295,7 @@ func createGroupsList(partgroups []types.EBOMGroup) []types.EBOMGroup {
 	// Passive Parts
 	partgroups = AddGroup(partgroups, "C", "Capacitor", "Passive", "f")
 	partgroups = AddGroup(partgroups, "CP", "CapacitorArray", "Passive", "f")
+	partgroups = AddGroup(partgroups, "TC", "CapacitorTan", "Passive", "f")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "R")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "K")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "M")
@@ -379,7 +382,7 @@ func strAscSum(str string) int {
 		//result = append(result, int(runes[i]))
 		result += int(runes[i]) * int(math.Pow(10, float64(strlen-i-1)))
 	}
-	log.Infof("strAscSum: %d", result)
+	//log.Infof("strAscSum: %d", result)
 	return result
 }
 
@@ -580,9 +583,14 @@ func (items *ComponentItems) Less(i, j int) bool {
 	fvalueA := objA.FValue
 	fvalueB := objB.FValue
 
+	//log.Infof("fpA -- %s", objA.Footprint)
+	fpA := float64(strAscSum(strings.ToUpper(objA.Footprint)))
+	//log.Infof("fpB -- %s", objA.Footprint)
+	fpB := float64(strAscSum(strings.ToUpper(objB.Footprint)))
+
 	//log.Infof("compare1 -- ", groupA, groupB)
 	//log.Infof("compare2 -- ", fvalueA, fvalueB)
-	ret := groupA < groupB || (groupA == groupB && fvalueA < fvalueB)
+	ret := groupA < groupB || (groupA == groupB && fvalueA < fvalueB) || (groupA == groupB && fvalueA == fvalueB && fpA < fpB)
 	//log.Infof("compare -- %v", ret)
 	return ret
 }
