@@ -407,7 +407,8 @@ func ExtractComponents(config configuration.Configuration) error {
 	for k, ipart := range combinedBOMparts {
 		combinedBOMparts[k].FValue = utils.GetFValFromEVal(combinedBOMparts[k].Value)
 		combinedBOMparts[k].References = sortComponentRef(ipart)
-		combinedBOMparts[k].SetComponentGroup(partgroups, true)
+		combinedBOMparts[k].SetComponentGroup(partgroups, false)
+		//log.Infof("combinedBOMparts[%d]: %s, %s", k, combinedBOMparts[k].Attributes["group"], combinedBOMparts[k].Attributes["part"])
 	}
 
 	combinedBOMparts = sortComponentList(combinedBOMparts)
@@ -493,7 +494,7 @@ func (items *RefItems) Less(i, j int) bool {
 	refVal2 := string(reRef.FindAll([]byte(strings.ToUpper(b.FieldByName(items.field).String())), -1)[0])
 	numVal2, _ := strconv.Atoi(string(reVal.FindAll([]byte(b.FieldByName(items.field).String()), -1)[0]))
 
-	return refVal1 < refVal2 || numVal1 < numVal2
+	return refVal1 < refVal2 || (refVal1 == refVal2 && numVal1 < numVal2)
 }
 
 func (items *RefItems) Swap(i, j int) {
@@ -562,9 +563,11 @@ func (items *ComponentItems) Less(i, j int) bool {
 	fvalueA := objA.FValue
 	fvalueB := objB.FValue
 
-	log.Infof("compare1 -- ", groupA, groupB)
-	log.Infof("compare2 -- ", fvalueA, fvalueB)
-	return groupA < groupB || fvalueA < fvalueB
+	//log.Infof("compare1 -- ", groupA, groupB)
+	//log.Infof("compare2 -- ", fvalueA, fvalueB)
+	ret := groupA < groupB || (groupA == groupB && fvalueA < fvalueB)
+	//log.Infof("compare -- %v", ret)
+	return ret
 }
 
 func (items *ComponentItems) Swap(i, j int) {
@@ -591,12 +594,13 @@ func sortComponentList(self []types.EBOMItem) []types.EBOMItem {
 
 	for _, v := range self {
 		sortItems = append(sortItems, sortItem{v})
+		//log.Infof("origin sorted ref -- %v", v)
 	}
 
 	sortComponentItems(sortItems, "EBOMItem")
 	for _, v := range sortItems {
-		//log.Infof("after sorted ref -- ", v)
 		ret = append(ret, v.EBOMItem)
+		//log.Infof("after sorted ref -- %v", v)
 	}
 	return ret
 }

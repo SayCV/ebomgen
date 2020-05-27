@@ -75,8 +75,8 @@ func NewRootCmd() *cobra.Command {
 	flags.BoolVarP(&verbose, "verbose", "v", true, "verbose")
 	flags.BoolVarP(&writeCSV, "writeCSV", "w", true, "Write BOM to CSV file")
 	flags.BoolVarP(&writeXLSX, "writeXLSX", "x", true, "Write BOM to XLSX file")
-	flags.StringVarP(&input, "input", "i", "../../test/pads/SCH/ex1.txt", "The path to the input schematic or netlist file")
-	flags.StringVarP(&output, "output", "o", "../../test/pads/BOM/", "The path for the output file")
+	flags.StringVarP(&input, "input", "i", "test/pads/SCH/ex1.txt", "The path to the input schematic or netlist file")
+	flags.StringVarP(&output, "output", "o", "test/pads/BOM/", "The path for the output file")
 	flags.StringVarP(&edaTool, "edaTool", "t", "padslogic", "Define what EDA tool created the input file")
 	flags.StringVarP(&logLevel, "log", "l", "debug", "log level to set [debug|info|warning|error|fatal|panic]")
 	return rootCmd

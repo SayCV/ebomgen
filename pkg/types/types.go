@@ -80,6 +80,8 @@ func (b *EBOMSheet) writeItem(w io.Writer, i EBOMItem) error {
 	res = append(res, fmt.Sprintf(`"%s"`, strings.Join(i.References, ",")))
 	res = append(res, `"`+i.Value+`"`)
 	res = append(res, `"`+i.Footprint+`"`)
+	//res = append(res, `"`+i.Group[0]+`"`)
+	//res = append(res, `"`+i.Group[1]+`"`)
 	//for _, f := range i.Attributes {
 	//	res = append(res, `"`+f+`"`)
 	//}
@@ -117,7 +119,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 
 	// Print if verbose is true
 	if verbose_p {
-		log.Info([40]string{"-"})
+		log.Infof("-")
 	}
 
 	for index, definition := range partgroups {
@@ -127,7 +129,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 		if strings.Contains(strings.ToUpper(self.References[0]), strings.ToUpper(definition.Ref)) {
 			current_confidence += 1
 			if verbose_p {
-				log.Info("{%s} matched in {%s} at {%d}",
+				log.Infof("{%s} matched in {%s} at {%d}",
 					definition.Ref, self.References[0], index)
 			}
 		}
@@ -135,7 +137,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 			strings.Contains(strings.ToUpper(self.Footprint), strings.ToUpper(definition.PartType)) {
 			current_confidence += 1
 			if verbose_p {
-				log.Info("{%s} matched in {%s} or {%s} at {%d}",
+				log.Infof("{%s} matched in {%s} or {%s} at {%d}",
 					definition.PartType, self.Library, self.Footprint,
 					index)
 			}
@@ -144,7 +146,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 			strings.Contains(strings.ToUpper(self.Footprint), strings.ToUpper(definition.GroupType)) {
 			current_confidence += 1
 			if verbose_p {
-				log.Info("{%s} matched in {%s} or {%s} at {%s}",
+				log.Infof("{%s} matched in {%s} or {%s} at {%s}",
 					definition.GroupType, self.Library, self.Footprint,
 					index)
 			}
@@ -152,7 +154,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 		if strings.Contains(strings.ToUpper(self.Value), strings.ToUpper(definition.Unit)) {
 			current_confidence += 1
 			if verbose_p {
-				log.Info("{%s} mached in {%s}", definition.Unit,
+				log.Infof("{%s} mached in {%s}", definition.Unit,
 					self.Value)
 			}
 		}
@@ -161,7 +163,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 			if definition.GroupType == "IC" {
 				current_confidence += 100
 				if verbose_p {
-					log.Info("{%s} mached in {%s}",
+					log.Infof("{%s} mached in {%s}",
 						definition.Unit, self.Value)
 				}
 			} else {
@@ -172,7 +174,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 			if definition.GroupType == "DNP" {
 				current_confidence += 100
 				if verbose_p {
-					log.Info("{%s} mached in {%s}",
+					log.Infof("{%s} mached in {%s}",
 						definition.Unit, self.Value)
 				}
 			} else {
@@ -183,7 +185,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 			if definition.PartType == "TestPoint" {
 				current_confidence += 100
 				if verbose_p {
-					log.Info("{%s} mached in {%s}",
+					log.Infof("{%s} mached in {%s}",
 						definition.Unit, self.Value)
 				}
 			} else {
@@ -194,7 +196,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 			if strings.Contains(definition.PartType, "Connector") {
 				current_confidence += 100
 				if verbose_p {
-					log.Info("{%s} mached in {%s}",
+					log.Infof("{%s} mached in {%s}",
 						definition.Unit, self.Value)
 				}
 			} else {
@@ -205,7 +207,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 			if strings.Contains(definition.PartType, "unkownPart") {
 				current_confidence += 100
 				if verbose_p {
-					log.Info("{%s} mached in {%s}",
+					log.Infof("{%s} mached in {%s}",
 						definition.Unit, self.Value)
 				}
 			} else {
@@ -215,7 +217,7 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 		if true && self.Attributes["part"] == definition.PartType {
 			current_confidence += 100
 			if verbose_p {
-				log.Info("{%s} mached in {%s}", definition.Unit,
+				log.Infof("{%s} mached in {%s}", definition.Unit,
 					self.Value)
 			}
 		}
@@ -227,24 +229,24 @@ func (self *EBOMItem) SetComponentGroup(partgroups []EBOMGroup, verbose_p bool) 
 		if current_confidence >= confidence_threshold {
 			MostLikelyMatches = append(MostLikelyMatches, definition)
 			if verbose_p {
-				log.Info("Threshold Met")
+				log.Infof("Threshold Met")
 			}
 		}
 	}
 
 	if verbose_p {
-		log.Info("Part:")
-		log.Info("\tRef:{%s}", self.References[0])
-		log.Info("\tValue:{%s}", self.Value)
-		log.Info("\tFootprint:{%s}", self.Footprint)
-		log.Info("\tLibrary: {%s}", self.Library)
-		log.Info("\tHighest Confidence: {%s}", highest_confidence)
-		log.Info("Most Likely Groups:")
+		log.Infof("Part:")
+		log.Infof("    Ref:{%s}", self.References[0])
+		log.Infof("    Value:{%s}", self.Value)
+		log.Infof("    Footprint:{%s}", self.Footprint)
+		log.Infof("    Library: {%s}", self.Library)
+		log.Infof("    Highest Confidence: {%d}", highest_confidence)
+		log.Infof("Most Likely Groups:")
 		if len(MostLikelyMatches) == 0 {
-			log.Info("No Match")
+			log.Infof("No Match")
 		} else {
 			for _, match := range MostLikelyMatches {
-				log.Info(match.Ref, match.PartType, match.GroupType)
+				log.Infof(match.Ref, match.PartType, match.GroupType)
 			}
 		}
 	}
