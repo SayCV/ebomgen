@@ -406,6 +406,9 @@ func ExtractComponents(config configuration.Configuration) error {
 
 	for k, ipart := range combinedBOMparts {
 		combinedBOMparts[k].FValue = utils.GetFValFromEVal(combinedBOMparts[k].Value)
+		if combinedBOMparts[k].Attributes["group"] == "IC" {
+			combinedBOMparts[k].FValue, _ = strconv.ParseFloat(combinedBOMparts[k].Value, 64)
+		}
 		combinedBOMparts[k].References = sortComponentRef(ipart)
 		combinedBOMparts[k].SetComponentGroup(partgroups, false)
 		//log.Infof("combinedBOMparts[%d]: %s, %s", k, combinedBOMparts[k].Attributes["group"], combinedBOMparts[k].Attributes["part"])
