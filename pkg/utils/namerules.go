@@ -76,7 +76,7 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 	} else if strings.HasPrefix(_capREF, "P") {
 		propclass["part"] = "Connector"
 		propclass["group"] = "Connector"
-	} else if strings.HasPrefix(_capREF, "S") && strings.HasPrefix(_capREF, "K") {
+	} else if strings.HasPrefix(_capREF, "S") || strings.HasPrefix(_capREF, "K") {
 		propclass["part"] = "Switch"
 		propclass["group"] = "Mech"
 	}
@@ -90,6 +90,9 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 	} else if strings.HasPrefix(_capREF, "CP") {
 		propclass["part"] = "CapacitorArray"
 		propclass["group"] = "Passive"
+	} else if strings.HasPrefix(_capREF, "ED") {
+		propclass["part"] = "DiodeESD"
+		propclass["group"] = "Passive"
 	} else if strings.HasPrefix(_capREF, "IC") {
 		propclass["part"] = "IC"
 		propclass["group"] = "IC"
@@ -97,7 +100,7 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		propclass["part"] = "Connector"
 	} else if strings.HasPrefix(_capREF, "CN") {
 		propclass["part"] = "Connector"
-	} else if strings.HasPrefix(_capREF, "BT") && strings.HasPrefix(_capREF, "BAT") {
+	} else if strings.HasPrefix(_capREF, "BT") || strings.HasPrefix(_capREF, "BAT") {
 		propclass["part"] = "BATT"
 	} else if strings.HasPrefix(_capREF, "TP") || strings.Contains(_capVAL, "TEST") {
 		propclass["part"] = "TestPoint"

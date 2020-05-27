@@ -121,6 +121,7 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 	//DIODETM3_PARTID := BASE_PARTID + 5*PARTID_FACTOR
 	//DIODETM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
 	//DIODETMPOL_PARTID := BASE_PARTID + 7*PARTID_FACTOR
+	DIODEESD_PARTID := BASE_PARTID + 8*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	//ZENERGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
@@ -130,7 +131,7 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 	//ZENERTM3_PARTID := BASE_PARTID + 3*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
-	//TVSGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
+	TVSGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
 	//TVSSM_PARTID := BASE_PARTID + 0*PARTID_FACTOR
 	//TVSSM3_PARTID := BASE_PARTID + 1*PARTID_FACTOR
 	//TVSTM_PARTID := BASE_PARTID + 2*PARTID_FACTOR
@@ -249,6 +250,10 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 			groupdef.Precedence = INDFUSESM_PARTID
 		} else if groupdef.PartType == "Diode" {
 			groupdef.Precedence = DIODEGEN_PARTID
+		} else if groupdef.PartType == "DiodeESD" {
+			groupdef.Precedence = DIODEESD_PARTID
+		} else if groupdef.PartType == "TVS" {
+			groupdef.Precedence = TVSGEN_PARTID
 		} else if groupdef.PartType == "LED" {
 			groupdef.Precedence = LEDGEN_PARTID
 		} else if groupdef.PartType == "Transistor" {
@@ -308,6 +313,7 @@ func createGroupsList(partgroups []types.EBOMGroup) []types.EBOMGroup {
 	partgroups = AddGroup3(partgroups, "L", "Inductor", "Passive")
 	partgroups = AddGroup3(partgroups, "FB", "FerritBead", "Passive")
 	partgroups = AddGroup3(partgroups, "D", "Diode", "Passive")
+	partgroups = AddGroup3(partgroups, "ED", "DiodeESD", "Passive")
 	partgroups = AddGroup3(partgroups, "TVS", "TVS", "Passive")
 	partgroups = AddGroup3(partgroups, "LED", "LED", "Passive")
 	partgroups = AddGroup3(partgroups, "F", "Fuse", "Passive")
