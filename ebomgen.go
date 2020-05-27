@@ -11,6 +11,7 @@
 package ebomgen
 
 import (
+	"math"
 	"os"
 	"path"
 	"path/filepath"
@@ -369,6 +370,19 @@ func componentGroupInit() {
 
 }
 
+func strAscSum(str string) int {
+	runes := []rune(str)
+	//var result []int
+	result := 0
+	strlen := len(runes)
+	for i := 0; i < strlen; i++ {
+		//result = append(result, int(runes[i]))
+		result += int(runes[i]) * int(math.Pow(10, float64(strlen-i-1)))
+	}
+	log.Infof("strAscSum: %d", result)
+	return result
+}
+
 // ExtractComponents converts the content of the given filename into an BOM document.
 // The conversion result is written in the given writer `output`, whereas the document metadata (title, etc.) (or an error if a problem occurred) is returned
 // as the result of the function call.
@@ -406,8 +420,12 @@ func ExtractComponents(config configuration.Configuration) error {
 
 	for k, ipart := range combinedBOMparts {
 		combinedBOMparts[k].FValue = utils.GetFValFromEVal(combinedBOMparts[k].Value)
-		if combinedBOMparts[k].Attributes["group"] == "IC" {
-			combinedBOMparts[k].FValue, _ = strconv.ParseFloat(combinedBOMparts[k].Value, 64)
+		if combinedBOMparts[k].Attributes["group"] != "Passive" {
+			if combinedBOMparts[k].Attributes["group"] == "IC" {
+				combinedBOMparts[k].FValue = -float64(strAscSum(combinedBOMparts[k].Value))
+			} else {
+				combinedBOMparts[k].FValue = float64(strAscSum(combinedBOMparts[k].Value))
+			}
 		}
 		combinedBOMparts[k].References = sortComponentRef(ipart)
 		combinedBOMparts[k].SetComponentGroup(partgroups, false)
@@ -487,10 +505,6 @@ func (items *RefItems) Less(i, j int) bool {
 	}
 	reRef := regexp.MustCompile("[A-Z\\.]+")
 	reVal := regexp.MustCompile("\\d*\\d+")
-	// log.Infof("a -- ", a)
-	// log.Infof("a.FieldByName -- ", a.FieldByName(items.field))
-	// log.Infof("b -- ", b)
-	// log.Infof("b.FieldByName -- ", b.FieldByName(items.field))
 
 	refVal1 := string(reRef.FindAll([]byte(strings.ToUpper(a.FieldByName(items.field).String())), -1)[0])
 	numVal1, _ := strconv.Atoi(string(reVal.FindAll([]byte(a.FieldByName(items.field).String()), -1)[0]))

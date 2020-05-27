@@ -64,7 +64,7 @@ func (b *EBOMSheet) appendField(fieldName string) {
 }
 
 func (b *EBOMSheet) generateHeaders() error {
-	b.Headers = []string{"Quantity", "References", "Value", "Footprint"}
+	b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description"}
 	return nil
 }
 
@@ -74,12 +74,14 @@ func (b *EBOMSheet) makeUniqueIdentifier(comp EBOMItem) string {
 	return ident
 }
 
-func (b *EBOMSheet) writeItem(w io.Writer, i EBOMItem) error {
+func (b *EBOMSheet) writeItem(w io.Writer, k int, i EBOMItem) error {
 	res := make([]string, 0, len(i.Attributes)+5)
-	res = append(res, fmt.Sprintf("%d", i.Quantity))
+	res = append(res, fmt.Sprintf("%d", k+1))
 	res = append(res, fmt.Sprintf(`"%s"`, strings.Join(i.References, ",")))
+	res = append(res, fmt.Sprintf("%d", i.Quantity))
 	res = append(res, `"`+i.Value+`"`)
 	res = append(res, `"`+i.Footprint+`"`)
+	res = append(res, `"`+i.Attributes["Description"]+`"`)
 	//res = append(res, `"`+i.Group[0]+`"`)
 	//res = append(res, `"`+i.Group[1]+`"`)
 	//for _, f := range i.Attributes {
@@ -94,13 +96,14 @@ func (b *EBOMSheet) writeItem(w io.Writer, i EBOMItem) error {
 // WriteCSV saveas csv file
 func (b *EBOMSheet) WriteCSV(w io.Writer) error {
 
+	b.generateHeaders()
 	_, err := fmt.Fprintln(w, strings.Join(b.Headers, ","))
 	if err != nil {
 		return err
 	}
 
-	for _, i := range b.Items {
-		err = b.writeItem(w, i)
+	for k, i := range b.Items {
+		err = b.writeItem(w, k, i)
 		if err != nil {
 			return err
 		}

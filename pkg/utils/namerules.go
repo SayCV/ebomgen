@@ -161,7 +161,7 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		propclass["part"] = "TestPoint"
 		propclass["group"] = "MOUNT"
 	} else if strings.HasPrefix(_capREF, "D") &&
-		(strings.Contains(_capVAL, "GRN") || strings.Contains(_capVAL, "RED") || strings.Contains(_capVAL, "YLW")) {
+		(strings.Contains(_capVAL, "LED") || strings.Contains(_capVAL, "GRN") || strings.Contains(_capVAL, "RED") || strings.Contains(_capVAL, "YLW")) {
 		propclass["part"] = "LED"
 		propclass["group"] = "Passive"
 	}
