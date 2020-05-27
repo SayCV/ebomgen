@@ -31,7 +31,7 @@ ebomgen -t padspcb -i test/pads/PCB/ex2.asc -o test/pads/BOM
 - [x] Process PADSLogic or PADSPCB file
 - [x] Export CSV file
 - [ ] Export Exls file
-- [ ] Sorted Components
+- [x] Sorted Components
 - [x] Sorted References
 - [ ] Calc MTBF based PCP
 - [ ] More humane
