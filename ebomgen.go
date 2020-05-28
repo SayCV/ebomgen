@@ -430,8 +430,28 @@ func ExtractComponents(config configuration.Configuration) error {
 	for k, ipart := range combinedBOMparts {
 		combinedBOMparts[k].FValue = utils.GetFValFromEVal(combinedBOMparts[k].Value)
 		if combinedBOMparts[k].Attributes["group"] != "Passive" {
-			if combinedBOMparts[k].Attributes["group"] == "IC" {
+			if combinedBOMparts[k].Attributes["group"] == "ICGen" {
 				combinedBOMparts[k].FValue = -float64(strAscSum(combinedBOMparts[k].Value))
+			} else if combinedBOMparts[k].Attributes["group"] == "IC" {
+				_val := 0
+				reVal := regexp.MustCompile("\\d*\\d+")
+				findRet := reVal.FindAll([]byte(combinedBOMparts[k].Footprint), -1)
+				if findRet != nil {
+					_val, err = strconv.Atoi(string(findRet[0]))
+				}
+				if strings.Contains(strings.ToUpper(combinedBOMparts[k].Footprint), "SOT23-6") {
+					_val = 6
+				} else if strings.Contains(strings.ToUpper(combinedBOMparts[k].Footprint), "SOT23-5") {
+					_val = 5
+				} else if strings.Contains(strings.ToUpper(combinedBOMparts[k].Footprint), "SC70-5") {
+					_val = 5
+				} else if strings.Contains(strings.ToUpper(combinedBOMparts[k].Footprint), "SC70") ||
+					strings.Contains(strings.ToUpper(combinedBOMparts[k].Footprint), "SOT23") ||
+					strings.Contains(strings.ToUpper(combinedBOMparts[k].Footprint), "SOT89") ||
+					strings.Contains(strings.ToUpper(combinedBOMparts[k].Footprint), "SOT323") {
+					_val = 3
+				}
+				combinedBOMparts[k].FValue = -float64(_val)
 			} else {
 				combinedBOMparts[k].FValue = float64(strAscSum(combinedBOMparts[k].Value))
 			}

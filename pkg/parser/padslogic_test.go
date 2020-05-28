@@ -8,6 +8,8 @@ import ( //"flag"
 	//"fmt"
 	//"strconv"
 	//"strings"
+	"regexp"
+	"strconv"
 	"testing"
 )
 
@@ -21,5 +23,24 @@ func TestExtractPADSLogicComponents(t *testing.T) {
 		t.Errorf("ExtractPADSLogicComponents error: %v", e)
 	}
 	t.Logf("ExtractPADSLogicComponents test done.")
+
+}
+
+func TestCase1(t *testing.T) {
+	fp := "gp234"
+	var err error
+	_val := 0
+
+	t.Logf("Testing TestCase1")
+	reVal := regexp.MustCompile("\\d*\\d+")
+	findRet := reVal.FindAll([]byte(fp), -1)
+	if findRet != nil {
+		_val, err = strconv.Atoi(string(findRet[0]))
+	}
+
+	if err != nil {
+		t.Errorf("TestCase1 error: %v", err)
+	}
+	t.Logf("TestCase1 test done: %v.", _val)
 
 }
