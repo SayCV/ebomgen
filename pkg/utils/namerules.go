@@ -94,6 +94,9 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 	} else if strings.HasPrefix(_capREF, "CP") {
 		propclass["part"] = "CapacitorArray"
 		propclass["group"] = "Passive"
+	} else if strings.HasPrefix(_capREF, "CM") {
+		propclass["part"] = "Inductor"
+		propclass["group"] = "Passive"
 	} else if strings.HasPrefix(_capREF, "ED") {
 		propclass["part"] = "DiodeESD"
 		propclass["group"] = "Passive"
@@ -114,7 +117,12 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 	}
 
 	// Step3 - process trigram References
-	if strings.HasPrefix(_capREF, "LED") {
+	if strings.HasPrefix(_capREF, "ANT") {
+		//
+	} else if strings.HasPrefix(_capREF, "ESD") {
+		propclass["part"] = "DiodeESD"
+		propclass["group"] = "Passive"
+	} else if strings.HasPrefix(_capREF, "LED") {
 		propclass["part"] = "LED"
 		propclass["group"] = "Passive"
 	} else if strings.HasPrefix(_capREF, "FET") {
@@ -123,12 +131,26 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 	} else if strings.HasPrefix(_capREF, "REG") {
 		propclass["part"] = "Reg"
 		propclass["group"] = "IC"
+	} else if strings.HasPrefix(_capREF, "COM") {
+		propclass["part"] = "Connector"
+		propclass["group"] = "Connector"
 	} else if strings.HasPrefix(_capREF, "CON") {
 		propclass["part"] = "Connector"
 		propclass["group"] = "Connector"
 	} else if strings.HasPrefix(_capREF, "OSC") {
 		propclass["part"] = "Crystal"
 		propclass["group"] = "Clock"
+	} else if strings.HasPrefix(_capREF, "USB") {
+		propclass["part"] = "ConnUSB"
+		propclass["group"] = "Connector"
+	} else if strings.HasPrefix(_capREF, "SIM") {
+		propclass["part"] = "Connector"
+		propclass["group"] = "Connector"
+	}
+
+	if strings.HasPrefix(_capREF, "MARK") {
+		propclass["part"] = "MOUNT"
+		propclass["group"] = "MOUNT"
 	}
 
 	// Step4 - process special footprint
@@ -151,7 +173,7 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 	// Step5 - process special value
 	if strings.Contains(_capVAL, "DNP") || strings.Contains(_capVAL, "DNI") ||
 		(strings.Contains(_capVAL, "NP") && (!strings.Contains(_capVAL, "PNP") && !strings.Contains(_capVAL, "NPN") && !mustRegexpMatch(".*NPO", []byte(_capVAL)))) ||
-		strings.Contains(_capVAL, "NC") ||
+		(strings.Contains(_capVAL, "NC") && propclass["group"] == "Passive") ||
 		(strings.Contains(_capVAL, "NF") && !mustRegexpMatch("[0-9\\.]+NF", []byte(_capVAL)) && !mustRegexpMatch("[A-Z\\.]+NF[A-Z\\.]", []byte(_capVAL))) {
 		propclass["part"] = "DNP"
 		propclass["group"] = "MOUNT"
@@ -173,14 +195,22 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		propclass["group"] = "Passive"
 	}
 
-	if propclass["part"] == "Capacitor" && ( strings.Contains(strings.ToUpper(propfootprint), "3216") ||
-		strings.Contains(strings.ToUpper(propfootprint), "3528") ||
-		strings.Contains(strings.ToUpper(propfootprint), "6032") ||
-		strings.Contains(strings.ToUpper(propfootprint), "7343") ) {
+	if propclass["part"] == "Capacitor" && (strings.Contains(strings.ToUpper(propfootprint), "3216") || strings.Contains(strings.ToUpper(propfootprint), "3528") ||
+		strings.Contains(strings.ToUpper(propfootprint), "6032") || strings.Contains(strings.ToUpper(propfootprint), "7343")) {
 		propclass["part"] = "CapacitorTan"
 	}
 	if propclass["part"] == "Crystal" && strings.Contains(_capVAL, "OSC") {
 		propclass["part"] = "Oscillator"
+	}
+	if strings.HasPrefix(_capREF, "X") || strings.HasPrefix(_capREF, "Y") {
+		if propclass["part"] == "Connector" {
+			if strings.Contains(strings.ToUpper(propfootprint), "2025") || strings.Contains(strings.ToUpper(propfootprint), "3225") ||
+				strings.Contains(strings.ToUpper(propfootprint), "4025") || strings.Contains(strings.ToUpper(propfootprint), "5032") ||
+				strings.Contains(strings.ToUpper(propfootprint), "6035") || strings.Contains(strings.ToUpper(propfootprint), "7050") ||
+				strings.Contains(strings.ToUpper(propfootprint), "8045") {
+				propclass["part"] = "Oscillator"
+			}
+		}
 	}
 
 	if propclass["part"] == "Connector" {
