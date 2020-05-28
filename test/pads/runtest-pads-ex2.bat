@@ -12,5 +12,4 @@ echo,
 set "PATH=../../bin;%PATH%"
 
 if not exist "BOM" mkdir BOM
-ebomgen -t padspcb -i PCB/ex2.asc -o BOM/ >BOM/ex2.convert.log 2>&1 && echo ok || echo fail
-pause
+ebomgen -t padspcb -i PCB/ex2.asc -o BOM/ >BOM/ex2.convert.log 2>&1 && echo ok || echo fail && pause

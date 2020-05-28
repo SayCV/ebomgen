@@ -12,5 +12,4 @@ echo,
 set "PATH=../../bin;%PATH%"
 
 if not exist "BOM" mkdir BOM
-ebomgen -t padslogic -i SCH/ex1.txt -o BOM/ >BOM/ex1.convert.log 2>&1 && echo ok || echo fail
-pause
+ebomgen -t padslogic -i SCH/ex1.txt -o BOM/ >BOM/ex1.convert.log 2>&1 && echo ok || echo fail && pause
