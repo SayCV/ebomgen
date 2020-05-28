@@ -190,6 +190,16 @@ func ExtractPADSPCBComponents(filename string) ([]types.EBOMItem, error) {
 		propclass["part"] = "unkownPart"
 		propclass["group"] = "unkownGroup"
 
+		if part.Value != "" {
+			propvalue = part.Value
+		}
+		if part.Footprint != "" {
+			propfootprint = part.Footprint
+		}
+		if part.Attributes["Manufacturer Part Number"] != "" {
+			propclass["Manufacturer Part Number"] = part.Attributes["Manufacturer Part Number"]
+		}
+
 		// for key, prop in enumerate(primitive.name().properties().items()) {
 		//     if prop[0] == "JEDEC_TYPE"{
 		//         propfootprint = prop[1]
@@ -211,7 +221,11 @@ func ExtractPADSPCBComponents(filename string) ([]types.EBOMItem, error) {
 		// Build BOMpart and append to list
 		propclass["Description"] = propclass["part"]
 
-		part.Attributes = propclass
+		part.Attributes = map[string]string{
+			"Description": propclass["Description"],
+			"part":        propclass["part"],
+			"group":       propclass["group"],
+		}
 		if part.Quantity == 0 {
 			part.Quantity = 1
 		}

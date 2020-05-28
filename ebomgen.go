@@ -614,9 +614,13 @@ func (items *ComponentItems) Less(i, j int) bool {
 	//log.Infof("fpB -- %s", objA.Footprint)
 	fpB := float64(strAscSum(strings.ToUpper(objB.Footprint)))
 
-	//log.Infof("compare1 -- ", groupA, groupB)
-	//log.Infof("compare2 -- ", fvalueA, fvalueB)
-	ret := groupA < groupB || (groupA == groupB && fvalueA < fvalueB) || (groupA == groupB && fvalueA == fvalueB && fpA < fpB)
+	rvA := float64(strAscSum(strings.ToUpper(objA.Value)))
+	rvB := float64(strAscSum(strings.ToUpper(objB.Value)))
+
+	ret := groupA < groupB || 
+			(groupA == groupB && fvalueA < fvalueB) || 
+			(groupA == groupB && fvalueA == fvalueB && fpA < fpB) || 
+			(groupA == groupB && fvalueA == fvalueB && fpA == fpB && rvA > rvB)
 	//log.Infof("compare -- %v", ret)
 	return ret
 }
