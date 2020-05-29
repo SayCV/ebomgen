@@ -1,8 +1,8 @@
-# ebomgen
+# eBOMGen
 
 ## 1. Introduction
 
-ebomgen is a tool to auto generate bom from EDA design file, it support Kicad, Eagle, Orcad, Altium or Mentor Graphics etc.
+eBOMGen is a tool to auto generate bom from EDA design file, it support Kicad, Eagle, Orcad, Altium or Mentor Graphics etc.
 
 ## 2. Getting started
 
