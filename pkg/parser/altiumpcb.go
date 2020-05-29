@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"io/ioutil"
 	"os"
+
 	//"strconv"
 	"strings"
 
@@ -20,7 +21,7 @@ func parsePCBDocParts(filename string) (map[string]types.EBOMItem, error) {
 	// Load a PADS Logic file and extract the part information
 
 	partsList := make(map[string]types.EBOMItem)
-	//var partName string
+	var partName string
 	//var partDesc string
 	var part types.EBOMItem
 	var byteVal []byte
@@ -36,7 +37,7 @@ func parsePCBDocParts(filename string) (map[string]types.EBOMItem, error) {
 	byteAll, _ := ioutil.ReadFile(filename)
 	reader := bufio.NewReader(bytes.NewBuffer(byteAll))
 	//newspacelines := 0
-	//partName = ""
+	partName = ""
 	part.Value = ""
 	part.Attributes = map[string]string{
 		"Manufacturer Part Number": "",
@@ -58,19 +59,19 @@ func parsePCBDocParts(filename string) (map[string]types.EBOMItem, error) {
 			listVal := strings.Split(strVal, "|")
 			//log.Infof(strings.Join(listVal[1:], ","))
 			c.AddSection(listVal[2])
-			for _,v := range listVal[1:] {
+			for _, v := range listVal[1:] {
 				opt := strings.Split(v, "=")
 				c.AddOption(listVal[2], opt[0], opt[1])
 			}
-			
+
 		} else if err == nil && strings.HasPrefix(strVal, "|RECORD=ParamItem") {
 			listVal := strings.Split(strVal, "|")
 			//log.Infof(strings.Join(listVal[1:], ","))
 			_val := strings.Split(listVal[2], "=")
 			index := strings.Split(_val[1], "#")
-			for _,v := range listVal[1:] {
+			for _, v := range listVal[1:] {
 				opt := strings.Split(v, "=")
-				c.AddOption("ID=" + string(index[1]), opt[0], opt[1])
+				c.AddOption("ID="+string(index[1]), opt[0], opt[1])
 			}
 
 		} else if err != nil {
@@ -83,11 +84,26 @@ func parsePCBDocParts(filename string) (map[string]types.EBOMItem, error) {
 		if orderedSection == "DEFAULT" {
 			continue
 		}
-		part := c.String(orderedSection, "Value")
+		partName, _ = c.String(orderedSection, "SOURCEDESIGNATOR")
+		part.References = []string{partName}
+		part.Value, _ = c.String(orderedSection, "VALUE")
+		part.Footprint, _ = c.String(orderedSection, "PATTERN")
+		part.Desc, _ = c.String(orderedSection, "FOOTPRINTDESCRIPTION")
+
+		partsList[partName] = part
+		//log.Infof("partName - %v", partName)
+		partName = ""
+		part.Value = ""
+		part.Attributes = map[string]string{
+			"Manufacturer Part Number": "",
+			"Description":              "unkownDesc",
+			"part":                     "unkownPart",
+			"group":                    "unkownGroup",
+		}
 	}
 	//print(part in partsList)
 	log.Infof("Parse Done.")
-	c.WriteFile("config.cfg", 0644, "Components list file")
+	//c.WriteFile("config.cfg", 0644, "Components list file")
 	return partsList, err
 }
 

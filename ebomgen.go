@@ -414,6 +414,11 @@ func ExtractComponents(config configuration.Configuration) error {
 		if err != nil {
 			return err
 		}
+	} else if strings.ToUpper(config.EDATool) == "ALTIUMPCB" {
+		bomParts, err = parser.ExtractAltiumPCBComponents(config.InputFile)
+		if err != nil {
+			return err
+		}
 	} else {
 		err = errors.Errorf("unknown tools %v", config.EDATool)
 		return err
@@ -617,10 +622,10 @@ func (items *ComponentItems) Less(i, j int) bool {
 	rvA := float64(strAscSum(strings.ToUpper(objA.Value)))
 	rvB := float64(strAscSum(strings.ToUpper(objB.Value)))
 
-	ret := groupA < groupB || 
-			(groupA == groupB && fvalueA < fvalueB) || 
-			(groupA == groupB && fvalueA == fvalueB && fpA < fpB) || 
-			(groupA == groupB && fvalueA == fvalueB && fpA == fpB && rvA > rvB)
+	ret := groupA < groupB ||
+		(groupA == groupB && fvalueA < fvalueB) ||
+		(groupA == groupB && fvalueA == fvalueB && fpA < fpB) ||
+		(groupA == groupB && fvalueA == fvalueB && fpA == fpB && rvA > rvB)
 	//log.Infof("compare -- %v", ret)
 	return ret
 }
