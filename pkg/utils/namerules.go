@@ -25,23 +25,25 @@ func mustRegexpMatch(pattern string, b []byte) bool {
 func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint string, propclass map[string]string) bool {
 	_capREF := strings.ToUpper(part.References[0])
 	_capVAL := strings.ToUpper(propvalue)
+	rCharacter := regexp.MustCompile("[a-zA-Z]")
+
 	// Step1 - process References common rules
-	if strings.HasPrefix(_capREF, "C") {
+	if strings.HasPrefix(_capREF, "C") && len(rCharacter.FindAllStringSubmatch(_capREF, -1)) < 4 {
 		propclass["part"] = "Capacitor"
 		propclass["group"] = "Passive"
-	} else if strings.HasPrefix(_capREF, "R") {
+	} else if strings.HasPrefix(_capREF, "R") && len(rCharacter.FindAllStringSubmatch(_capREF, -1)) < 4 {
 		propclass["part"] = "Resistor"
 		propclass["group"] = "Passive"
-	} else if strings.HasPrefix(_capREF, "L") {
+	} else if strings.HasPrefix(_capREF, "L") && len(rCharacter.FindAllStringSubmatch(_capREF, -1)) < 4 {
 		propclass["part"] = "Inductor"
 		propclass["group"] = "Passive"
-	} else if strings.HasPrefix(_capREF, "F") {
+	} else if strings.HasPrefix(_capREF, "F") && len(rCharacter.FindAllStringSubmatch(_capREF, -1)) < 4 {
 		propclass["part"] = "Fuse"
 		propclass["group"] = "Passive"
-	} else if strings.HasPrefix(_capREF, "D") {
+	} else if strings.HasPrefix(_capREF, "D") && len(rCharacter.FindAllStringSubmatch(_capREF, -1)) < 4 {
 		propclass["part"] = "Diode"
 		propclass["group"] = "Passive"
-	} else if strings.HasPrefix(_capREF, "Q") {
+	} else if strings.HasPrefix(_capREF, "Q") && len(rCharacter.FindAllStringSubmatch(_capREF, -1)) < 4 {
 		propclass["part"] = "Transistor"
 		propclass["group"] = "Transistor"
 	} else if strings.HasPrefix(_capREF, "X") {
@@ -195,6 +197,10 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		propclass["group"] = "Passive"
 	}
 
+	if propclass["part"] == "Resistor" && (strings.Contains(_capVAL, "2%") || strings.Contains(_capVAL, "1%") ||
+		strings.Contains(_capVAL, "0.5%") || strings.Contains(_capVAL, "0.1%")) {
+		propclass["part"] = "ResistorHR"
+	}
 	if propclass["part"] == "Capacitor" && (strings.Contains(strings.ToUpper(propfootprint), "3216") || strings.Contains(strings.ToUpper(propfootprint), "3528") ||
 		strings.Contains(strings.ToUpper(propfootprint), "6032") || strings.Contains(strings.ToUpper(propfootprint), "7343")) {
 		propclass["part"] = "CapacitorTan"

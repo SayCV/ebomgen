@@ -91,6 +91,7 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 	//RESTM3_PARTID := BASE_PARTID + 5*PARTID_FACTOR
 	//RESTM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
 	//RESTMPOL_PARTID := BASE_PARTID + 7*PARTID_FACTOR
+	RESHR1_PARTID := BASE_PARTID + 8*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	INDGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
@@ -240,6 +241,8 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 			groupdef.Precedence = CAPSMPOL_PARTID
 		} else if groupdef.PartType == "Resistor" {
 			groupdef.Precedence = RESGEN_PARTID
+		} else if groupdef.PartType == "ResistorHR" {
+			groupdef.Precedence = RESHR1_PARTID
 		} else if groupdef.PartType == "ResistorArray" {
 			groupdef.Precedence = RESSM8_PARTID
 		} else if groupdef.PartType == "Inductor" {
@@ -305,6 +308,7 @@ func createGroupsList(partgroups []types.EBOMGroup) []types.EBOMGroup {
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "K")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "M")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "ohm")
+	partgroups = AddGroup3(partgroups, "R", "ResistorHR", "Passive")
 	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "R")
 	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "K")
 	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "M")

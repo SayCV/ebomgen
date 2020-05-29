@@ -20,11 +20,14 @@ echo Process PADSLogic ASCII file
 ebomgen -t padslogic -i test/pads/SCH/ex1.txt -o test/pads/BOM
 echo Process PADSPCB ASCII file
 ebomgen -t padspcb -i test/pads/PCB/ex2.asc -o test/pads/BOM
+
+echo Process AltiumPCB ASCII file
+ebomgen -t altiumpcb -i test/altium/PCB/ex4.PcbDoc -o test/altium/BOM
 ```
 
 ## 3. TODO
 
-- [ ] Process Altium file
+- [x] Process Altium file
 - [ ] Process Eagle file
 - [ ] Process Kicad file
 - [ ] Process OrCAD file
