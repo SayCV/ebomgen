@@ -401,7 +401,9 @@ func strAscSum(str string) int {
 // as the result of the function call.
 func ExtractComponents(config configuration.Configuration) error {
 	var bomParts []types.EBOMItem
+	var combinedBOMparts []types.EBOMItem
 	var err error
+	outputFilenameAppend := "_BOM"
 
 	filenameWithSuffix := path.Base(config.InputFile)
 	fileSuffix := path.Ext(filenameWithSuffix)
@@ -418,11 +420,13 @@ func ExtractComponents(config configuration.Configuration) error {
 		if err != nil {
 			return err
 		}
+		outputFilenameAppend = "_PCBBOM"
 	} else if strings.ToUpper(config.EDATool) == "ALTIUMPCB" {
 		bomParts, err = parser.ExtractAltiumPCBComponents(config.InputFile)
 		if err != nil {
 			return err
 		}
+		outputFilenameAppend = "_PCBBOM"
 	} else {
 		err = errors.Errorf("unknown tools %v", config.EDATool)
 		return err
@@ -430,8 +434,13 @@ func ExtractComponents(config configuration.Configuration) error {
 	numberofparts := len(bomParts)
 	log.Infof("numberofparts %d", numberofparts)
 
-	combinedBOMparts, _ := combineBOMparts(bomParts)
-	outputFilename := filepath.ToSlash(filepath.Join(config.OutputFile, prjname+"_BOM.csv"))
+	if !config.OnePartRows {
+		combinedBOMparts, _ = combineBOMparts(bomParts)
+	} else {
+		combinedBOMparts = bomParts
+	}
+
+	outputFilename := filepath.ToSlash(filepath.Join(config.OutputFile, prjname+outputFilenameAppend+".csv"))
 	log.Infof("CSV Output File %s", outputFilename)
 
 	componentGroupInit()
@@ -472,7 +481,7 @@ func ExtractComponents(config configuration.Configuration) error {
 
 	combinedBOMparts = sortComponentList(combinedBOMparts)
 
-	BOM, err := types.NewBOM(combinedBOMparts)
+	BOM, err := types.NewBOM(combinedBOMparts, config)
 	if err != nil {
 		return err
 	}
@@ -502,8 +511,8 @@ func combineBOMparts(bomparts []types.EBOMItem) ([]types.EBOMItem, error) {
 	for _, ipart := range bomparts {
 		foundFlag = false
 		for i, cpart := range combinedparts {
-			if ((!strings.Contains("M", strings.ToUpper(cpart.Value)) && strings.ToUpper(cpart.Value) == strings.ToUpper(ipart.Value)) ||
-				(strings.Contains("M", strings.ToUpper(cpart.Value)) && cpart.Value == ipart.Value)) &&
+			if ((!strings.Contains(strings.ToUpper(cpart.Value), "M") && strings.ToUpper(cpart.Value) == strings.ToUpper(ipart.Value)) ||
+				(strings.Contains(strings.ToUpper(cpart.Value), "M") && cpart.Value == ipart.Value)) &&
 				cpart.Footprint == ipart.Footprint {
 				// Match found, update combined parts list
 				foundFlag = true
@@ -612,6 +621,15 @@ func (items *ComponentItems) Less(i, j int) bool {
 	objA := _va.(types.EBOMItem)
 	objB := _vb.(types.EBOMItem)
 
+	layerA, ok := objA.Attributes["layer"]
+	if !ok {
+		layerA = ""
+	}
+	layerB, ok := objB.Attributes["layer"]
+	if !ok {
+		layerB = ""
+	}
+
 	groupA, _ := strconv.Atoi(objA.Group[1])
 	groupB, _ := strconv.Atoi(objB.Group[1])
 
@@ -626,7 +644,7 @@ func (items *ComponentItems) Less(i, j int) bool {
 	rvA := float64(strAscSum(strings.ToUpper(objA.Value)))
 	rvB := float64(strAscSum(strings.ToUpper(objB.Value)))
 
-	ret := groupA < groupB ||
+	ret := layerA > layerB || (layerA == layerB && groupA < groupB) ||
 		(groupA == groupB && fvalueA < fvalueB) ||
 		(groupA == groupB && fvalueA == fvalueB && fpA < fpB) ||
 		(groupA == groupB && fvalueA == fvalueB && fpA == fpB && rvA > rvB)

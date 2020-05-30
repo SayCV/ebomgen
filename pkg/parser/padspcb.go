@@ -37,6 +37,7 @@ func parsePCBTextParts(filename string) (map[string]types.EBOMItem, error) {
 		"Description":              "unkownDesc",
 		"part":                     "unkownPart",
 		"group":                    "unkownGroup",
+		"layer":                    "",
 	}
 
 	pkgList := make(map[string]types.EBOMItem)
@@ -111,6 +112,17 @@ func parsePCBTextParts(filename string) (map[string]types.EBOMItem, error) {
 					// Deal with partDesc reference is "FPG@FPA" for PCB hard hack
 					partDesc = strings.Split(kv[1], "@")[0]
 					partDecalNbr, _ = strconv.ParseInt(kv[7], 10, 32)
+
+					//rotate, _ := strconv.ParseFloat(kv[4], 64)
+					rotate := kv[4]
+					mirror := kv[6]
+					if strings.ToUpper(mirror) == "M" {
+						part.Attributes["layer"] = "bottom"
+					} else {
+						part.Attributes["layer"] = "top"
+					}
+					part.Attributes["rotate"] = rotate
+
 					part.References = []string{partName}
 					part.Desc = partDesc
 					singlelines = 0
@@ -146,6 +158,7 @@ func parsePCBTextParts(filename string) (map[string]types.EBOMItem, error) {
 					"Description":              "unkownDesc",
 					"part":                     "unkownPart",
 					"group":                    "unkownGroup",
+					"layer":                    "",
 				}
 			}
 		} else if err == nil && strVal == "*ROUTE*" {
@@ -221,11 +234,10 @@ func ExtractPADSPCBComponents(filename string) ([]types.EBOMItem, error) {
 		// Build BOMpart and append to list
 		propclass["Description"] = propclass["part"]
 
-		part.Attributes = map[string]string{
-			"Description": propclass["Description"],
-			"part":        propclass["part"],
-			"group":       propclass["group"],
-		}
+		part.Attributes["Description"] = propclass["Description"]
+		part.Attributes["part"] = propclass["part"]
+		part.Attributes["group"] = propclass["group"]
+
 		if part.Quantity == 0 {
 			part.Quantity = 1
 		}

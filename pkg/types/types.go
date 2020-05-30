@@ -12,6 +12,7 @@ import (
 	"strings"
 
 	"github.com/prometheus/common/log"
+	"github.com/saycv/ebomgen/pkg/configuration"
 	//"github.com/pkg/errors"
 	//"github.com/sirupsen/logrus"
 	//log "github.com/sirupsen/logrus"
@@ -44,11 +45,13 @@ type EBOMSheet struct {
 	Headers       []string
 	Items         []EBOMItem
 	CustomHeaders []string
+	Config        configuration.Configuration
 }
 
-func NewBOM(bomParts []EBOMItem) (*EBOMSheet, error) {
+func NewBOM(bomParts []EBOMItem, config configuration.Configuration) (*EBOMSheet, error) {
 	res := &EBOMSheet{}
 	res.Items = bomParts
+	res.Config = config
 
 	return res, nil
 }
@@ -64,7 +67,11 @@ func (b *EBOMSheet) appendField(fieldName string) {
 }
 
 func (b *EBOMSheet) generateHeaders() error {
-	b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description"}
+	if b.Config.OnePartRows && strings.Contains(strings.ToUpper(b.Config.EDATool), "PCB") {
+		b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description", "Rotation", "Layer"}
+	} else {
+		b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description"}
+	}
 	return nil
 }
 
@@ -89,6 +96,14 @@ func (b *EBOMSheet) writeItem(w io.Writer, k int, i EBOMItem) error {
 	//for _, f := range i.Attributes {
 	//	res = append(res, `"`+f+`"`)
 	//}
+	rotate, ok := i.Attributes["rotate"]
+	if ok && rotate != "" && b.Config.OnePartRows && strings.Contains(strings.ToUpper(b.Config.EDATool), "PCB") {
+		res = append(res, `"`+rotate+`"`)
+	}
+	layer, ok := i.Attributes["layer"]
+	if ok && layer != "" && b.Config.OnePartRows && strings.Contains(strings.ToUpper(b.Config.EDATool), "PCB") {
+		res = append(res, `"`+layer+`"`)
+	}
 
 	_, err := fmt.Fprintln(w, strings.Join(res, ","))
 

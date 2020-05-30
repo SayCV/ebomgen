@@ -8,7 +8,7 @@ import (
 // NewConfiguration returns a new configuration
 func NewConfiguration(settings ...Setting) Configuration {
 	config := Configuration{
-		macros:             make(map[string]MacroTemplate),
+		macros: make(map[string]MacroTemplate),
 	}
 	for _, set := range settings {
 		set(&config)
@@ -18,20 +18,22 @@ func NewConfiguration(settings ...Setting) Configuration {
 
 // Configuration the configuration used when rendering a document
 type Configuration struct {
-	InputFile           string
-	OutputFile          string
-	LastUpdated         time.Time
-	EDATool             string
-	macros              map[string]MacroTemplate
+	InputFile   string
+	OutputFile  string
+	LastUpdated time.Time
+	EDATool     string
+	OnePartRows bool
+	SortLayer   bool
+	macros      map[string]MacroTemplate
 }
 
 // Clone return a clone of the current configuration
 func (c Configuration) Clone() Configuration {
 	return Configuration{
-		EDATool:             c.EDATool,
-		InputFile:           c.InputFile,
-		OutputFile:          c.OutputFile,
-		LastUpdated:         c.LastUpdated,
+		EDATool:     c.EDATool,
+		InputFile:   c.InputFile,
+		OutputFile:  c.OutputFile,
+		LastUpdated: c.LastUpdated,
 	}
 }
 
@@ -51,6 +53,18 @@ const (
 
 // Setting a setting to customize the configuration used during parsing and rendering of a document
 type Setting func(config *Configuration)
+
+func WithOnePartRows(value bool) Setting {
+	return func(config *Configuration) {
+		config.OnePartRows = value
+	}
+}
+
+func WithSortLayer(value bool) Setting {
+	return func(config *Configuration) {
+		config.SortLayer = value
+	}
+}
 
 // WithLastUpdated function to set the `last updated` option in the renderer context (default is `time.Now()`)
 func WithLastUpdated(value time.Time) Setting {

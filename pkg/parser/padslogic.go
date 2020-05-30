@@ -180,11 +180,9 @@ func ExtractPADSLogicComponents(filename string) ([]types.EBOMItem, error) {
 		// Build BOMpart and append to list
 		propclass["Description"] = propclass["part"]
 
-		part.Attributes = map[string]string{
-			"Description": propclass["Description"],
-			"part":        propclass["part"],
-			"group":       propclass["group"],
-		}
+		part.Attributes["Description"] = propclass["Description"]
+		part.Attributes["part"] = propclass["part"]
+		part.Attributes["group"] = propclass["group"]
 		if part.Quantity == 0 {
 			part.Quantity = 1
 		}

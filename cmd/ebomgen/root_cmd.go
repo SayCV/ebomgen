@@ -22,6 +22,8 @@ func NewRootCmd() *cobra.Command {
 	var verbose bool
 	var writeCSV bool
 	var writeXLSX bool
+	var onePartRows bool
+	var sortLayer bool
 	var input string
 	var output string
 	var edaTool string
@@ -57,6 +59,8 @@ func NewRootCmd() *cobra.Command {
 				path = filepath.ToSlash(path)
 
 				config := configuration.NewConfiguration(
+					configuration.WithOnePartRows(onePartRows),
+					configuration.WithSortLayer(sortLayer),
 					configuration.WithInputFile(input),
 					configuration.WithOutputFile(output),
 					configuration.WithEDATool(edaTool))
@@ -75,6 +79,8 @@ func NewRootCmd() *cobra.Command {
 	flags.BoolVarP(&verbose, "verbose", "v", true, "verbose")
 	flags.BoolVarP(&writeCSV, "writeCSV", "w", true, "Write BOM to CSV file")
 	flags.BoolVarP(&writeXLSX, "writeXLSX", "x", true, "Write BOM to XLSX file")
+	flags.BoolVarP(&onePartRows, "onePartRows", "p", false, "Write one part per row")
+	flags.BoolVarP(&sortLayer, "sortLayer", "s", false, "Only support export with pcb file")
 	flags.StringVarP(&input, "input", "i", "test/pads/SCH/ex1.txt", "The path to the input schematic or netlist file")
 	flags.StringVarP(&output, "output", "o", "test/pads/BOM/", "The path for the output file")
 	flags.StringVarP(&edaTool, "edaTool", "t", "padslogic", "Define what EDA tool created the input file")
