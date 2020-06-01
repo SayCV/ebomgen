@@ -28,6 +28,30 @@ type EBOMGroup struct {
 	Unit       string
 }
 
+type PartParameter struct {
+	Param string
+	Val   string
+}
+
+type PartNumber struct {
+	ManPartNumber  string
+	DistPartNumber string
+	Desc           string
+}
+
+type PartDistributor struct {
+	Name        string
+	PartNumbers []PartNumber
+}
+
+type EBOMPart struct {
+	PartNumber   string
+	Parameters   []PartParameter
+	Datasheets   []string
+	Alternatives []string
+	Distributors []PartDistributor
+}
+
 type EBOMItem struct {
 	Quantity   int
 	References []string
@@ -38,6 +62,7 @@ type EBOMItem struct {
 	Desc       string
 	Attributes map[string]string
 	Group      []string
+	PartSpecs  EBOMPart
 }
 
 // EBOMSheet include all parts
