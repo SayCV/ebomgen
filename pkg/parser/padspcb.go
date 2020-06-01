@@ -5,7 +5,6 @@ import (
 	"bytes"
 	"io/ioutil"
 	"os"
-	"strconv"
 	"strings"
 
 	"github.com/saycv/ebomgen/pkg/types"
@@ -111,7 +110,13 @@ func parsePCBTextParts(filename string) (map[string]types.EBOMItem, error) {
 					partName = strings.Split(kv[0], "-")[0]
 					// Deal with partDesc reference is "FPG@FPA" for PCB hard hack
 					partDesc = strings.Split(kv[1], "@")[0]
-					partDecalNbr, _ = strconv.ParseInt(kv[7], 10, 32)
+					// partDecalNbr, _ = strconv.ParseInt(kv[7], 10, 32)
+					partDecalNbr = 0
+					if strings.Contains(kv[1], "@") {
+						part.Footprint = strings.Split(kv[1], "@")[1]
+					} else {
+						part.Footprint = ""
+					}
 
 					//rotate, _ := strconv.ParseFloat(kv[4], 64)
 					rotate := kv[4]
@@ -147,7 +152,9 @@ func parsePCBTextParts(filename string) (map[string]types.EBOMItem, error) {
 					}
 				}
 
-				part.Footprint = string(strings.Split(pkgList[partDesc].Desc, ":")[partDecalNbr])
+				if part.Footprint == "" {
+					part.Footprint = string(strings.Split(pkgList[partDesc].Desc, ":")[partDecalNbr])
+				}
 				//partsList = append(partsList, part)
 				partsList[partName] = part
 				//log.Infof("partName - %v", partName)
