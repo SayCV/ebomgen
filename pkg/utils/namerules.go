@@ -210,13 +210,16 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 	}
 	if strings.HasPrefix(_capREF, "X") || strings.HasPrefix(_capREF, "Y") {
 		if propclass["part"] == "Connector" {
-			if strings.Contains(strings.ToUpper(propfootprint), "2025") || strings.Contains(strings.ToUpper(propfootprint), "3225") ||
+			if strings.Contains(strings.ToUpper(propfootprint), "2016") || strings.Contains(strings.ToUpper(propfootprint), "2520") || strings.Contains(strings.ToUpper(propfootprint), "3225") ||
 				strings.Contains(strings.ToUpper(propfootprint), "4025") || strings.Contains(strings.ToUpper(propfootprint), "5032") ||
 				strings.Contains(strings.ToUpper(propfootprint), "6035") || strings.Contains(strings.ToUpper(propfootprint), "7050") ||
 				strings.Contains(strings.ToUpper(propfootprint), "8045") {
-				propclass["part"] = "Oscillator"
+				propclass["part"] = "Crystal"
 			}
 		}
+	}
+	if propclass["part"] == "Crystal" && (strings.Contains(_capVAL, "1.8V") || strings.Contains(_capVAL, "2.5V") || strings.Contains(_capVAL, "3.3V") || strings.Contains(_capVAL, "5V")) {
+		propclass["part"] = "Oscillator"
 	}
 
 	if propclass["part"] == "Connector" {
