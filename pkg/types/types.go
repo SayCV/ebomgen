@@ -28,28 +28,49 @@ type EBOMGroup struct {
 	Unit       string
 }
 
+type ParamSourceType int32
+
+const (
+	ParamFromOctopart ParamSourceType = iota
+	ParamFromFindchips
+	ParamFromDigikey
+	ParamFromMouser
+	ParamFromCalc
+	ParamFromInit
+)
+
 type PartParameter struct {
-	Param string
-	Val   string
+	Value  string
+	Source ParamSourceType
 }
 
-type PartNumber struct {
-	ManPartNumber  string
-	DistPartNumber string
-	Desc           string
-}
+type EBOMWebPart struct {
+	Category                PartParameter
+	Subcategory             PartParameter
+	MFR                     PartParameter
+	MPN                     PartParameter
+	Lifecycle               PartParameter
+	RoHS                    PartParameter
+	PackageCase             PartParameter
+	MoistureSensitive       PartParameter
+	OperatingTemperatureMin PartParameter
+	OperatingTemperatureMax PartParameter
+	SupplyVoltageMin        PartParameter
+	SupplyVoltageMax        PartParameter
+	SupplyVoltageNom        PartParameter
+	SupplyCurrentMin        PartParameter
+	SupplyCurrentMax        PartParameter
+	SupplyCurrentNom        PartParameter
+	PowerDissipationMin     PartParameter
+	PowerDissipationMax     PartParameter
+	PowerDissipationNom     PartParameter
 
-type PartDistributor struct {
-	Name        string
-	PartNumbers []PartNumber
-}
+	UnitLength PartParameter
+	UnitWidth  PartParameter
+	UnitHeight PartParameter
+	UnitWeight PartParameter
 
-type EBOMPart struct {
-	PartNumber   string
-	Parameters   []PartParameter
-	Datasheets   []string
-	Alternatives []string
-	Distributors []PartDistributor
+	Attributes map[string]PartParameter
 }
 
 type EBOMItem struct {
@@ -62,7 +83,7 @@ type EBOMItem struct {
 	Desc       string
 	Attributes map[string]string
 	Group      []string
-	PartSpecs  EBOMPart
+	WebECDPart EBOMWebPart
 }
 
 // EBOMSheet include all parts
