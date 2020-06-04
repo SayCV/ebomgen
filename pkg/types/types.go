@@ -53,6 +53,7 @@ type EBOMWebPart struct {
 	RoHS                    PartParameter
 	PackageCase             PartParameter
 	MoistureSensitive       PartParameter
+	ReflowTemperaturePeak   PartParameter
 	OperatingTemperatureMin PartParameter
 	OperatingTemperatureMax PartParameter
 	SupplyVoltageMin        PartParameter
