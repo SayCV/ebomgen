@@ -83,7 +83,7 @@ type EBOMItem struct {
 	Desc       string
 	Attributes map[string]string
 	Group      []string
-	WebECDPart EBOMWebPart
+	PartSpecs  EBOMWebPart
 }
 
 // EBOMSheet include all parts
