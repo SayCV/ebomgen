@@ -1,9 +1,13 @@
 package webecd
 
 import (
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strings"
+
+	"github.com/PuerkitoBio/goquery"
 
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
@@ -44,12 +48,28 @@ func (hc *FindchipsClient) queryCall(mpn string) (map[string]interface{}, error)
 	}
 	result := make(map[string]interface{})
 	defer resp.Body.Close()
+
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
 
-	log.Print(string(body))
+	utfBody := strings.NewReader(string(body))
+
+	// Load the HTML document
+	doc, err := goquery.NewDocumentFromReader(utfBody)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Find the key items
+	content := doc.Find(".parametric-content")
+	content.Each(func(i int, s *goquery.Selection) {
+		// For each item found, get the band and title
+		band := s.Find("a").Text()
+		title := s.Find("i").Text()
+		fmt.Printf("Review %d: %s - %s\n", i, band, title)
+	})
 
 	return result, nil
 }

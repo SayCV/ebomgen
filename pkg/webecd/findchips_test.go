@@ -17,5 +17,6 @@ func TestQueryCall(t *testing.T) {
 	if err != nil {
 		t.Errorf("Error with query call: " + err.Error())
 	}
+	log.Println("TestQueryCall Done.")
 	log.Println(result["hits"])
 }
