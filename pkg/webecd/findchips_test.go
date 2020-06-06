@@ -11,12 +11,22 @@ import (
 	"testing"
 )
 
-func TestQueryCall(t *testing.T) {
+func TestFindchipsQueryCall(t *testing.T) {
 	hc := NewFindchipsClient()
-	result, err := hc.queryCall("ne555")
+	result, err := hc.queryCall("MAX706TESA")
 	if err != nil {
 		t.Errorf("Error with query call: " + err.Error())
 	}
 	log.Println("TestQueryCall Done.")
-	log.Println(result["hits"])
+	log.Println(result)
+}
+
+func TestMouserQueryCall(t *testing.T) {
+	hc := NewMouserClient()
+	result, err := hc.queryCall("MAX706TESA")
+	if err != nil {
+		t.Errorf("Error with query call: " + err.Error())
+	}
+	log.Println("TestQueryCall Done.")
+	log.Println(result)
 }

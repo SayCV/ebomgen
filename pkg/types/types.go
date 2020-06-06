@@ -31,12 +31,12 @@ type EBOMGroup struct {
 type ParamSourceType int32
 
 const (
-	ParamFromOctopart ParamSourceType = iota
+	ParamFromInit ParamSourceType = iota
+	ParamFromOctopart
 	ParamFromFindchips
 	ParamFromDigikey
 	ParamFromMouser
 	ParamFromCalc
-	ParamFromInit
 )
 
 type PartParameter struct {
@@ -51,6 +51,7 @@ type EBOMWebPart struct {
 	MPN                     PartParameter
 	Lifecycle               PartParameter
 	RoHS                    PartParameter
+	Datasheet               PartParameter
 	PackageCase             PartParameter
 	MoistureSensitive       PartParameter
 	ReflowTemperaturePeak   PartParameter
@@ -70,6 +71,8 @@ type EBOMWebPart struct {
 	UnitWidth  PartParameter
 	UnitHeight PartParameter
 	UnitWeight PartParameter
+
+	UnitPrice PartParameter
 
 	Attributes map[string]PartParameter
 }
