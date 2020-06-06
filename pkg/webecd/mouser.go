@@ -89,45 +89,45 @@ func (hc *MouserClient) queryCallDetail(suburl string, partSpecs types.EBOMWebPa
 		//log.Printf("Found %d: %s - %s", i, band, title)
 		
 		if strings.HasPrefix(band, "RoHS") {
-			partSpecs.RoHS = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.RoHS = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Part Life Cycle") {
-			partSpecs.Lifecycle = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.Lifecycle = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Package / Case") {
-			partSpecs.PackageCase = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.PackageCase = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Moisture Sensitivity") {
-			partSpecs.MoistureSensitive = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.MoistureSensitive = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Peak Reflow") {
-			partSpecs.ReflowTemperaturePeak = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.ReflowTemperaturePeak = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Minimum Operating Temperature") {
-			partSpecs.OperatingTemperatureMin = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.OperatingTemperatureMin = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Maximum Operating Temperature") {
-			partSpecs.OperatingTemperatureMax = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.OperatingTemperatureMax = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Supply Voltage - Min") {
-			partSpecs.SupplyVoltageMin = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.SupplyVoltageMin = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Supply Voltage-Max") {
-			partSpecs.SupplyVoltageMax = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.SupplyVoltageMax = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Supply Voltage-Nom") {
-			partSpecs.SupplyVoltageNom = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.SupplyVoltageNom = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Supply Current-Min") {
-			partSpecs.SupplyCurrentMin = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.SupplyCurrentMin = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Supply Current-Max") {
-			partSpecs.SupplyCurrentMax = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.SupplyCurrentMax = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Operating Supply Current") {
-			partSpecs.SupplyCurrentNom = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.SupplyCurrentNom = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Power Dissipation-Min") {
-			partSpecs.PowerDissipationMin = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.PowerDissipationMin = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Power Dissipation-Max") {
-			partSpecs.PowerDissipationMax = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.PowerDissipationMax = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Pd - Power Dissipation") {
-			partSpecs.PowerDissipationNom = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.PowerDissipationNom = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Length") {
-			partSpecs.UnitLength = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.UnitLength = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Width") {
-			partSpecs.UnitWidth = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.UnitWidth = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Height") {
-			partSpecs.UnitHeight = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.UnitHeight = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Unit Weight") {
-			partSpecs.UnitWeight = types.PartParameter{title, types.ParamFromFindchips}
+			partSpecs.UnitWeight = types.PartParameter{title, types.ParamFromMouser}
 		}
 		return !found1st
 	})
