@@ -9,6 +9,9 @@ import (
 	//"strconv"
 	"log"
 	"testing"
+	"time"
+
+	"github.com/saycv/ebomgen/pkg/utils"
 )
 
 func TestMouserQueryCall(t *testing.T) {
@@ -21,6 +24,18 @@ func TestMouserQueryCall(t *testing.T) {
 	log.Println(result)
 }
 
-func TestMisc(t *testing.T) {
+func TestMisc1(t *testing.T) {
+	result := utils.GetUaHeaders()
+	log.Println(result)
+}
 
+func TestMisc2(t *testing.T) {
+	chromeDriver, session := utils.InitChromeBrowser()
+	err := session.Url("http://bing.com")
+	if err != nil {
+		log.Println(err)
+	}
+	time.Sleep(10 * time.Second)
+	session.Delete()
+	chromeDriver.Stop()
 }

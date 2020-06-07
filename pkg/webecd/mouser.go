@@ -44,14 +44,14 @@ func (hc *MouserClient) queryCallDetail(suburl string, partSpecs types.EBOMWebPa
 	paramStringUnescaped, _ := url.QueryUnescape(paramString)
 	log.Infof("Fetching: " + hc.RemoteHost + "" + method + paramStringUnescaped)
 	//resp, err := hc.client.Get(hc.RemoteHost + "" + method + paramString)
-	reqest, err := http.NewRequest("GET", hc.RemoteHost+""+method+paramString, nil)
-	reqest.Header.Add("Cookie", "name=anny")
-	reqest.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36")
-	reqest.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+	request, err := http.NewRequest("GET", hc.RemoteHost+""+method+paramString, nil)
+	request.Header.Add("Cookie", "name=anny")
+	request.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36")
+	request.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 	if err != nil {
 		return partSpecs, err
 	}
-	resp, err := hc.client.Do(reqest)
+	resp, err := hc.client.Do(request)
 	if err != nil {
 		return partSpecs, err
 	}
@@ -87,7 +87,7 @@ func (hc *MouserClient) queryCallDetail(suburl string, partSpecs types.EBOMWebPa
 		title = strings.Replace(title, "\n", "", -1)
 		title = strings.TrimSpace(title)
 		//log.Printf("Found %d: %s - %s", i, band, title)
-		
+
 		if strings.HasPrefix(band, "RoHS") {
 			partSpecs.RoHS = types.PartParameter{title, types.ParamFromMouser}
 		} else if strings.HasPrefix(band, "Part Life Cycle") {
@@ -143,14 +143,14 @@ func (hc *MouserClient) queryCall(mpn string) (types.EBOMWebPart, error) {
 	paramStringUnescaped, _ := url.QueryUnescape(paramString)
 	log.Infof("Fetching: " + hc.RemoteHost + "/Search/" + method + paramStringUnescaped)
 	//resp, err := hc.client.Get(hc.RemoteHost + "/Search/" + method + paramString)
-	reqest, err := http.NewRequest("GET", hc.RemoteHost+"/Search/"+method+paramString, nil)
-	reqest.Header.Add("Cookie", "name=anny")
-	reqest.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36")
-	reqest.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+	request, err := http.NewRequest("GET", hc.RemoteHost+"/Search/"+method+paramString, nil)
+	request.Header.Add("Cookie", "name=anny")
+	request.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36")
+	request.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 	if err != nil {
 		return partSpecs, err
 	}
-	resp, err := hc.client.Do(reqest)
+	resp, err := hc.client.Do(request)
 	if err != nil {
 		return partSpecs, err
 	}

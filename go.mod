@@ -4,6 +4,7 @@ go 1.11
 
 require (
 	github.com/PuerkitoBio/goquery v1.5.1
+	github.com/fedesog/webdriver v0.0.0-20180606182539-99f36c92eaef
 	github.com/larspensjo/config v0.0.0-20160228172812-b6db95dc6321
 	github.com/pkg/errors v0.8.0
 	github.com/prometheus/common v0.4.0
