@@ -24,6 +24,16 @@ func TestMouserQueryCall(t *testing.T) {
 	log.Println(result)
 }
 
+func TestMouserQueryWDCall(t *testing.T) {
+	hc := NewMouserClient()
+	result, err := hc.queryWDCall("MAX706TESA")
+	if err != nil {
+		t.Errorf("Error with query call: " + err.Error())
+	}
+	log.Println("TestQueryCall Done.")
+	log.Println(result)
+}
+
 func TestMisc1(t *testing.T) {
 	result := utils.GetUaHeaders()
 	log.Println(result)
