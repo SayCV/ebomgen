@@ -36,6 +36,7 @@ ebomgen -t altiumpcb -i test/altium/PCB/ex4.PcbDoc -o test/altium/BOM
 - [ ] Export Exls file
 - [x] Sorted Components
 - [x] Sorted References
+- [ ] Calc BOMCOST based WEB
 - [ ] Calc MTBF based PCP
 - [ ] More humane
 - [ ] More smart
