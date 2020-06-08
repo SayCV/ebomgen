@@ -257,6 +257,10 @@ func (hc *DigikeyClient) queryWDCall(mpn string) (types.EBOMWebPart, error) {
 		return partSpecs, err
 	}
 	//time.Sleep(10 * time.Second)
+	_, err = session.FindElement(webdriver.ID, "noResults")
+	if err == nil {
+		return partSpecs, errors.Errorf(digikeyHome + " noResults")
+	}
 
 	qpLinkList, err := session.FindElement(webdriver.ID, "qpLinkList") // when search keywords is not met
 	if err == nil {
