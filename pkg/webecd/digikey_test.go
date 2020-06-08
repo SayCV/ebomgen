@@ -19,4 +19,11 @@ func TestDigikeyQueryCall(t *testing.T) {
 	}
 	log.Println("TestQueryCall Done.")
 	log.Println(result)
+
+	result, err = hc.queryWDCall("NE555")
+	if err != nil {
+		t.Errorf("Error with query call: " + err.Error())
+	}
+	log.Println("TestQueryCall Done.")
+	log.Println(result)
 }

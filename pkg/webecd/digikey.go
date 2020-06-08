@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"regexp"
 	"strings"
 	"time"
 
@@ -220,6 +221,8 @@ func (hc *DigikeyClient) queryWDCall(mpn string) (types.EBOMWebPart, error) {
 	var partSpecs types.EBOMWebPart
 	var detaillink webdriver.WebElement
 	//var cookie webdriver.Cookie
+	reDigit := regexp.MustCompile("\\d*\\.?\\d+")
+
 	paramString := mpn
 	method := "en?keywords="
 
@@ -253,6 +256,45 @@ func (hc *DigikeyClient) queryWDCall(mpn string) (types.EBOMWebPart, error) {
 		return partSpecs, err
 	}
 	//time.Sleep(10 * time.Second)
+
+	qpLinkList, err := session.FindElement(webdriver.ID, "qpLinkList") // when search keywords is not met
+	if err == nil {
+		trs, err := qpLinkList.FindElements(webdriver.TagName, "tr")
+		if err != nil {
+			return partSpecs, err
+		}
+		for k, trv := range trs {
+			log.Println(k, trv)
+			tds, err := trv.FindElements(webdriver.TagName, "td")
+			if err != nil {
+				return partSpecs, err
+			}
+			for j, tdv := range tds {
+				switch j {
+				case 0:
+					//detaillink = tdv
+					_val, err := tdv.FindElements(webdriver.TagName, "a") //[0].GetAttribute("href")
+					if err != nil {
+						return partSpecs, err
+					}
+					detaillink = _val[0]
+					href, err := detaillink.GetAttribute("href")
+					if err != nil {
+						return partSpecs, err
+					}
+					log.Printf(href)
+					//partSpecs.MPN = types.PartParameter{href, types.ParamFromDigikey}
+				default:
+				}
+			}
+			break
+		}
+		err = detaillink.Click()
+		if err != nil {
+			return partSpecs, err
+		}
+		time.Sleep(2 * time.Second)
+	}
 
 	we, err := session.FindElement(webdriver.ID, "lnkPart") // productTable
 	if err != nil {
@@ -325,7 +367,7 @@ func (hc *DigikeyClient) queryWDCall(mpn string) (types.EBOMWebPart, error) {
 		return partSpecs, err
 	}
 	for k, trv := range prodAttrTrs {
-		log.Println(k, trv)
+		//log.Println(k, trv)
 		if err != nil {
 			continue
 		}
@@ -362,20 +404,28 @@ func (hc *DigikeyClient) queryWDCall(mpn string) (types.EBOMWebPart, error) {
 		} else if strings.HasPrefix(band, "Peak Reflow") {
 			partSpecs.ReflowTemperaturePeak = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Operating Temperature") {
-			partSpecs.OperatingTemperatureMin = types.PartParameter{title, types.ParamFromDigikey}
+			_val := strings.Split(title, "~")
+			baseval := string(reDigit.FindAll([]byte(_val[0]), -1)[0])
+			partSpecs.OperatingTemperatureMin = types.PartParameter{baseval, types.ParamFromDigikey}
+			baseval = string(reDigit.FindAll([]byte(_val[1]), -1)[0])
+			partSpecs.OperatingTemperatureMax = types.PartParameter{baseval, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Maximum Operating Temperature") {
 			partSpecs.OperatingTemperatureMax = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Supply Voltage - Min") {
 			partSpecs.SupplyVoltageMin = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Supply Voltage-Max") {
 			partSpecs.SupplyVoltageMax = types.PartParameter{title, types.ParamFromDigikey}
-		} else if strings.HasPrefix(band, "Supply Voltage-Nom") {
-			partSpecs.SupplyVoltageNom = types.PartParameter{title, types.ParamFromDigikey}
+		} else if strings.HasPrefix(band, "Voltage - Supply") {
+			_val := strings.Split(title, "~")
+			baseval := string(reDigit.FindAll([]byte(_val[0]), -1)[0])
+			partSpecs.SupplyVoltageMin = types.PartParameter{baseval, types.ParamFromDigikey}
+			baseval = string(reDigit.FindAll([]byte(_val[1]), -1)[0])
+			partSpecs.SupplyVoltageMax = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Supply Current-Min") {
 			partSpecs.SupplyCurrentMin = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Supply Current-Max") {
 			partSpecs.SupplyCurrentMax = types.PartParameter{title, types.ParamFromDigikey}
-		} else if strings.HasPrefix(band, "Operating Supply Current") {
+		} else if strings.HasPrefix(band, "Current - Supply") {
 			partSpecs.SupplyCurrentNom = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Power Dissipation-Min") {
 			partSpecs.PowerDissipationMin = types.PartParameter{title, types.ParamFromDigikey}
