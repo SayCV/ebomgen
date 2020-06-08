@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"regexp"
+	"strconv"
 	"strings"
 	"time"
 
@@ -289,65 +290,133 @@ func (hc *DigikeyClient) queryWDCall(mpn string) (types.EBOMWebPart, error) {
 			}
 			break
 		}
+		_, err = session.GetAlertText()
+		if err == nil {
+			err = session.DismissAlert()
+		}
 		err = detaillink.Click()
 		if err != nil {
 			return partSpecs, err
 		}
 		time.Sleep(2 * time.Second)
+	} else {
+		productIndexList, err := session.FindElement(webdriver.ID, "productIndexList")
+		if err == nil {
+			type productIndexItem struct {
+				detaillink webdriver.WebElement
+				href       string
+				items      int
+			}
+			var prodItem []productIndexItem
+			lis, err := productIndexList.FindElements(webdriver.TagName, "li")
+			if err != nil {
+				return partSpecs, err
+			}
+			for k, liv := range lis {
+				log.Println(k, liv)
+				_val, err := liv.FindElement(webdriver.TagName, "a")
+				if err != nil {
+					return partSpecs, err
+				}
+				detaillink = _val
+				href, err := _val.GetAttribute("href")
+				if err != nil {
+					return partSpecs, err
+				}
+				items, err := liv.Text()
+				baseval := string(reDigit.FindAll([]byte(items), -1)[0])
+				itemsInt, err := strconv.Atoi(baseval)
+				log.Println(itemsInt)
+				_prod := productIndexItem{detaillink, href, itemsInt}
+				prodItem = append(prodItem, _prod)
+			}
+			index := 0
+			lastItems := prodItem[0].items
+			for k, prod := range prodItem {
+				items := prod.items
+				if lastItems < items {
+					lastItems = items
+					index = k
+				}
+			}
+			detaillink = prodItem[index].detaillink
+			_, err = session.GetAlertText()
+			if err == nil {
+				err = session.DismissAlert()
+			}
+			err = detaillink.Click()
+			if err != nil {
+				return partSpecs, err
+			}
+			time.Sleep(2 * time.Second)
+		}
 	}
 
-	we, err := session.FindElement(webdriver.ID, "lnkPart") // productTable
-	if err != nil {
-		return partSpecs, err
-	}
-	//log.Println(we)
-	trs, err := we.FindElements(webdriver.TagName, "tr")
-	if err != nil {
-		return partSpecs, err
-	}
-	found1st := false
-	for k, trv := range trs {
-		log.Println(k, trv)
-		tds, err := trv.FindElements(webdriver.TagName, "td")
+	clickcnts := 0
+	for {
+		we, err := session.FindElement(webdriver.ID, "lnkPart") // productTable
 		if err != nil {
 			return partSpecs, err
 		}
-		for j, tdv := range tds {
-			switch j {
-			case 2:
-				//detaillink = tdv
-				_val, err := tdv.FindElements(webdriver.TagName, "a") //[0].GetAttribute("href")
-				if err != nil {
-					return partSpecs, err
-				}
-				detaillink = _val[0]
-				href, err := detaillink.GetAttribute("href")
-				if err != nil {
-					return partSpecs, err
-				}
-				log.Printf(href)
-				//partSpecs.MPN = types.PartParameter{href, types.ParamFromDigikey}
-			default:
-			}
+		//log.Println(we)
+		trs, err := we.FindElements(webdriver.TagName, "tr")
+		if err != nil {
+			return partSpecs, err
 		}
-		found1st = true
-		break
-	}
+		found1st := false
+		for k, trv := range trs {
+			log.Println(k, trv)
+			tds, err := trv.FindElements(webdriver.TagName, "td")
+			if err != nil {
+				return partSpecs, err
+			}
+			for j, tdv := range tds {
+				switch j {
+				case 2:
+					//detaillink = tdv
+					_val, err := tdv.FindElements(webdriver.TagName, "a") //[0].GetAttribute("href")
+					if err != nil {
+						return partSpecs, err
+					}
+					detaillink = _val[0]
+					href, err := detaillink.GetAttribute("href")
+					if err != nil {
+						return partSpecs, err
+					}
+					log.Printf(href)
+					//partSpecs.MPN = types.PartParameter{href, types.ParamFromDigikey}
+				default:
+				}
+			}
+			found1st = true
+			break
+		}
 
-	if !found1st {
-		return partSpecs, errors.Errorf(digikeyHome+" not found vaildate data: %v", err)
-	}
+		if !found1st {
+			return partSpecs, errors.Errorf(digikeyHome+" not found vaildate data: %v", err)
+		}
 
-	//partSpecs, err = hc.queryWDCallDetail(detaillink, partSpecs)
+		//partSpecs, err = hc.queryWDCallDetail(detaillink, partSpecs)
 
-	//err = detaillink.SendKeys("\n")
-	//session.ExecuteScript("arguments[0].click();", []interface{}{detaillink})
-	if err != nil {
-		return partSpecs, err
-	}
-	err = detaillink.Click()
-	if err != nil {
-		return partSpecs, err
+		session.ExecuteScript("window.scrollBy(0, 200)", make([]interface{}, 0))
+		err = detaillink.Click()
+		clickcnts = clickcnts + 1
+
+		if err != nil {
+			log.Infof("click failed: %d try again!!!", clickcnts)
+			if err != nil && clickcnts == 5 {
+				return partSpecs, err
+			}
+			//err = session.SendKeysOnActiveElement(string(keyboard.KeyTab))
+			//err = session.SendKeysOnActiveElement(string(keyboard.KeyEsc))
+			err = session.Refresh()
+			if err != nil {
+				log.Infof("SendKeysOnActiveElement failed")
+			}
+			time.Sleep(1 * time.Second)
+		} else {
+			break
+		}
 	}
 	time.Sleep(2 * time.Second)
 	// #pdp_content
@@ -420,7 +489,7 @@ func (hc *DigikeyClient) queryWDCall(mpn string) (types.EBOMWebPart, error) {
 			baseval := string(reDigit.FindAll([]byte(_val[0]), -1)[0])
 			partSpecs.SupplyVoltageMin = types.PartParameter{baseval, types.ParamFromDigikey}
 			baseval = string(reDigit.FindAll([]byte(_val[1]), -1)[0])
-			partSpecs.SupplyVoltageMax = types.PartParameter{title, types.ParamFromDigikey}
+			partSpecs.SupplyVoltageMax = types.PartParameter{baseval, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Supply Current-Min") {
 			partSpecs.SupplyCurrentMin = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Supply Current-Max") {
