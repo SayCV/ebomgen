@@ -23,7 +23,7 @@ func NewBomcostCmd() *cobra.Command {
 	var logLevel string
 
 	rootCmd := &cobra.Command{
-		Use:   "ebomgen bomcost -i infile -o outfile",
+		Use:   "bomcost -i infile -o outfile",
 		Short: `Fetch the bomcost info`,
 		Args:  cobra.ArbitraryArgs,
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {

@@ -13,7 +13,7 @@ import (
 
 func TestDigikeyQueryCall(t *testing.T) {
 	hc := NewDigikeyClient()
-	result, err := hc.queryWDCall("stm32f407")
+	result, err := hc.QueryWDCall("stm32f407")
 	if err != nil {
 		t.Errorf("Error with query call: " + err.Error())
 	}

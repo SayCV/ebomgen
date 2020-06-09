@@ -218,7 +218,7 @@ func (hc *DigikeyClient) queryCall(mpn string) (types.EBOMWebPart, error) {
 	return partSpecs, nil
 }
 
-func (hc *DigikeyClient) queryWDCall(mpn string) (types.EBOMWebPart, error) {
+func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	var partSpecs types.EBOMWebPart
 	var detaillink webdriver.WebElement
 	//var cookie webdriver.Cookie
