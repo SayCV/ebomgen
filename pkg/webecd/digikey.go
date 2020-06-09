@@ -487,11 +487,16 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 		} else if strings.HasPrefix(band, "Peak Reflow") {
 			partSpecs.ReflowTemperaturePeak = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Operating Temperature") {
-			_val := strings.Split(title, "~")
-			baseval := string(reDigit.FindAll([]byte(_val[0]), -1)[0])
-			partSpecs.OperatingTemperatureMin = types.PartParameter{baseval, types.ParamFromDigikey}
-			baseval = string(reDigit.FindAll([]byte(_val[1]), -1)[0])
-			partSpecs.OperatingTemperatureMax = types.PartParameter{baseval, types.ParamFromDigikey}
+			if strings.Contains(title, "~") {
+				_val := strings.Split(title, "~")
+				baseval := string(reDigit.FindAll([]byte(_val[0]), -1)[0])
+				partSpecs.OperatingTemperatureMin = types.PartParameter{baseval, types.ParamFromDigikey}
+				baseval = string(reDigit.FindAll([]byte(_val[1]), -1)[0])
+				partSpecs.OperatingTemperatureMax = types.PartParameter{baseval, types.ParamFromDigikey}
+			} else {
+				baseval := string(reDigit.FindAll([]byte(title), -1)[0])
+				partSpecs.OperatingTemperatureMin = types.PartParameter{baseval, types.ParamFromDigikey}
+			}
 		} else if strings.HasPrefix(band, "Maximum Operating Temperature") {
 			partSpecs.OperatingTemperatureMax = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Supply Voltage - Min") {
@@ -499,11 +504,16 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 		} else if strings.HasPrefix(band, "Supply Voltage-Max") {
 			partSpecs.SupplyVoltageMax = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Voltage - Supply") {
-			_val := strings.Split(title, "~")
-			baseval := string(reDigit.FindAll([]byte(_val[0]), -1)[0])
-			partSpecs.SupplyVoltageMin = types.PartParameter{baseval, types.ParamFromDigikey}
-			baseval = string(reDigit.FindAll([]byte(_val[1]), -1)[0])
-			partSpecs.SupplyVoltageMax = types.PartParameter{baseval, types.ParamFromDigikey}
+			if strings.Contains(title, "~") {
+				_val := strings.Split(title, "~")
+				baseval := string(reDigit.FindAll([]byte(_val[0]), -1)[0])
+				partSpecs.SupplyVoltageMin = types.PartParameter{baseval, types.ParamFromDigikey}
+				baseval = string(reDigit.FindAll([]byte(_val[1]), -1)[0])
+				partSpecs.SupplyVoltageMax = types.PartParameter{baseval, types.ParamFromDigikey}
+			} else {
+				baseval := string(reDigit.FindAll([]byte(title), -1)[0])
+				partSpecs.SupplyVoltageMin = types.PartParameter{baseval, types.ParamFromDigikey}
+			}
 		} else if strings.HasPrefix(band, "Supply Current-Min") {
 			partSpecs.SupplyCurrentMin = types.PartParameter{title, types.ParamFromDigikey}
 		} else if strings.HasPrefix(band, "Supply Current-Max") {
