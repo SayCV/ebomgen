@@ -16,6 +16,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -56,6 +57,9 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		if line[0] == "Item" && line[1] == "References" {
 			continue
 		}
+		if line[5] == "DNP" || line[5] == "TestPoint" {
+			continue
+		}
 		//cpart.Item = line[0]
 		cpart.References = strings.Split(line[1], ",")
 		cpart.Quantity, _ = strconv.Atoi(line[2])
@@ -79,13 +83,25 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		fp := ipart.Footprint
 		value = strings.Replace(value, "/", " ", -1)
 		value = strings.Replace(value, "-", " ", -1)
+
+		reg, err := regexp.Compile("[^0-9]+")
+		if err != nil {
+			log.Fatal(err)
+		}
+		digitfp := fp
+		if len(fp) > 3 && (strings.HasPrefix(fp, "CN") || strings.HasPrefix(fp, "CP") ||
+			strings.HasPrefix(fp, "RN") || strings.HasPrefix(fp, "RP")) {
+			digitfp = fp[3:]
+		}
+		digitfp = reg.ReplaceAllString(digitfp, "")
+
 		querympn := value
-		if strings.HasPrefix(ipart.Attributes["Description"], "Capacitor") {
+		if strings.HasPrefix(ipart.Attributes["Description"], "Capacitor") || strings.HasPrefix(ipart.Attributes["Description"], "Resistor") {
 			fvalue := strconv.FormatFloat(utils.GetFValFromEVal(value), 'E', -1, 64)
 			log.Println(fvalue)
-			querympn = strings.Join([]string{value, fp}, " ")
+			querympn = strings.Join([]string{value, digitfp}, " ")
 			if fvalue == "-1E+00" {
-				querympn = strings.Join([]string{"0.1uF", fp}, " ")
+				querympn = strings.Join([]string{"0.1uF", digitfp}, " ")
 			}
 		} else if strings.HasPrefix(ipart.Attributes["Description"], "IC") {
 			if strings.Contains(value, " ") {

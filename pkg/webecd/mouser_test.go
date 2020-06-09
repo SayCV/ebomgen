@@ -8,9 +8,10 @@ import (
 	//"regexp"
 	//"strconv"
 
+	"fmt"
 	"log"
+	"regexp"
 	"testing"
-	"time"
 
 	"github.com/saycv/ebomgen/pkg/utils"
 )
@@ -41,12 +42,13 @@ func TestMisc1(t *testing.T) {
 }
 
 func TestMisc2(t *testing.T) {
-	chromeDriver, session := utils.InitChromeBrowser()
-	err := session.Url("http://bing.com")
+	example := "rn4-0402"
+	log.Println(example[3:])
+	reg, err := regexp.Compile("[^0-9]+")
 	if err != nil {
-		log.Println(err)
+		log.Fatal(err)
 	}
-	time.Sleep(10 * time.Second)
-	session.Delete()
-	chromeDriver.Stop()
+	processedString := reg.ReplaceAllString(example, "")
+
+	fmt.Printf("A string of %s becomes %s \n", example, processedString)
 }

@@ -148,7 +148,7 @@ func (b *EBOMSheet) writeItem(w io.Writer, k int, i EBOMItem) error {
 
 	if b.Config.Command == "bomcost" {
 		res = append(res, `"`+i.Attributes["UnitPrice"]+`"`)
-		str := fmt.Sprintf("=C%d*G%d", k, k)
+		str := fmt.Sprintf("=C%d*G%d", k+2, k+2)
 		res = append(res, `"`+str+`"`)
 	}
 
@@ -175,8 +175,26 @@ func (b *EBOMSheet) WriteCSV(w io.Writer) error {
 		return err
 	}
 
+	indexCnt := 0
 	for k, i := range b.Items {
+		indexCnt = k
 		err = b.writeItem(w, k, i)
+		if err != nil {
+			return err
+		}
+	}
+	totalBomPrice := fmt.Sprintf("=sum(H%d:H%d)", 2, indexCnt+2)
+	if b.Config.Command == "bomcost" {
+		totalBomPriceItem := []string{"", "", "", "", "", "", "Total BOMCOST", "", "USD"}
+		totalBomPriceItem[7] = totalBomPrice
+		_, err := fmt.Fprintln(w, strings.Join(totalBomPriceItem, ","))
+		if err != nil {
+			return err
+		}
+		totalBomPriceItem = []string{"", "", "", "", "", "", "Total BOMCOST", "", "CNY"}
+		usd2rmb := 7.0876
+		totalBomPriceItem[7] = fmt.Sprintf("=sum(H%d*%f)", indexCnt+3, usd2rmb)
+		_, err = fmt.Fprintln(w, strings.Join(totalBomPriceItem, ","))
 		if err != nil {
 			return err
 		}
