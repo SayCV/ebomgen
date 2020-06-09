@@ -45,7 +45,7 @@ func NewBomcostCmd() *cobra.Command {
 
 			//for _, sourcePath := range args {
 			//}
-			out, close := getOut(cmd, input, output)
+			out, close := getOut(cmd, input, filepath.Dir(output))
 			if out != nil {
 				defer close()
 				path, _ := filepath.Abs(input)
@@ -54,7 +54,8 @@ func NewBomcostCmd() *cobra.Command {
 				config := configuration.NewConfiguration(
 					configuration.WithInputFile(input),
 					configuration.WithOutputFile(output),
-					configuration.WithEDATool(edaTool))
+					configuration.WithEDATool(edaTool),
+					configuration.WithCommand("bomcost"))
 
 				err := ebomgen.FetchPriceFromWebecd(config)
 				if err != nil {

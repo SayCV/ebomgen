@@ -119,6 +119,8 @@ func (b *EBOMSheet) appendField(fieldName string) {
 func (b *EBOMSheet) generateHeaders() error {
 	if b.Config.OnePartRows && strings.Contains(strings.ToUpper(b.Config.EDATool), "PCB") {
 		b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description", "Rotation", "Layer"}
+	} else if b.Config.Command == "bomcost" {
+		b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description", "UnitPrice", "TotalPrice"}
 	} else {
 		b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description"}
 	}
@@ -143,9 +145,13 @@ func (b *EBOMSheet) writeItem(w io.Writer, k int, i EBOMItem) error {
 		res = append(res, `"`+i.Group[0]+`"`)
 		res = append(res, `"`+i.Group[1]+`"`)
 	}
-	//for _, f := range i.Attributes {
-	//	res = append(res, `"`+f+`"`)
-	//}
+
+	if b.Config.Command == "bomcost" {
+		res = append(res, `"`+i.Attributes["UnitPrice"]+`"`)
+		str := fmt.Sprintf("=C%d*G%d", k, k)
+		res = append(res, `"`+str+`"`)
+	}
+
 	rotate, ok := i.Attributes["rotate"]
 	if ok && rotate != "" && b.Config.OnePartRows && strings.Contains(strings.ToUpper(b.Config.EDATool), "PCB") {
 		res = append(res, `"`+rotate+`"`)

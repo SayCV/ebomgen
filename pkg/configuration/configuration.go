@@ -18,6 +18,7 @@ func NewConfiguration(settings ...Setting) Configuration {
 
 // Configuration the configuration used when rendering a document
 type Configuration struct {
+	Command     string
 	InputFile   string
 	OutputFile  string
 	LastUpdated time.Time
@@ -48,11 +49,17 @@ func (c Configuration) MacroTemplate(name string) (MacroTemplate, error) {
 
 const (
 	// LastUpdatedFormat key to the time format for the `last updated` document attribute
-	LastUpdatedFormat string = "2006-01-02 15:04:05 -0700"
+	LastUpdatedFormat string = "2020-06-01 12:00:00 -0800"
 )
 
 // Setting a setting to customize the configuration used during parsing and rendering of a document
 type Setting func(config *Configuration)
+
+func WithCommand(cmd string) Setting {
+	return func(config *Configuration) {
+		config.Command = cmd
+	}
+}
 
 func WithOnePartRows(value bool) Setting {
 	return func(config *Configuration) {

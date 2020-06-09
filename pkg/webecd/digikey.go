@@ -27,15 +27,18 @@ const (
 )
 
 type DigikeyClient struct {
-	RemoteHost string
-	client     *http.Client
-	infoCache  map[string]interface{}
+	RemoteHost   string
+	client       *http.Client
+	chromeDriver *webdriver.ChromeDriver
+	session      *webdriver.Session
+	infoCache    map[string]interface{}
 }
 
 func NewDigikeyClient() *DigikeyClient {
 	hc := &DigikeyClient{
 		RemoteHost: digikeyHome}
 	hc.client = &http.Client{}
+	hc.chromeDriver, hc.session = utils.InitChromeBrowser()
 	hc.infoCache = make(map[string]interface{})
 	return hc
 }
@@ -230,7 +233,9 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	paramStringUnescaped, _ := url.QueryUnescape(paramString)
 	log.Infof("Fetching: " + hc.RemoteHost + "/products/" + method + paramStringUnescaped)
 
-	chromeDriver, session := utils.InitChromeBrowser()
+	//chromeDriver := hc.chromeDriver
+	session := hc.session
+	//chromeDriver, session := utils.InitChromeBrowser()
 	//err := session.SetCookie(cookie)
 	//if err != nil {
 	//	return partSpecs, err
@@ -358,6 +363,11 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 
 	clickcnts := 0
 	for {
+		_, err := session.FindElement(webdriver.ID, "product-attribute-table")
+		if err == nil {
+			break
+		}
+
 		we, err := session.FindElement(webdriver.ID, "lnkPart") // productTable
 		if err != nil {
 			return partSpecs, err
@@ -537,8 +547,13 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	_val := strings.Split(prodPriceTitle, " ")
 	partSpecs.UnitPrice = types.PartParameter{_val[1], types.ParamFromDigikey}
 
-	session.Delete()
-	chromeDriver.Stop()
+	//session.Delete()
+	//chromeDriver.Stop()
 
 	return partSpecs, nil
+}
+
+func (hc *DigikeyClient) Close() {
+	hc.session.Delete()
+	hc.chromeDriver.Stop()
 }
