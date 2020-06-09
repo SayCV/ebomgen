@@ -71,6 +71,10 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 
 	hc := webecd.NewDigikeyClient()
 	for _, ipart := range bomParts {
+		if strings.HasPrefix(ipart.Attributes["Description"], "DNP") ||
+			strings.HasPrefix(ipart.Attributes["Description"], "TestPoint") {
+			continue
+		}
 		value := ipart.Value
 		fp := ipart.Footprint
 		value = strings.Replace(value, "/", " ", -1)
