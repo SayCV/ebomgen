@@ -83,6 +83,11 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			if fvalue == "-1E+00" {
 				querympn = strings.Join([]string{"0.1uF", fp}, " ")
 			}
+		} else if strings.HasPrefix(ipart.Attributes["Description"], "IC") {
+			if strings.Contains(value, " ") {
+				_val := strings.Split(value, " ")
+				querympn = _val[0]
+			}
 		}
 
 		log.Infof(querympn)

@@ -494,7 +494,11 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 				baseval = string(reDigit.FindAll([]byte(_val[1]), -1)[0])
 				partSpecs.OperatingTemperatureMax = types.PartParameter{baseval, types.ParamFromDigikey}
 			} else {
-				baseval := string(reDigit.FindAll([]byte(title), -1)[0])
+				dval := reDigit.FindAll([]byte(title), -1)
+				baseval := ""
+				if len(dval) >= 1 {
+					baseval = string(dval[0])
+				}
 				partSpecs.OperatingTemperatureMin = types.PartParameter{baseval, types.ParamFromDigikey}
 			}
 		} else if strings.HasPrefix(band, "Maximum Operating Temperature") {
@@ -511,7 +515,11 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 				baseval = string(reDigit.FindAll([]byte(_val[1]), -1)[0])
 				partSpecs.SupplyVoltageMax = types.PartParameter{baseval, types.ParamFromDigikey}
 			} else {
-				baseval := string(reDigit.FindAll([]byte(title), -1)[0])
+				dval := reDigit.FindAll([]byte(title), -1)
+				baseval := ""
+				if len(dval) >= 1 {
+					baseval = string(dval[0])
+				}
 				partSpecs.SupplyVoltageMin = types.PartParameter{baseval, types.ParamFromDigikey}
 			}
 		} else if strings.HasPrefix(band, "Supply Current-Min") {
