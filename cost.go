@@ -108,6 +108,8 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 				_val := strings.Split(value, " ")
 				querympn = _val[0]
 			}
+		} else if strings.HasPrefix(ipart.Attributes["Description"], "LED") {
+			querympn = strings.Join([]string{value, "LED"}, " ")
 		}
 
 		log.Infof(querympn)
