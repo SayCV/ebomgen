@@ -552,18 +552,38 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	if err != nil {
 		return partSpecs, err
 	}
-	prodPriceBand, err := prodPriceTrs[0].Text()
-	if err != nil {
-		return partSpecs, err
+	valPrice := ""
+	lastPrice := ""
+	for j, trv := range prodPriceTrs {
+		switch j {
+		case 0:
+			prodPriceBand, err := trv.Text()
+			if err != nil {
+				return partSpecs, err
+			}
+			log.Printf(prodPriceBand)
+		default:
+			prodPriceTitle, err := trv.Text()
+			if err != nil {
+				return partSpecs, err
+			}
+			//log.Printf(prodPriceTitle)
+			_val := strings.Split(prodPriceTitle, " ")
+			priceBreak, _ := strconv.Atoi(strings.Replace(_val[0], ",", "", -1))
+			//log.Println(priceBreak)
+			if priceBreak <= 1000 {
+				valPrice = _val[1]
+			} else if valPrice == "" {
+				valPrice = _val[1]
+			}
+			lastPrice = _val[1]
+		}
 	}
-	log.Printf(prodPriceBand)
-	prodPriceTitle, err := prodPriceTrs[1].Text()
-	if err != nil {
-		return partSpecs, err
+	if valPrice == "" {
+		valPrice = lastPrice
 	}
-	log.Printf(prodPriceTitle)
-	_val := strings.Split(prodPriceTitle, " ")
-	partSpecs.UnitPrice = types.PartParameter{_val[1], types.ParamFromDigikey}
+	log.Println(valPrice)
+	partSpecs.UnitPrice = types.PartParameter{valPrice, types.ParamFromDigikey}
 
 	//session.Delete()
 	//chromeDriver.Stop()

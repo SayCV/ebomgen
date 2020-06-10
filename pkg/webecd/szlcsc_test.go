@@ -11,9 +11,9 @@ import (
 	"testing"
 )
 
-func TestDigikeyQueryCall(t *testing.T) {
-	hc := NewDigikeyClient()
-	result, err := hc.QueryWDCall("DS1338Z-33+")
+func TestSzlcsQueryCall(t *testing.T) {
+	hc := NewSzlcsClient()
+	result, err := hc.queryCall("MAX706TESA")
 	if err != nil {
 		t.Errorf("Error with query call: " + err.Error())
 	}

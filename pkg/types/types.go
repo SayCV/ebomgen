@@ -19,6 +19,10 @@ import (
 	//yaml "gopkg.in/yaml.v2"
 )
 
+const (
+	USD2CNY = 7.0876
+)
+
 // EBOMGroup part group
 type EBOMGroup struct {
 	Ref        string
@@ -36,6 +40,7 @@ const (
 	ParamFromFindchips
 	ParamFromDigikey
 	ParamFromMouser
+	ParamFromSzlcs
 	ParamFromCalc
 )
 
@@ -192,7 +197,7 @@ func (b *EBOMSheet) WriteCSV(w io.Writer) error {
 			return err
 		}
 		totalBomPriceItem = []string{"", "", "", "", "", "", "Total BOMCOST", "", "CNY"}
-		usd2rmb := 7.0876
+		usd2rmb := USD2CNY
 		totalBomPriceItem[7] = fmt.Sprintf("=sum(H%d*%f)", indexCnt+3, usd2rmb)
 		_, err = fmt.Fprintln(w, strings.Join(totalBomPriceItem, ","))
 		if err != nil {
