@@ -11,9 +11,9 @@ import (
 	"testing"
 )
 
-func TestSzlcsQueryCall(t *testing.T) {
-	hc := NewSzlcsClient()
-	result, err := hc.queryCall("MAX706TESA")
+func TestSzlcscQueryCall(t *testing.T) {
+	hc := NewSzlcscClient()
+	result, err := hc.QueryCall("MAX706TESA")
 	if err != nil {
 		t.Errorf("Error with query call: " + err.Error())
 	}

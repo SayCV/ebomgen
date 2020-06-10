@@ -3,10 +3,10 @@ package webecd
 import (
 	"fmt"
 	//"regexp"
-	"strconv"
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strconv"
 	"strings"
 
 	"github.com/saycv/ebomgen/pkg/types"
@@ -19,30 +19,30 @@ import (
 )
 
 const (
-	szlcsHome        = "https://so.szlcsc.com"
-	szlcsParamSearch = "https://so.szlcsc.com/parametric"
+	szlcscHome        = "https://so.szlcsc.com"
+	szlcscParamSearch = "https://so.szlcsc.com/parametric"
 )
 
-type SzlcsClient struct {
+type SzlcscClient struct {
 	RemoteHost string
 	client     *http.Client
 	infoCache  map[string]interface{}
 }
 
-func NewSzlcsClient() *SzlcsClient {
-	hc := &SzlcsClient{
-		RemoteHost: szlcsHome}
+func NewSzlcscClient() *SzlcscClient {
+	hc := &SzlcscClient{
+		RemoteHost: szlcscHome}
 	hc.client = &http.Client{}
 	hc.infoCache = make(map[string]interface{})
 	return hc
 }
 
-func (hc *SzlcsClient) queryCallDetail(suburl string, partSpecs types.EBOMWebPart) (types.EBOMWebPart, error) {
+func (hc *SzlcscClient) QueryCallDetail(suburl string, partSpecs types.EBOMWebPart) (types.EBOMWebPart, error) {
 
 	return partSpecs, nil
 }
 
-func (hc *SzlcsClient) queryCall(mpn string) (types.EBOMWebPart, error) {
+func (hc *SzlcscClient) QueryCall(mpn string) (types.EBOMWebPart, error) {
 	var partSpecs types.EBOMWebPart
 	//var detaillink string
 	paramString := mpn
@@ -55,7 +55,7 @@ func (hc *SzlcsClient) queryCall(mpn string) (types.EBOMWebPart, error) {
 		return partSpecs, err
 	}
 	if resp.StatusCode != 200 {
-		return partSpecs, errors.Errorf(szlcsHome + " queryCall error: " + resp.Status)
+		return partSpecs, errors.Errorf(szlcscHome + " queryCall error: " + resp.Status)
 	}
 
 	defer resp.Body.Close()
@@ -95,7 +95,7 @@ func (hc *SzlcsClient) queryCall(mpn string) (types.EBOMWebPart, error) {
 					//log.Printf(_val)
 					switch j {
 					case 6:
-						partSpecs.MPN = types.PartParameter{_val, types.ParamFromSzlcs}
+						partSpecs.MPN = types.PartParameter{_val, types.ParamFromSzlcsc}
 					}
 				})
 
@@ -124,9 +124,9 @@ func (hc *SzlcsClient) queryCall(mpn string) (types.EBOMWebPart, error) {
 				}
 				log.Println(valPrice)
 				priceCny, _ := strconv.ParseFloat(valPrice, 64)
-				priceUsd := priceCny/types.USD2CNY
+				priceUsd := priceCny / types.USD2CNY
 				valPrice = fmt.Sprintf("%.5f", priceUsd)
-				partSpecs.UnitPrice = types.PartParameter{valPrice, types.ParamFromSzlcs}
+				partSpecs.UnitPrice = types.PartParameter{valPrice, types.ParamFromSzlcsc}
 			default:
 			}
 			found1st = true

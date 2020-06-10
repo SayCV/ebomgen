@@ -13,6 +13,7 @@ package ebomgen
 import (
 	"encoding/csv"
 	"io"
+	"net/url"
 	"os"
 	"path"
 	"path/filepath"
@@ -73,7 +74,8 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		bomParts = append(bomParts, cpart)
 	}
 
-	hc := webecd.NewDigikeyClient()
+	hcDigikey := webecd.NewDigikeyClient()
+	hcSzlcsc := webecd.NewSzlcscClient()
 	for _, ipart := range bomParts {
 		if strings.HasPrefix(ipart.Attributes["Description"], "DNP") ||
 			strings.HasPrefix(ipart.Attributes["Description"], "TestPoint") {
@@ -81,8 +83,8 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		}
 		value := ipart.Value
 		fp := ipart.Footprint
-		value = strings.Replace(value, "/", " ", -1)
-		value = strings.Replace(value, "-", " ", -1)
+		regVal, err := regexp.Compile("[^a-zA-Z0-9]+")
+		value = regVal.ReplaceAllString(value, " ")
 
 		reg, err := regexp.Compile("[^0-9]+")
 		if err != nil {
@@ -113,12 +115,16 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		}
 
 		log.Infof(querympn)
-		webpart, _ := FetchPriceFromDigikey(hc, querympn)
+		webpart, err := FetchPriceFromDigikey(hcDigikey, url.QueryEscape(querympn))
 		//log.Println(webpart)
+		if webpart.UnitPrice.Value == "" {
+			log.Infof("Try get from 2nd websource")
+			webpart, err = FetchPriceFromSzlcsc(hcSzlcsc, url.QueryEscape(querympn))
+		}
 		ipart.Attributes["UnitPrice"] = webpart.UnitPrice.Value
 		log.Println(ipart)
 	}
-	hc.Close()
+	hcDigikey.Close()
 
 	BOM, err := types.NewBOM(bomParts, config)
 	if err != nil {
@@ -139,6 +145,15 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 func FetchPriceFromDigikey(hc *webecd.DigikeyClient, query string) (types.EBOMWebPart, error) {
 	//hc := webecd.NewDigikeyClient()
 	result, err := hc.QueryWDCall(query)
+	if err != nil {
+		log.Infof("Error with query call: " + err.Error())
+	}
+	return result, err
+}
+
+func FetchPriceFromSzlcsc(hc *webecd.SzlcscClient, query string) (types.EBOMWebPart, error) {
+	//hc := webecd.NewSzlcscClient()
+	result, err := hc.QueryCall(query)
 	if err != nil {
 		log.Infof("Error with query call: " + err.Error())
 	}

@@ -412,7 +412,7 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 
 		//partSpecs, err = hc.queryWDCallDetail(detaillink, partSpecs)
 
-		session.ExecuteScript("window.scrollBy(0, 200)", make([]interface{}, 0))
+		session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
 		err = detaillink.Click()
 		clickcnts = clickcnts + 1
 

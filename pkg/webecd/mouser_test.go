@@ -52,3 +52,14 @@ func TestMisc2(t *testing.T) {
 
 	fmt.Printf("A string of %s becomes %s \n", example, processedString)
 }
+
+func TestMisc3(t *testing.T) {
+	example := "rn4-0402"
+	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
+	if err != nil {
+		log.Fatal(err)
+	}
+	processedString := reg.ReplaceAllString(example, " ")
+
+	fmt.Printf("A string of %s becomes %s \n", example, processedString)
+}

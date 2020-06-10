@@ -40,7 +40,7 @@ const (
 	ParamFromFindchips
 	ParamFromDigikey
 	ParamFromMouser
-	ParamFromSzlcs
+	ParamFromSzlcsc
 	ParamFromCalc
 )
 
