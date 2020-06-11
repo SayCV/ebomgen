@@ -100,22 +100,22 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		if strings.HasPrefix(ipart.Attributes["Description"], "Capacitor") {
 			fvalue := strconv.FormatFloat(utils.GetFValFromEVal(value), 'E', -1, 64)
 			log.Println(fvalue)
-			querympn = strings.Join([]string{value, digitfp}, " ")
 			valPref := ""
 			if strings.HasPrefix(ipart.Attributes["Description"], "CapacitorArray") {
 				valPref = "Capacitor Array"
 			}
+			querympn = strings.Join([]string{valPref, value, digitfp}, " ")
 			if fvalue == "-1E+00" {
 				querympn = strings.Join([]string{valPref, "0.1uF", digitfp}, " ")
 			}
 		}  else if strings.HasPrefix(ipart.Attributes["Description"], "Resistor") {
 			fvalue := strconv.FormatFloat(utils.GetFValFromEVal(value), 'E', -1, 64)
 			log.Println(fvalue)
-			querympn = strings.Join([]string{value, digitfp}, " ")
 			valPref := ""
 			if strings.HasPrefix(ipart.Attributes["Description"], "ResistorArray") {
 				valPref = "Resistor Array"
 			}
+			querympn = strings.Join([]string{valPref, value, digitfp}, " ")
 			if fvalue == "-1E+00" {
 				querympn = strings.Join([]string{valPref, "22R", digitfp}, " ")
 			}
