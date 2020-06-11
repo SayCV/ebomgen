@@ -91,19 +91,33 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			log.Fatal(err)
 		}
 		digitfp := fp
-		if len(fp) > 3 && (strings.HasPrefix(fp, "CN") || strings.HasPrefix(fp, "CP") ||
-			strings.HasPrefix(fp, "RN") || strings.HasPrefix(fp, "RP")) {
+		if strings.HasPrefix(ipart.Attributes["Description"], "CapacitorArray") || strings.HasPrefix(ipart.Attributes["Description"], "ResistorArray") {
 			digitfp = fp[3:]
 		}
 		digitfp = reg.ReplaceAllString(digitfp, "")
 
 		querympn := value
-		if strings.HasPrefix(ipart.Attributes["Description"], "Capacitor") || strings.HasPrefix(ipart.Attributes["Description"], "Resistor") {
+		if strings.HasPrefix(ipart.Attributes["Description"], "Capacitor") {
 			fvalue := strconv.FormatFloat(utils.GetFValFromEVal(value), 'E', -1, 64)
 			log.Println(fvalue)
 			querympn = strings.Join([]string{value, digitfp}, " ")
+			valPref := ""
+			if strings.HasPrefix(ipart.Attributes["Description"], "CapacitorArray") {
+				valPref = "Capacitor Array"
+			}
 			if fvalue == "-1E+00" {
-				querympn = strings.Join([]string{"0.1uF", digitfp}, " ")
+				querympn = strings.Join([]string{valPref, "0.1uF", digitfp}, " ")
+			}
+		}  else if strings.HasPrefix(ipart.Attributes["Description"], "Resistor") {
+			fvalue := strconv.FormatFloat(utils.GetFValFromEVal(value), 'E', -1, 64)
+			log.Println(fvalue)
+			querympn = strings.Join([]string{value, digitfp}, " ")
+			valPref := ""
+			if strings.HasPrefix(ipart.Attributes["Description"], "ResistorArray") {
+				valPref = "Resistor Array"
+			}
+			if fvalue == "-1E+00" {
+				querympn = strings.Join([]string{valPref, "22R", digitfp}, " ")
 			}
 		} else if strings.HasPrefix(ipart.Attributes["Description"], "IC") {
 			if strings.Contains(value, " ") {

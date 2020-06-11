@@ -43,7 +43,8 @@ func TestMisc1(t *testing.T) {
 
 func TestMisc2(t *testing.T) {
 	example := "rn4-0402"
-	log.Println(example[3:])
+	example = example[3:]
+	log.Println(example)
 	reg, err := regexp.Compile("[^0-9]+")
 	if err != nil {
 		log.Fatal(err)
