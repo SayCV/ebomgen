@@ -83,7 +83,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		}
 		value := ipart.Value
 		fp := ipart.Footprint
-		regVal, err := regexp.Compile("[^a-zA-Z0-9]+")
+		regVal, err := regexp.Compile("[^a-zA-Z0-9%]+")
 		value = regVal.ReplaceAllString(value, " ")
 
 		reg, err := regexp.Compile("[^0-9]+")
