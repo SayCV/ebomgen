@@ -12,8 +12,10 @@ import (
 func main() {
 	rootCmd := NewRootCmd()
 	bomcostCmd := NewBomcostCmd()
+	bommtbfCmd := NewBommtbfCmd()
 	versionCmd := NewVersionCmd()
 	rootCmd.AddCommand(bomcostCmd)
+	rootCmd.AddCommand(bommtbfCmd)
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.SetHelpCommand(helpCommand)
 	if err := rootCmd.Execute(); err != nil {
