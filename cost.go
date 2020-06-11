@@ -94,7 +94,9 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		if strings.HasPrefix(ipart.Attributes["Description"], "CapacitorArray") || strings.HasPrefix(ipart.Attributes["Description"], "ResistorArray") {
 			digitfp = fp[3:]
 		}
+		log.Println(digitfp)
 		digitfp = reg.ReplaceAllString(digitfp, "")
+		log.Println(digitfp)
 
 		querympn := value
 		if strings.HasPrefix(ipart.Attributes["Description"], "Capacitor") {
