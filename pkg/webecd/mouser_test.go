@@ -55,12 +55,25 @@ func TestMisc2(t *testing.T) {
 }
 
 func TestMisc3(t *testing.T) {
-	example := "rn4-0402"
+	example := "HDR1X5-2P54"
 	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
 	if err != nil {
 		log.Fatal(err)
 	}
 	processedString := reg.ReplaceAllString(example, " ")
+	fmt.Printf("A string of %s becomes %s \n", example, processedString)
 
+	reg2, err := regexp.Compile(`([0-9]+)[dDpP]([0-9]+)`)
+	if err != nil {
+		log.Fatal(err)
+	}
+	processedString = reg2.ReplaceAllString(processedString, "${1}.${2}")
+	fmt.Printf("A string of %s becomes %s \n", example, processedString)
+
+	reg3, err := regexp.Compile(`.HDR`)
+	if err != nil {
+		log.Fatal(err)
+	}
+	processedString = reg3.ReplaceAllString(processedString, " header ")
 	fmt.Printf("A string of %s becomes %s \n", example, processedString)
 }
