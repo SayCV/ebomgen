@@ -19,10 +19,6 @@ import (
 	//yaml "gopkg.in/yaml.v2"
 )
 
-const (
-	USD2CNY = 7.0876
-)
-
 // EBOMGroup part group
 type EBOMGroup struct {
 	Ref        string
