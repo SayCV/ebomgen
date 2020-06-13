@@ -23,6 +23,12 @@ func TestCase1(t *testing.T) {
 	t.Log(len(ClsEnv))
 	t.Log(ClsEnv)
 
-	//t.Log(len(FactorEnv))
-	t.Log(FactorEnv)
+	t.Log(len(FactorEnvImported))
+	t.Log(FactorEnvImported)
+
+	t.Log(len(FactorQualityImported))
+	t.Log(FactorQualityImported)
+
+	t.Log(len(FactorTemperatureImported))
+	t.Log(FactorTemperatureImported)
 }
