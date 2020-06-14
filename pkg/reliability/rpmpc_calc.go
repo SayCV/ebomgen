@@ -3,6 +3,8 @@ package reliability
 import (
 	"strconv"
 	"strings"
+
+	log "github.com/sirupsen/logrus"
 )
 
 func (b *EBOMFrPart) FrCalcCap() (string, error) {
@@ -107,6 +109,8 @@ func (b *EBOMFrPart) FrCalcDiodeBjt() (string, error) {
 	pi_t, _ := strconv.ParseFloat(strpi_t, 64)
 	pi_s, _ := strconv.ParseFloat(strpi_s, 64)
 	pi_ch, _ := strconv.ParseFloat(strpi_ch, 64)
+
+	log.Info(lambda_b, pi_e, pi_q, pi_t, pi_s, pi_ch)
 
 	reqValue := lambda_b * pi_e * pi_q * pi_t * pi_s * pi_ch
 	strreqValue := strconv.FormatFloat(reqValue, 'f', -1, 64)

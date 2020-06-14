@@ -161,6 +161,7 @@ var (
 		"Diode-Var":                  []string{"0.003 300"},
 
 		// P241
+		"OptoElectronicDevices":       []string{"URI", "LED"},
 		"LED":                         []string{"0.000 30"},
 		"IRLED":                       []string{"0.000 30"},
 		"PhotoDiode":                  []string{"0.001 33"},
@@ -285,6 +286,9 @@ var (
 		"CAP-VAR-unsealed":          []string{"0.008 3"},
 
 		// P251
+		"XFMR":               []string{"URI", "XFMR-LF"},
+		"Coil":               []string{"URI", "Coil-Chip"},
+		"IND":                []string{"URI", "Coil-Chip"},
 		"XFMR-PowerPulse-LP": []string{"0.001 3"},
 		"XFMR-PowerPulse-HP": []string{"0.006 0"},
 		"XFMR-PowerSupply":   []string{"URI", "XFMR-PowerPulse-HP"},
@@ -964,6 +968,7 @@ var (
 
 		//P242
 		"OptoElectronicDevices-TEMP-CLASS": []int{30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 130, 140, 150},
+		"LED-TEMP-CLASS": []int{30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 130, 140, 150},
 		"OptoElectronicDevices-1":          []string{"0.92", "0.95", "0.95", "0.975", "0.975", "1.000", "1.025", "1.025", "1.050", "1.075", "1.100", "l.125", "1.150", "l.175", "1.200", "1.225", "1.300", "1.375", "1.450", "1.55", "1.675", "1.800", "1.925", "2.075", "2.250", "2.425", "2.600", "2.825", "3.300", "3.575", "4.225"},
 		"OptoElectronicDevices-2":          []string{"0.90", "0.925", "0.925", "0.95", "0.975", "1.000", "1.025", "1.050", "1.075", "l.100", "1.150", "1.175", "l.225", "l.275", "1.30", "1.35", "1.50", "1.675", "1.850", "2.10", "2.350", "2.675", "3.050", "3.475", "3.950", "4.500", "5.150", "5.850", "7.600", "9.800", "12.55"},
 		"OptoElectronicDevices-3":          []string{"0.90", "0.90", "0.70", "0.80", "0.975", "1.000", "1.025", "1.050", "1.100", "1.125", "1.175", "1.225", "1.250", "1.325", "1.375", "l.425", "1.60", "1.825", "2.100", "2.400", "2.775", "3.225", "3.775", "4.400", "5.150", "6.025", "7.025", "8.200", "11.125", "14.925", "19.875"},
@@ -1309,22 +1314,25 @@ var (
 		"CAP-VAR-unsealed":          []string{"URI", "CAP-VAR-sealed"},
 
 		// Pxxx        工作电压/额定电压 = S : 0.1,     0.2,    0.3,     0.4,     0.5,     0.6,    0.7,    0.8,    0.9
-		"XFMR-PowerPulse-LP": []string{"0"},
-		"XFMR-PowerPulse-HP": []string{"0"},
-		"XFMR-PowerSupply":   []string{"0"},
-		"XFMR-LF":            []string{"0"},
-		"XFMR-MF":            []string{"0"},
-		"XFMR-Power":         []string{"0"},
-		"XFMR-RF":            []string{"0"},
-		"XFMR-HV":            []string{"0"},
-		"Coil-Load":          []string{"0"},
-		"Coil-Choke":         []string{"0"},
-		"Coil-Fix-RF-LP":     []string{"0"},
-		"Coil-Fix-RF-HP":     []string{"0"},
-		"Coil-Var-RF-LP":     []string{"0"},
-		"Coil-Var-RF-HP":     []string{"0"},
-		"Coil-Chip":          []string{"0"},
-		"IND-Chip":           []string{"0"},
+		"XFMR":               []string{"0"},
+		"Coil":               []string{"URI", "XFMR"},
+		"IND":                []string{"URI", "XFMR"},
+		"XFMR-PowerPulse-LP": []string{"URI", "XFMR"},
+		"XFMR-PowerPulse-HP": []string{"URI", "XFMR"},
+		"XFMR-PowerSupply":   []string{"URI", "XFMR"},
+		"XFMR-LF":            []string{"URI", "XFMR"},
+		"XFMR-MF":            []string{"URI", "XFMR"},
+		"XFMR-Power":         []string{"URI", "XFMR"},
+		"XFMR-RF":            []string{"URI", "XFMR"},
+		"XFMR-HV":            []string{"URI", "XFMR"},
+		"Coil-Load":          []string{"URI", "Coil"},
+		"Coil-Choke":         []string{"URI", "Coil"},
+		"Coil-Fix-RF-LP":     []string{"URI", "Coil"},
+		"Coil-Fix-RF-HP":     []string{"URI", "Coil"},
+		"Coil-Var-RF-LP":     []string{"URI", "Coil"},
+		"Coil-Var-RF-HP":     []string{"URI", "Coil"},
+		"Coil-Chip":          []string{"URI", "IND"},
+		"IND-Chip":           []string{"URI", "IND"},
 
 		// P254 工作电压/额定电压 = S : 0.1,    0.2,   0.3,  0.4,    0.5,   0.6,   0.7,   0.8,   0.9
 		"Relay":          []string{"0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.3", "1.5", "-"},

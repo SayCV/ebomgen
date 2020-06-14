@@ -155,6 +155,7 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 	}
 
 	for k, cpart := range frParts {
+		log.Info(cpart)
 		if strings.HasPrefix(cpart.Desc, "Capacitor") {
 			cpart.FrUnit, _ = cpart.FrCalcCap()
 		} else if strings.HasPrefix(cpart.Desc, "Resistor") {
@@ -164,7 +165,7 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 		} else if strings.HasPrefix(cpart.Desc, "Fuse") {
 			cpart.FrUnit, _ = cpart.FrCalcRes()
 		} else if strings.HasPrefix(cpart.Desc, "LED") {
-			cpart.FrUnit, _ = cpart.FrCalcDiodeBjt()
+			cpart.FrUnit, _ = cpart.FrCalcOptoElectronicDevices()
 		} else if strings.HasPrefix(cpart.Desc, "Diode") {
 			cpart.FrUnit, _ = cpart.FrCalcDiodeBjt()
 		} else if strings.HasPrefix(cpart.Desc, "Transistor") {

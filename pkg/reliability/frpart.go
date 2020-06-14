@@ -327,8 +327,10 @@ func (b *EBOMFrPart) GetFactorTemperatureImported() (string, error) {
 		partTempType = "CAP-TEMP-CLASS"
 	} else if strings.HasPrefix(partType, "IND") {
 		partTempType = "IND-TEMP-CLASS"
-	} else if strings.HasPrefix(partType, "DIODE") || strings.HasPrefix(partType, "LED") {
+	} else if strings.HasPrefix(partType, "Diode") {
 		partTempType = "DIODE-TEMP-CLASS"
+	} else if strings.HasPrefix(partType, "LED") {
+		partTempType = "LED-TEMP-CLASS"
 	} else if strings.HasPrefix(partType, "NPN") || strings.HasPrefix(partType, "PNP") {
 		partTempType = "BJT-TEMP-CLASS"
 	} else if strings.HasPrefix(partType, "XTAL") || strings.HasPrefix(partType, "OSC") {
@@ -448,21 +450,22 @@ func (b *EBOMFrPart) GetFactorStressImported() (string, error) {
 	special_part := ""
 
 	uriRefcnts := 0
+	foundValue := false
 	for {
-		if reqValue[0] == "URI" {
+		if reqValue[0] == "URI" && !foundValue {
 			special_part = reqValue[1]
 			if special_part == "BJT" {
-				reqValue[0] = "BJT"
 				spreqValue, ok = tableData[reqValue[1]].(map[string]interface{})
 				if !ok {
 					return "", errors.Errorf("%s not found in %v, %v", reqValue[1], reflect.ValueOf(tableData), reflect.TypeOf(tableData))
 				}
+				foundValue = true
 			} else if special_part == "Diode" {
-				reqValue[0] = "Diode"
 				spreqValue, ok = tableData[reqValue[1]].(map[string]interface{})
 				if !ok {
 					return "", errors.Errorf("%s not found in %v, %v", reqValue[1], reflect.ValueOf(tableData), reflect.TypeOf(tableData))
 				}
+				foundValue = true
 			} else {
 				reqValue, ok = tableData[reqValue[1]].([]string)
 				if !ok {
