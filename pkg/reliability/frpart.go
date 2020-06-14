@@ -689,11 +689,11 @@ func (b *EBOMFrPart) GetFactorC1Imported() (string, error) {
 	}
 
 	// transistors on chip
-	toc, _ := utils.GetTocFromValue(b.Value, b.Desc, b.Footprint)
+	toc, _ := utils.GetTocOfIc(b.Value, b.Desc, b.Footprint)
 
 	// 37 lines
 	//totlines := 36
-	query_c1_index := "1000"
+	query_c1_index := ""
 	for k, temp := range reqValue {
 		if reqValue[k] == "-     " {
 			break

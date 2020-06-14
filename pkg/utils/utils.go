@@ -137,17 +137,6 @@ func GetFValFromEVal(evalue string) float64 {
 	return fvalue
 }
 
-func GetTocFromValue(value string, desc string, fp string) (int, error) {
-	partType := desc
-	toc := 10
-
-	if partType == "FIFO" || partType == "DRAM" || strings.HasPrefix(partType, "FLASH") {
-		toc = 536870912
-	}
-
-	return toc, nil
-}
-
 func GetPinsFromFp(desc string, fp string) (int, error) {
 	pins := 1
 	fp = strings.ToUpper(fp)

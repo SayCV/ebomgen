@@ -88,7 +88,20 @@ func GetTocOfIc(value string, desc string, fp string) (int, error) {
 			partICType = "PL-Virtex"
 		} else if pins >= 50 {
 			partICType = "GEN4-80486"
+		} else if pins >= 45 {
+			partICType = "GEN4-80386"
+		} else if pins >= 40 {
+			partICType = "GEN3-80286"
+		} else if pins >= 35 {
+			partICType = "GEN3-8086"
+		} else if pins >= 30 {
+			partICType = "GEN2-8085"
+		} else if pins >= 25 {
+			partICType = "GEN2-8080"
+		} else if pins >= 20 {
+			partICType = "GEN1-4004"
 		}
+
 	}
 
 	if strings.Contains(fp, "QFP") {
@@ -169,6 +182,7 @@ func GetTocOfIc(value string, desc string, fp string) (int, error) {
 	}
 
 	toc := reqValueFloat
+	log.Info(toc)
 
 	return int(toc), nil
 }
