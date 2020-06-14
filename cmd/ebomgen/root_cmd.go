@@ -45,7 +45,7 @@ func NewRootCmd() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			//if len(args) == 0 {
+			//if len(args) <= 1 {
 			//	return helpCommand.RunE(cmd, args)
 			//}
 			//attrs := parseAttributes(attributes)
@@ -85,6 +85,9 @@ func NewRootCmd() *cobra.Command {
 	flags.StringVarP(&output, "output", "o", "test/pads/BOM/", "The path for the output file")
 	flags.StringVarP(&edaTool, "edaTool", "t", "padslogic", "Define what EDA tool created the input file")
 	flags.StringVarP(&logLevel, "log", "l", "debug", "log level to set [debug|info|warning|error|fatal|panic]")
+
+	// rootCmd.MarkFlagRequired("edaTool")
+
 	return rootCmd
 }
 

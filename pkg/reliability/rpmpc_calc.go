@@ -86,7 +86,7 @@ func (b *EBOMFrPart) FrCalcInd() (string, error) {
 	return strreqValue, nil
 }
 
-func (b *EBOMFrPart) FrCalcBjt() (string, error) {
+func (b *EBOMFrPart) FrCalcDiodeBjt() (string, error) {
 	strlambda_b, _ := b.GetFailureRateBaseImported()
 	strpi_e, _ := b.GetFactorEnvImported()
 	strpi_q, _ := b.GetFactorQualityImported()

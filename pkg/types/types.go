@@ -122,6 +122,8 @@ func (b *EBOMSheet) generateHeaders() error {
 		b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description", "Rotation", "Layer"}
 	} else if b.Config.Command == "bomcost" {
 		b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description", "UnitPrice", "TotalPrice"}
+	} else if b.Config.Command == "bommtbf" {
+		b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description", "FrUnit", "FrTot"}
 	} else {
 		b.Headers = []string{"Item", "References", "Quantity", "Value", "Footprint", "Description"}
 	}
@@ -149,6 +151,10 @@ func (b *EBOMSheet) writeItem(w io.Writer, k int, i EBOMItem) error {
 
 	if b.Config.Command == "bomcost" {
 		res = append(res, `"`+i.Attributes["UnitPrice"]+`"`)
+		str := fmt.Sprintf("=C%d*G%d", k+2, k+2)
+		res = append(res, `"`+str+`"`)
+	} else if b.Config.Command == "bommtbf" {
+		res = append(res, `"`+i.Attributes["FrUnit"]+`"`)
 		str := fmt.Sprintf("=C%d*G%d", k+2, k+2)
 		res = append(res, `"`+str+`"`)
 	}
@@ -184,8 +190,10 @@ func (b *EBOMSheet) WriteCSV(w io.Writer) error {
 			return err
 		}
 	}
-	totalBomPrice := fmt.Sprintf("=sum(H%d:H%d)", 2, indexCnt+2)
+
 	if b.Config.Command == "bomcost" {
+		totalBomPrice := fmt.Sprintf("=sum(H%d:H%d)", 2, indexCnt+2)
+
 		totalBomPriceItem := []string{"", "", "", "", "", "", "Total BOMCOST", "", "USD"}
 		totalBomPriceItem[7] = totalBomPrice
 		_, err := fmt.Fprintln(w, strings.Join(totalBomPriceItem, ","))
@@ -199,7 +207,23 @@ func (b *EBOMSheet) WriteCSV(w io.Writer) error {
 		if err != nil {
 			return err
 		}
+	} else if b.Config.Command == "bommtbf" {
+		totalBomPrice := fmt.Sprintf("=sum(H%d:H%d)", 2, indexCnt+2)
+
+		totalBomPriceItem := []string{"", "", "", "", "", "", "Total BOMFR", "", ""}
+		totalBomPriceItem[7] = totalBomPrice
+		_, err := fmt.Fprintln(w, strings.Join(totalBomPriceItem, ","))
+		if err != nil {
+			return err
+		}
+		totalBomPriceItem = []string{"", "", "", "", "", "", "Total BOMMTBF", "", "h"}
+		totalBomPriceItem[7] = fmt.Sprintf("=10^6/(H%d)", indexCnt+3)
+		_, err = fmt.Fprintln(w, strings.Join(totalBomPriceItem, ","))
+		if err != nil {
+			return err
+		}
 	}
+
 	return nil
 }
 

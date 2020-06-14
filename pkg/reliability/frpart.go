@@ -22,6 +22,8 @@ import (
 
 // EBOMFrPart for reliability
 type EBOMFrPart struct {
+	Quantity      int
+	References    []string
 	Value         string
 	FValue        float64
 	Footprint     string
@@ -38,6 +40,8 @@ type EBOMFrPart struct {
 	CurrentStress string
 	VoltageStress string
 	PowerStress   string
+
+	FrUnit string
 }
 
 type Setting func(frpart *EBOMFrPart)
@@ -117,6 +121,8 @@ func WithPowerStress(value string) Setting {
 // NewFrPart init
 func NewFrPart(part types.EBOMItem, settings ...Setting) *EBOMFrPart {
 	new := &EBOMFrPart{}
+	new.Quantity = part.Quantity
+	new.References = part.References
 	new.Value = part.Value
 	new.FValue = part.FValue
 	new.Footprint = part.Footprint
@@ -134,6 +140,8 @@ func NewFrPart(part types.EBOMItem, settings ...Setting) *EBOMFrPart {
 	new.CurrentStress = "0.5"
 	new.VoltageStress = "0.5"
 	new.PowerStress = "0.5"
+
+	new.FrUnit = ""
 
 	new.FrPins, _ = utils.GetPinsFromFp(new.Desc, new.Footprint)
 

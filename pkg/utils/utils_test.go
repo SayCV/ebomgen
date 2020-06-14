@@ -9,6 +9,7 @@ import (
 	//"fmt"
 	"math"
 	"strconv"
+
 	//"strings"
 	"testing"
 
@@ -78,6 +79,15 @@ func TestCase0(t *testing.T) {
 	t.Log(queryTemp)
 
 	__spFloat := 0.6
-	result := int(__spFloat*10)-1
+	result := int(__spFloat*10) - 1
+	t.Log(result)
+}
+
+func TestCase1(t *testing.T) {
+	value := ""
+	desc := "IC"
+	fp := "BGA400"
+
+	result, _ := GetTocOfIc(value, desc, fp)
 	t.Log(result)
 }
