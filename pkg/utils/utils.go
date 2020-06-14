@@ -136,3 +136,84 @@ func GetFValFromEVal(evalue string) float64 {
 	}
 	return fvalue
 }
+
+func GetTocFromValue(value string, desc string, fp string) (int, error) {
+	partType := desc
+	toc := 10
+
+	if partType == "FIFO" || partType == "DRAM" || strings.HasPrefix(partType, "FLASH") {
+		toc = 536870912
+	}
+
+	return toc, nil
+}
+
+func GetPinsFromFp(desc string, fp string) (int, error) {
+	pins := 1
+	fp = strings.ToUpper(fp)
+
+	if strings.HasPrefix(desc, "Capacitor") {
+		pins = 2
+		if strings.HasPrefix(desc, "CapacitorArray") {
+			pins = 8
+		}
+	} else if strings.HasPrefix(desc, "Resistor") {
+		pins = 2
+		if strings.HasPrefix(desc, "ResistorArray") {
+			pins = 8
+		}
+	} else if strings.HasPrefix(desc, "Inductor") {
+		pins = 2
+	} else if strings.HasPrefix(desc, "Diode") {
+		pins = 2
+	} else if strings.HasPrefix(desc, "LED") {
+		pins = 2
+	} else if strings.HasPrefix(desc, "Transistor") {
+		pins = 3
+	} else if strings.HasPrefix(desc, "Crystal") {
+		pins = 4
+	} else if strings.HasPrefix(desc, "Oscillator") {
+		pins = 4
+	} else if strings.HasPrefix(desc, "IC") || strings.HasPrefix(desc, "XFRM") {
+		_val := 0
+		reVal := regexp.MustCompile("\\d*\\d+")
+		findRet := reVal.FindAll([]byte(fp), -1)
+		if findRet != nil {
+			_val, _ = strconv.Atoi(string(findRet[0]))
+		}
+		if strings.Contains(fp, "SOT23-6") {
+			_val = 6
+		} else if strings.Contains(fp, "SOT23-5") {
+			_val = 5
+		} else if strings.Contains(fp, "SC70-5") {
+			_val = 5
+		} else if strings.Contains(fp, "SC70") ||
+			strings.Contains(fp, "SOT23") ||
+			strings.Contains(fp, "SOT89") ||
+			strings.Contains(fp, "SOT323") {
+			_val = 3
+		}
+		pins = _val
+	} else if strings.HasPrefix(desc, "Connector") || strings.HasPrefix(desc, "Switch") {
+		reVal, _ := regexp.Compile(`([0-9]+)[X]([0-9]+)`)
+		value := reVal.FindAll([]byte(fp), -1)
+		if value == nil {
+			reVal := regexp.MustCompile("\\d*\\d+")
+			findRet := reVal.FindAll([]byte(fp), -1)
+			if findRet != nil {
+				pins, _ = strconv.Atoi(string(findRet[0]))
+			}
+		} else {
+			valuelist := strings.Split(string(value[0]), "X")
+			row, _ := strconv.Atoi(valuelist[0])
+			col, _ := strconv.Atoi(valuelist[1])
+			pins = row * col
+		}
+	} else if strings.HasPrefix(desc, "ConnRJ") {
+		pins = 12
+	} else if strings.HasPrefix(desc, "ConnUSB") {
+		pins = 4
+	}
+
+	return pins, nil
+}

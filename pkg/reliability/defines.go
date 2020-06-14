@@ -13,126 +13,117 @@ const (
 
 // ClsEnv - Environment Class
 var (
-	ClsEnv = []struct {
-		mark  string
-		title string
-		desc  string
-		temp  string
-	}{
-		{
-			"GB",
-			"Ground, Fixed, Controlled",
+	ClsEnv = map[string]interface{}{
+		"GB": []string{
+			"0", "Ground, Fixed, Controlled",
 			"",
 			"30",
 		},
-		{
-			"GMS",
-			"Ground, Fixed, Controlled",
+		"GMS": []string{
+			"1", "Ground, Fixed, Controlled",
 			"",
 			"30",
 		},
-		{
-			"GF1",
-			"Ground, Fixed, Uncontrolled",
+		"GF1": []string{
+			"2", "Ground, Fixed, Uncontrolled",
 			"",
 			"40",
 		},
-		{
-			"GF2",
-			"Ground, Fixed, Uncontrolled",
+		"GF2": []string{
+			"3", "Ground, Fixed, Uncontrolled",
 			"",
 			"40",
 		},
-		{
-			"GM1",
-			"Ground, Mobile, Steady",
+		"GM1": []string{
+			"4", "Ground, Mobile, Steady",
 			"",
 			"55",
 		},
-		{
-			"GM2",
-			"Ground, Mobile, Violent",
+		"GM2": []string{
+			"5", "Ground, Mobile, Violent",
 			"",
 			"60",
 		},
-		{
-			"MP",
-			"Ground, Fixed, Controlled",
+		"MP": []string{
+			"6", "Ground, Fixed, Controlled",
 			"",
 			"40",
 		},
-		{
-			"NSB",
-			"Ground, Fixed, Controlled",
+		"NSB": []string{
+			"7", "Ground, Fixed, Controlled",
 			"",
 			"45",
 		},
-		{
-			"NS1",
-			"Ground, Fixed, Controlled",
+		"NS1": []string{
+			"8", "Ground, Fixed, Controlled",
 			"",
 			"40",
 		},
-		{
-			"NS2",
-			"Ground, Fixed, Controlled",
+		"NS2": []string{
+			"9", "Ground, Fixed, Controlled",
 			"",
 			"45",
 		},
-		{
-			"NU",
-			"Ground, Fixed, Controlled",
+		"NU": []string{
+			"10", "Ground, Fixed, Controlled",
 			"",
 			"70",
 		},
-		{
-			"AIF",
-			"Ground, Fixed, Controlled",
+		"AIF": []string{
+			"11", "Ground, Fixed, Controlled",
 			"",
 			"55",
 		},
-		{
-			"AUF",
-			"Ground, Fixed, Controlled",
+		"AUF": []string{
+			"12", "Ground, Fixed, Controlled",
 			"",
 			"70",
 		},
-		{
-			"AIC",
-			"Airborne, Commercial",
+		"AIC": []string{
+			"13", "Airborne, Commercial",
 			"",
 			"55",
 		},
-		{
-			"AUC",
-			"Ground, Fixed, Controlled",
+		"AUC": []string{
+			"14", "Ground, Fixed, Controlled",
 			"",
 			"70",
 		},
-		{
-			"ARW",
-			"Ground, Fixed, Controlled",
+		"ARW": []string{
+			"15", "Ground, Fixed, Controlled",
 			"",
 			"55",
 		},
-		{
-			"SF",
-			"Ground, Fixed, Controlled",
+		"SF": []string{
+			"16", "Ground, Fixed, Controlled",
 			"",
 			"30",
 		},
-		{
-			"ML",
-			"Ground, Fixed, Controlled",
+		"ML": []string{
+			"17", "Ground, Fixed, Controlled",
 			"",
 			"55",
 		},
-		{
-			"MF",
-			"Ground, Fixed, Controlled",
+		"MF": []string{
+			"18", "Ground, Fixed, Controlled",
 			"",
 			"55",
 		},
+	}
+)
+
+// ClsQuality - Quality Class
+var (
+	ClsQuality = map[string]interface{}{
+		"A1": []string{"0", "", ""},
+		"A2": []string{"1", "", ""},
+		"A3": []string{"2", "", ""},
+		"A4": []string{"3", "", ""},
+		"A5": []string{"4", "", ""},
+		"B1": []string{"5", "", ""},
+		"B2": []string{"6", "", ""},
+		"C1": []string{"7", "", ""},
+		"C2": []string{"8", "", ""},
 	}
 )
 
@@ -322,6 +313,7 @@ var (
 		"Relay-Soild":    []string{"0.010"},
 
 		// P255
+		"Switch":          []string{"URI", "Switch-Button"},
 		"Switch-Button":   []string{"0.000 9"},
 		"Switch-Toggle":   []string{"0.000 8"},
 		"Switch-Rotary":   []string{"0.003 75"},

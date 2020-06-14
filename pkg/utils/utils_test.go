@@ -8,7 +8,7 @@ import (
 	//"flag"
 	//"fmt"
 	"math"
-	//"strconv"
+	"strconv"
 	//"strings"
 	"testing"
 
@@ -68,4 +68,16 @@ func TestNamerulesProcess(t *testing.T) {
 	}
 	t.Logf("utils.NamerulesProcess results: %v", propclass2)
 
+}
+
+func TestCase0(t *testing.T) {
+
+	queryTempStr := "GF1"
+	queryTemp, err := strconv.Atoi(queryTempStr)
+	t.Log(err)
+	t.Log(queryTemp)
+
+	__spFloat := 0.6
+	result := int(__spFloat*10)-1
+	t.Log(result)
 }

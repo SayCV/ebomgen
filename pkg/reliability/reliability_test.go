@@ -11,12 +11,21 @@ import (
 	//"strings"
 	//"regexp"
 	//"strconv"
+
 	"strconv"
 	"strings"
 	"testing"
 
 	"github.com/saycv/ebomgen/pkg/types"
 )
+
+func TestCase0(t *testing.T) {
+
+	queryTempStr := "55"
+	queryTemp, err := strconv.Atoi(queryTempStr)
+	t.Log(err)
+	t.Log(queryTemp)
+}
 
 func TestCase1(t *testing.T) {
 
@@ -56,11 +65,16 @@ func TestCase2(t *testing.T) {
 	}
 	frpart := NewFrPart(part,
 		WithFrType("NPN-Si-LP"),
+		WithFrProcess(""),
 		WithClsEnv("GF1"),
-		WithCurrentStress("0.8"),
-		WithVoltageStress("0.8"),
-		WithPowerStress("0.8"),
+		WithClsQuality("C1"),
+		WithOperatingTemp("GF1"),
+		WithCurrentStress("0.5"),
+		WithVoltageStress("0.5"),
+		WithPowerStress("0.5"),
 	)
+	t.Log(frpart)
+
 	results, err := frpart.GetFailureRateBaseImported()
 	if err != nil {
 		t.Errorf("Error: %v", err)
@@ -69,5 +83,154 @@ func TestCase2(t *testing.T) {
 	fvalue, _ := strconv.ParseFloat(results, 64)
 	t.Log(fvalue)
 
+	results, err = frpart.GetFactorEnvImported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ = strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+	results, err = frpart.GetFactorQualityImported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ = strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+	results, err = frpart.GetFactorTemperatureImported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ = strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+	results, err = frpart.GetFactorStressImported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ = strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+	results, err = frpart.GetFactorChImported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ = strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+	results, err = frpart.GetFactorProcessImported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ = strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+	results, err = frpart.GetFactorApplicationImported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ = strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+	results, err = frpart.GetFactorC1Imported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ = strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+	results, err = frpart.GetFactorC2Imported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ = strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+}
+
+func TestCase3(t *testing.T) {
+	part := types.EBOMItem{
+		/*Quantity=*/ 0,
+		/*References=*/ []string{""},
+		/*Value=*/ "10k",
+		/*FValue=*/ 0.0,
+		/*Library=*/ "",
+		/*Footprint=*/ "",
+		/*Desc=*/ "",
+		/*Attributes*/ map[string]string{},
+		/*Group*/ []string{""},
+		/*PartSpecs*/ types.EBOMWebPart{},
+	}
+	frpart := NewFrPart(part,
+		WithFrType("RES-Film-Carbon"),
+		WithFrProcess(""),
+		WithClsEnv("GB"),
+		WithClsQuality("C1"),
+		WithOperatingTemp("GB"),
+		WithCurrentStress("0.5"),
+		WithVoltageStress("0.5"),
+		WithPowerStress("0.5"),
+	)
 	t.Log(frpart)
+
+	results, err := frpart.GetFailureRateBaseImported()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ := strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+}
+
+func TestResFr(t *testing.T) {
+	part := types.EBOMItem{
+		/*Quantity=*/ 1,
+		/*References=*/ []string{"R1"},
+		/*Value=*/ "10k",
+		/*FValue=*/ 0.0,
+		/*Library=*/ "",
+		/*Footprint=*/ "R0603",
+		/*Desc=*/ "Resistor",
+		/*Attributes*/ map[string]string{},
+		/*Group*/ []string{""},
+		/*PartSpecs*/ types.EBOMWebPart{},
+	}
+	frpart := NewFrPart(part,
+		WithFrType("RES-Film-Carbon"),
+		WithFrProcess(""),
+		WithClsEnv("GB"),
+		WithClsQuality("C1"),
+		WithOperatingTemp("GB"),
+		WithCurrentStress("0.5"),
+		WithVoltageStress("0.5"),
+		WithPowerStress("0.5"),
+	)
+	t.Log(frpart)
+
+	results, err := frpart.FrCalcRes()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results = strings.Replace(results, " ", "", -1)
+	fvalue, _ := strconv.ParseFloat(results, 64)
+	t.Log(fvalue)
+
+	results2, err := frpart.FrCalcIc()
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	results2 = strings.Replace(results2, " ", "", -1)
+	fvalue2, _ := strconv.ParseFloat(results2, 64)
+	t.Log(fvalue2)
+
 }
