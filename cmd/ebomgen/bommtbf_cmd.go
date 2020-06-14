@@ -19,7 +19,10 @@ func NewBommtbfCmd() *cobra.Command {
 	var verbose bool
 	var input string
 	var output string
-	var edaTool string
+	var clsquality string
+	var clsenv string
+	var opsenv string
+	var degrade string
 	var logLevel string
 
 	rootCmd := &cobra.Command{
@@ -54,7 +57,10 @@ func NewBommtbfCmd() *cobra.Command {
 				config := configuration.NewConfiguration(
 					configuration.WithInputFile(input),
 					configuration.WithOutputFile(output),
-					configuration.WithEDATool(edaTool),
+					configuration.WithFrClsQuality(clsquality),
+					configuration.WithFrClsEnv(clsenv),
+					configuration.WithFrOpsEnv(opsenv),
+					configuration.WithFrDegrade(degrade),
 					configuration.WithCommand("bommtbf"))
 
 				err := ebomgen.CalcMtbfBasedPCP(config)
@@ -71,6 +77,10 @@ func NewBommtbfCmd() *cobra.Command {
 	flags.BoolVarP(&verbose, "verbose", "v", true, "verbose")
 	flags.StringVarP(&input, "input", "i", "test/pads/BOM/ex1_BOM.csv", "The path to the input schematic or netlist file")
 	flags.StringVarP(&output, "output", "o", "test/pads/BOM/ex1_BOM.bommtbf.csv", "The path for the output file")
+	flags.StringVarP(&clsquality, "clsquality", "q", "C1", "The component quality class")
+	flags.StringVarP(&clsenv, "clsenv", "c", "GB", "The component ambient temprature")
+	flags.StringVarP(&opsenv, "opsenv", "e", "GM1", "The component work temprature")
+	flags.StringVarP(&degrade, "degrade", "d", "0.5", "The component stress value")
 	flags.StringVarP(&logLevel, "log", "l", "debug", "log level to set [debug|info|warning|error|fatal|panic]")
 	return rootCmd
 }

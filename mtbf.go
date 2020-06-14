@@ -23,7 +23,7 @@
 
 	"github.com/saycv/ebomgen/pkg/configuration"
 	"github.com/saycv/ebomgen/pkg/types"
-	//"github.com/saycv/ebomgen/pkg/utils"
+	"github.com/saycv/ebomgen/pkg/utils"
 	"github.com/saycv/ebomgen/pkg/reliability"
 
 	log "github.com/sirupsen/logrus"
@@ -76,54 +76,119 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 
 		bomParts = append(bomParts, cpart)
 
+		frType := ""
+		frProcess := ""
+		clsQuality := config.FrClsQuality
+		ambientTemp := config.FrClsEnv
+		operatingTemp := config.FrOpsEnv
+		currentStress := config.FrDegrade
+		voltageStress := config.FrDegrade
+		powerStress := config.FrDegrade
+
+		if strings.HasPrefix(cpart.Desc, "Capacitor") {
+			frType = "CAP-Ceramic-1"
+			if strings.HasPrefix(cpart.Desc, "CapacitorTan") {
+				frType = "CAP-TAN"
+			}
+		} else if strings.HasPrefix(cpart.Desc, "Resistor") {
+			frType = "RES-Film-Carbon"
+		} else if strings.HasPrefix(cpart.Desc, "Inductor") {
+			frType = "IND"
+		} else if strings.HasPrefix(cpart.Desc, "Fuse") {
+			frType = "RES-Wirewound-Power"
+		} else if strings.HasPrefix(cpart.Desc, "LED") {
+			frType = "LED"
+		} else if strings.HasPrefix(cpart.Desc, "Diode") {
+			frType = "Diode-Ge-LP"
+			if strings.HasPrefix(cpart.Footprint, "POWER") {
+				frType = "Diode-Ge-HP"
+			}
+		} else if strings.HasPrefix(cpart.Desc, "Transistor") {
+			frType = "NPN-Si-LP"
+			if strings.HasPrefix(cpart.Footprint, "POWER") {
+				frType = "NPN-Si-HP"
+			}
+		} else if strings.HasPrefix(cpart.Desc, "FET") {
+			frType = "FET-Si-Switch"
+			if strings.HasPrefix(cpart.Footprint, "POWER") {
+				frType = "FET-Si-Amp"
+			}
+		} else if strings.HasPrefix(cpart.Desc, "Crystal") {
+			frType = "XTAL"
+		} else if strings.HasPrefix(cpart.Desc, "Oscillator") {
+			frType = "OSC"
+		} else if strings.HasPrefix(cpart.Desc, "ConnRJ") {
+			frType = "CONN-PCB"
+		} else if strings.HasPrefix(cpart.Desc, "ConnUSB") {
+			frType = "CONN-PCB"
+		} else if strings.HasPrefix(cpart.Desc, "Connector") {
+			frType = "CONN-PCB"
+		} else if strings.HasPrefix(cpart.Desc, "Switch") {
+			frType = "Switch"
+		} else if strings.HasPrefix(cpart.Desc, "XFRM") {
+			frType = "XFMR-LF"
+		} else if strings.HasPrefix(cpart.Desc, "IC") {
+			frType = "DIC-MOS"
+			pins, _ := utils.GetPinsFromFp(cpart.Desc, cpart.Footprint)
+			if pins>=100 {
+				frType = "MPU-MOS"
+			}
+			if (pins==96 || pins==178) && strings.HasPrefix(cpart.Footprint, "BGA") {
+				frType = "DRAM"
+			}
+			if (pins==48 && strings.HasPrefix(cpart.Footprint, "SO")) || (pins==169 && strings.HasPrefix(cpart.Footprint, "BGA")) {
+				frType = "FLASH-MOS"
+			}
+		}
+
 		frpart := reliability.NewFrPart(cpart,
-			reliability.WithFrType("RES-Film-Carbon"),
-			reliability.WithFrProcess(""),
-			reliability.WithClsEnv("GB"),
-			reliability.WithClsQuality("C1"),
-			reliability.WithOperatingTemp("GB"),
-			reliability.WithCurrentStress("0.5"),
-			reliability.WithVoltageStress("0.5"),
-			reliability.WithPowerStress("0.5"),
+			reliability.WithFrType(frType),
+			reliability.WithFrProcess(frProcess),
+			reliability.WithClsEnv(ambientTemp),
+			reliability.WithClsQuality(clsQuality),
+			reliability.WithOperatingTemp(operatingTemp),
+			reliability.WithCurrentStress(currentStress),
+			reliability.WithVoltageStress(voltageStress),
+			reliability.WithPowerStress(powerStress),
 		)
 		frParts = append(frParts, *frpart)
 	}
 
-	for k, ipart := range frParts {
-		if strings.HasPrefix(ipart.Desc, "Capacitor") {
-			ipart.FrUnit, _ = ipart.FrCalcCap()
-		} else if strings.HasPrefix(ipart.Desc, "Resistor") {
-			ipart.FrUnit, _ = ipart.FrCalcRes()
-		} else if strings.HasPrefix(ipart.Desc, "Inductor") {
-			ipart.FrUnit, _ = ipart.FrCalcInd()
-		} else if strings.HasPrefix(ipart.Desc, "Fuse") {
-			ipart.FrUnit, _ = ipart.FrCalcRes()
-		} else if strings.HasPrefix(ipart.Desc, "LED") {
-			ipart.FrUnit, _ = ipart.FrCalcDiodeBjt()
-		} else if strings.HasPrefix(ipart.Desc, "Diode") {
-			ipart.FrUnit, _ = ipart.FrCalcDiodeBjt()
-		} else if strings.HasPrefix(ipart.Desc, "Transistor") {
-			ipart.FrUnit, _ = ipart.FrCalcDiodeBjt()
-		} else if strings.HasPrefix(ipart.Desc, "FET") {
-			ipart.FrUnit, _ = ipart.FrCalcDiodeBjt()
-		} else if strings.HasPrefix(ipart.Desc, "Crystal") {
-			ipart.FrUnit, _ = ipart.FrCalcXtal()
-		} else if strings.HasPrefix(ipart.Desc, "Oscillator") {
-			ipart.FrUnit, _ = ipart.FrCalcXtal()
-		} else if strings.HasPrefix(ipart.Desc, "ConnRJ") {
-			ipart.FrUnit, _ = ipart.FrCalcConn()
-		} else if strings.HasPrefix(ipart.Desc, "ConnUSB") {
-			ipart.FrUnit, _ = ipart.FrCalcConn()
-		} else if strings.HasPrefix(ipart.Desc, "Connector") {
-			ipart.FrUnit, _ = ipart.FrCalcConn()
-		} else if strings.HasPrefix(ipart.Desc, "Switch") {
-			ipart.FrUnit, _ = ipart.FrCalcSwitch()
-		} else if strings.HasPrefix(ipart.Desc, "XFRM") {
-			ipart.FrUnit, _ = ipart.FrCalcInd()
-		} else if strings.HasPrefix(ipart.Desc, "IC") {
-			ipart.FrUnit, _ = ipart.FrCalcIc()
+	for k, cpart := range frParts {
+		if strings.HasPrefix(cpart.Desc, "Capacitor") {
+			cpart.FrUnit, _ = cpart.FrCalcCap()
+		} else if strings.HasPrefix(cpart.Desc, "Resistor") {
+			cpart.FrUnit, _ = cpart.FrCalcRes()
+		} else if strings.HasPrefix(cpart.Desc, "Inductor") {
+			cpart.FrUnit, _ = cpart.FrCalcInd()
+		} else if strings.HasPrefix(cpart.Desc, "Fuse") {
+			cpart.FrUnit, _ = cpart.FrCalcRes()
+		} else if strings.HasPrefix(cpart.Desc, "LED") {
+			cpart.FrUnit, _ = cpart.FrCalcDiodeBjt()
+		} else if strings.HasPrefix(cpart.Desc, "Diode") {
+			cpart.FrUnit, _ = cpart.FrCalcDiodeBjt()
+		} else if strings.HasPrefix(cpart.Desc, "Transistor") {
+			cpart.FrUnit, _ = cpart.FrCalcDiodeBjt()
+		} else if strings.HasPrefix(cpart.Desc, "FET") {
+			cpart.FrUnit, _ = cpart.FrCalcDiodeBjt()
+		} else if strings.HasPrefix(cpart.Desc, "Crystal") {
+			cpart.FrUnit, _ = cpart.FrCalcXtal()
+		} else if strings.HasPrefix(cpart.Desc, "Oscillator") {
+			cpart.FrUnit, _ = cpart.FrCalcXtal()
+		} else if strings.HasPrefix(cpart.Desc, "ConnRJ") {
+			cpart.FrUnit, _ = cpart.FrCalcConn()
+		} else if strings.HasPrefix(cpart.Desc, "ConnUSB") {
+			cpart.FrUnit, _ = cpart.FrCalcConn()
+		} else if strings.HasPrefix(cpart.Desc, "Connector") {
+			cpart.FrUnit, _ = cpart.FrCalcConn()
+		} else if strings.HasPrefix(cpart.Desc, "Switch") {
+			cpart.FrUnit, _ = cpart.FrCalcSwitch()
+		} else if strings.HasPrefix(cpart.Desc, "XFRM") {
+			cpart.FrUnit, _ = cpart.FrCalcInd()
+		} else if strings.HasPrefix(cpart.Desc, "IC") {
+			cpart.FrUnit, _ = cpart.FrCalcIc()
 		}
-		bomParts[k].Attributes["FrUnit"] = ipart.FrUnit
+		bomParts[k].Attributes["FrUnit"] = cpart.FrUnit
 	}
 
 	BOM, err := types.NewBOM(bomParts, config)

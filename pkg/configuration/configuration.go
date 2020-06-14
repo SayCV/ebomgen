@@ -25,6 +25,10 @@ type Configuration struct {
 	EDATool     string
 	OnePartRows bool
 	SortLayer   bool
+	FrClsQuality string
+	FrClsEnv     string
+	FrOpsEnv    string
+	FrDegrade   string
 	macros      map[string]MacroTemplate
 }
 
@@ -105,5 +109,29 @@ func WithOutputFile(filename string) Setting {
 func WithMacroTemplate(name string, t MacroTemplate) Setting {
 	return func(config *Configuration) {
 		config.macros[name] = t
+	}
+}
+
+func WithFrClsQuality(name string) Setting {
+	return func(config *Configuration) {
+		config.FrClsQuality = name
+	}
+}
+
+func WithFrClsEnv(name string) Setting {
+	return func(config *Configuration) {
+		config.FrClsEnv = name
+	}
+}
+
+func WithFrOpsEnv(name string) Setting {
+	return func(config *Configuration) {
+		config.FrOpsEnv = name
+	}
+}
+
+func WithFrDegrade(name string) Setting {
+	return func(config *Configuration) {
+		config.FrDegrade = name
 	}
 }
