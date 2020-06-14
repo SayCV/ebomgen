@@ -664,28 +664,36 @@ func (b *EBOMFrPart) GetFactorC1Imported() (string, error) {
 		partType = "CAP"
 	}
 
-	reqValue, ok := tableData[b.FrType].([]string)
-	if !ok {
-		return "", errors.Errorf("%s not found in %v", b.FrType, reflect.TypeOf(tableData))
-	}
-
-	uriRefcnts := 0
-	for {
-		if reqValue[0] == "URI" {
-			reqValue, ok = tableData[reqValue[1]].([]string)
-			if !ok {
-				return "", errors.Errorf("%s not found in %v, %v", reqValue[1], reflect.ValueOf(tableData), reflect.TypeOf(tableData))
+	log.Info(partType)
+	reqValueMap := make(map[string]interface{})
+	reqValue, ok := tableData[partType].([]string)
+	if ok {
+		uriRefcnts := 0
+		for {
+			if reqValue[0] == "URI" {
+				partType = reqValue[1]
+				_reqValue, ok := tableData[partType].([]string)
+				if ok {
+					if uriRefcnts > 1 {
+						log.Errorf("ERR: URI Ref Counts too many!!!: %s, %s", reqValue[0], reqValue[1])
+					}
+					uriRefcnts = uriRefcnts + 1
+					reqValue = _reqValue
+					continue
+				}
+				break
+			} else {
+				break
 			}
-			if uriRefcnts > 1 {
-				log.Errorf("ERR: URI Ref Counts too many!!!: %s, %s", reqValue[0], reqValue[1])
-			}
-			uriRefcnts = uriRefcnts + 1
-		} else {
-			break
+		}
+		if reqValue[0] == "EXP" {
+			reqValue = []string{"0"}
 		}
 	}
-	if reqValue[0] == "EXP" {
-		reqValue = []string{"0"}
+	log.Info(partType)
+	reqValueMap, ok = tableData[partType].(map[string]interface{})
+	if !ok {
+		return "", errors.Errorf("%s not found in %v", reqValue[1], reflect.TypeOf(tableData))
 	}
 
 	// transistors on chip
@@ -693,19 +701,24 @@ func (b *EBOMFrPart) GetFactorC1Imported() (string, error) {
 
 	// 37 lines
 	//totlines := 36
-	query_c1_index := ""
-	for k, temp := range reqValue {
-		if reqValue[k] == "-     " {
-			break
+	query_c1_index := 0
+	for k, _ := range reqValueMap {
+		if reqValueMap[k] == "-     " {
+			continue
 		}
-		tempInt, _ := strconv.Atoi(temp)
-		if toc >= tempInt {
-			query_c1_index = strconv.Itoa(tempInt)
+		tempInt, _ := strconv.Atoi(k)
+		//log.Info(tempInt)
+		if toc >= tempInt && query_c1_index < tempInt {
+			query_c1_index = tempInt
+			//log.Info("update")
 			continue
 		}
 	}
-	query_c1_indexInt, _ := strconv.Atoi(query_c1_index)
-	return reqValue[query_c1_indexInt], nil
+	query_c1_indexStr := strconv.Itoa(query_c1_index)
+
+	log.Info(toc)
+	log.Info(query_c1_index)
+	return reqValueMap[query_c1_indexStr].([]string)[0], nil
 }
 
 func (b *EBOMFrPart) GetFactorC2Imported() (string, error) {
@@ -756,7 +769,7 @@ func (b *EBOMFrPart) GetFactorC2Imported() (string, error) {
 
 	reqValue, ok := tableData[pinsAvailabeStr].([]string)
 	if !ok {
-		return "", errors.Errorf("%d not found in %v", pinsAvailabe, reflect.TypeOf(tableData))
+		return "", errors.Errorf("ERR1 : %d not found in %v", pinsAvailabe, reflect.TypeOf(tableData))
 	}
 
 	return reqValue[fp_map[fp_map_key]], nil

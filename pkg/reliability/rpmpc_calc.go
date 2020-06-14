@@ -291,7 +291,10 @@ func (b *EBOMFrPart) FrCalcRotator() (string, error) {
 func (b *EBOMFrPart) FrCalcIc() (string, error) {
 	partType := b.FrType
 
-	strc1, _ := b.GetFactorC1Imported()
+	strc1, err := b.GetFactorC1Imported()
+	if err != nil {
+		log.Errorf("Error: %v", err)
+	}
 	strc2, _ := b.GetFactorC2Imported()
 	strpi_e, _ := b.GetFactorEnvImported()
 	strpi_q, _ := b.GetFactorQualityImported()
@@ -318,6 +321,8 @@ func (b *EBOMFrPart) FrCalcIc() (string, error) {
 	pi_t, _ := strconv.ParseFloat(strpi_t, 64)
 	pi_p, _ := strconv.ParseFloat(strpi_p, 64)
 	pi_a, _ := strconv.ParseFloat(strpi_a, 64)
+
+	log.Info(c1, pi_e, pi_q, pi_t, pi_p, pi_a)
 
 	reqValue := (c1*pi_t*pi_p*pi_a + c2*pi_e) * pi_q
 	strreqValue := strconv.FormatFloat(reqValue, 'f', -1, 64)

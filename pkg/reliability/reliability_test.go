@@ -195,18 +195,18 @@ func TestCase3(t *testing.T) {
 func TestResFr(t *testing.T) {
 	part := types.EBOMItem{
 		/*Quantity=*/ 1,
-		/*References=*/ []string{"R1"},
-		/*Value=*/ "10k",
+		/*References=*/ []string{"U1"},
+		/*Value=*/ "CPU8086",
 		/*FValue=*/ 0.0,
 		/*Library=*/ "",
-		/*Footprint=*/ "R0603",
-		/*Desc=*/ "Resistor",
+		/*Footprint=*/ "BGA472",
+		/*Desc=*/ "IC",
 		/*Attributes*/ map[string]string{},
 		/*Group*/ []string{""},
 		/*PartSpecs*/ types.EBOMWebPart{},
 	}
 	frpart := NewFrPart(part,
-		WithFrType("RES-Film-Carbon"),
+		WithFrType("MPU-MOS"),
 		WithFrProcess(""),
 		WithClsEnv("GB"),
 		WithClsQuality("C1"),

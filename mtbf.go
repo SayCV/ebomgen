@@ -8,27 +8,29 @@
  * =====
  */
 
- package ebomgen
+package ebomgen
 
- import (
+import (
 	"encoding/csv"
 	"io"
+
 	//"net/url"
 	"os"
 	"path"
 	"path/filepath"
+
 	//"regexp"
 	"strconv"
 	"strings"
 
 	"github.com/saycv/ebomgen/pkg/configuration"
+	"github.com/saycv/ebomgen/pkg/reliability"
 	"github.com/saycv/ebomgen/pkg/types"
 	"github.com/saycv/ebomgen/pkg/utils"
-	"github.com/saycv/ebomgen/pkg/reliability"
 
 	log "github.com/sirupsen/logrus"
- )
- 
+)
+
 func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 	outputFilenameAppend := ""
 
@@ -70,7 +72,7 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 		cpart.Desc = line[5]
 		//cpart.FrUnit = ""
 		cpart.Attributes = map[string]string{
-			"FrUnit":   "",
+			"FrUnit":      "",
 			"Description": line[5],
 		}
 
@@ -130,13 +132,13 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 		} else if strings.HasPrefix(cpart.Desc, "IC") {
 			frType = "DIC-MOS"
 			pins, _ := utils.GetPinsFromFp(cpart.Desc, cpart.Footprint)
-			if pins>=100 {
+			if pins >= 100 {
 				frType = "MPU-MOS"
 			}
-			if (pins==96 || pins==178) && strings.HasPrefix(cpart.Footprint, "BGA") {
+			if (pins == 96 || pins == 178) && strings.HasPrefix(cpart.Footprint, "BGA") {
 				frType = "DRAM"
 			}
-			if (pins==48 && strings.HasPrefix(cpart.Footprint, "SO")) || (pins==169 && strings.HasPrefix(cpart.Footprint, "BGA")) {
+			if (pins == 48 && strings.HasPrefix(cpart.Footprint, "SO")) || (pins == 169 && strings.HasPrefix(cpart.Footprint, "BGA")) {
 				frType = "FLASH-MOS"
 			}
 		}
@@ -157,37 +159,85 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 	for k, cpart := range frParts {
 		log.Info(cpart)
 		if strings.HasPrefix(cpart.Desc, "Capacitor") {
-			cpart.FrUnit, _ = cpart.FrCalcCap()
+			cpart.FrUnit, err = cpart.FrCalcCap()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Resistor") {
-			cpart.FrUnit, _ = cpart.FrCalcRes()
+			cpart.FrUnit, err = cpart.FrCalcRes()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Inductor") {
-			cpart.FrUnit, _ = cpart.FrCalcInd()
+			cpart.FrUnit, err = cpart.FrCalcInd()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Fuse") {
-			cpart.FrUnit, _ = cpart.FrCalcRes()
+			cpart.FrUnit, err = cpart.FrCalcRes()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "LED") {
-			cpart.FrUnit, _ = cpart.FrCalcOptoElectronicDevices()
+			cpart.FrUnit, err = cpart.FrCalcOptoElectronicDevices()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Diode") {
-			cpart.FrUnit, _ = cpart.FrCalcDiodeBjt()
+			cpart.FrUnit, err = cpart.FrCalcDiodeBjt()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Transistor") {
-			cpart.FrUnit, _ = cpart.FrCalcDiodeBjt()
+			cpart.FrUnit, err = cpart.FrCalcDiodeBjt()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "FET") {
-			cpart.FrUnit, _ = cpart.FrCalcDiodeBjt()
+			cpart.FrUnit, err = cpart.FrCalcDiodeBjt()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Crystal") {
-			cpart.FrUnit, _ = cpart.FrCalcXtal()
+			cpart.FrUnit, err = cpart.FrCalcXtal()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Oscillator") {
-			cpart.FrUnit, _ = cpart.FrCalcXtal()
+			cpart.FrUnit, err = cpart.FrCalcXtal()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "ConnRJ") {
-			cpart.FrUnit, _ = cpart.FrCalcConn()
+			cpart.FrUnit, err = cpart.FrCalcConn()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "ConnUSB") {
-			cpart.FrUnit, _ = cpart.FrCalcConn()
+			cpart.FrUnit, err = cpart.FrCalcConn()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Connector") {
-			cpart.FrUnit, _ = cpart.FrCalcConn()
+			cpart.FrUnit, err = cpart.FrCalcConn()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Switch") {
-			cpart.FrUnit, _ = cpart.FrCalcSwitch()
+			cpart.FrUnit, err = cpart.FrCalcSwitch()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "XFRM") {
-			cpart.FrUnit, _ = cpart.FrCalcInd()
+			cpart.FrUnit, err = cpart.FrCalcInd()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "IC") {
-			cpart.FrUnit, _ = cpart.FrCalcIc()
+			cpart.FrUnit, err = cpart.FrCalcIc()
+			if err != nil {
+				log.Errorf("Error: %v", err)
+			}
 		}
 		bomParts[k].Attributes["FrUnit"] = cpart.FrUnit
 	}
@@ -209,6 +259,6 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 }
 
 func CalcMtbfBasedPCP(config configuration.Configuration) error {
- 
+
 	return CalcMtbfBasedPCPMain(config)
 }
