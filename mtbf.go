@@ -111,12 +111,22 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 				operatingTemp="60"
 			}
 			if currentStressFloat>0.7 {
-				currentStress="0.7"
-				voltageStress="0.7"
-				powerStress="0.7"
+				currentStress="0.6"
+				voltageStress="0.6"
+				powerStress="0.6"
 			}
 		} else if strings.HasPrefix(cpart.Desc, "Resistor") {
 			frType = "RES-Film-Carbon"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
+			if currentStressFloat>0.7 {
+				currentStress="0.6"
+				voltageStress="0.6"
+				powerStress="0.6"
+			}
+		} else if strings.HasPrefix(cpart.Desc, "Inductor") {
+			frType = "IND"
 			if operatingTempInt>60 {
 				operatingTemp="60"
 			}
@@ -125,7 +135,7 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 				voltageStress="0.7"
 				powerStress="0.7"
 			}
-		} else if strings.HasPrefix(cpart.Desc, "Inductor") {
+		} else if strings.HasPrefix(cpart.Desc, "FerritBead") {
 			frType = "IND"
 			if operatingTempInt>60 {
 				operatingTemp="60"
@@ -160,9 +170,9 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 				operatingTemp="60"
 			}
 			if currentStressFloat>0.7 {
-				currentStress="0.7"
-				voltageStress="0.7"
-				powerStress="0.7"
+				currentStress="0.6"
+				voltageStress="0.6"
+				powerStress="0.6"
 			}
 		} else if strings.HasPrefix(cpart.Desc, "Oscillator") {
 			frType = "OSC"
@@ -241,7 +251,7 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 				valfloat, _ := strconv.ParseFloat(cpart.FrUnit, 64)
 				cpart.FrUnit = strconv.FormatFloat(valfloat*4.0, 'f', -1, 64)
 			}
-		} else if strings.HasPrefix(cpart.Desc, "Inductor") {
+		} else if strings.HasPrefix(cpart.Desc, "Inductor") || strings.HasPrefix(cpart.Desc, "FerritBead") {
 			cpart.FrUnit, err = cpart.FrCalcInd()
 			if err != nil {
 				log.Errorf("Error: %v", err)
