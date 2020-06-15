@@ -590,11 +590,11 @@ func (b *EBOMFrPart) GetFactorProcessImported() (string, error) {
 		reqValue = []string{"0"}
 	}
 
-	if strings.HasPrefix(partType, "Conn") {
+	if strings.HasPrefix(partType, "CONN") {
 		if pins <= 1 {
 			pins = 1
 		}
-		log.Infof("Conn/pins: %d", pins)
+		log.Infof("CONN/pins: %d", pins)
 		if pins <= 20 {
 			return reqValue[pins-1], nil
 		} else if pins > 100 {
