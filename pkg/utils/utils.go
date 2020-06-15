@@ -206,3 +206,10 @@ func GetPinsFromFp(desc string, fp string) (int, error) {
 
 	return pins, nil
 }
+
+func IsCapTanFp(fp string) bool {
+	if strings.Contains(fp, "3216") || strings.Contains(fp, "3528") || strings.Contains(fp, "6032") || strings.Contains(fp, "7343") {
+		return true
+	}
+	return false
+}

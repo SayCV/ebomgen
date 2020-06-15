@@ -68,6 +68,7 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 		cpart.References = strings.Split(line[1], ",")
 		cpart.Quantity, _ = strconv.Atoi(line[2])
 		cpart.Value = line[3]
+		cpart.FValue = utils.GetFValFromEVal(cpart.Value)
 		cpart.Footprint = line[4]
 		cpart.Desc = line[5]
 		//cpart.FrUnit = ""
@@ -94,6 +95,17 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 			frType = "CAP-Ceramic-1"
 			if strings.HasPrefix(cpart.Desc, "CapacitorTan") {
 				frType = "CAP-TAN"
+			}
+			if cpart.FValue >= 12000*1e-06 {
+				frType="CAP-Aluminum-Axial-HC"
+			} else if cpart.FValue >= 400*1e-06 && !utils.IsCapTanFp(cpart.Footprint) {
+				frType="CAP-Aluminum-Axial-MC"
+			} else if cpart.FValue >= 99*1e-06 && !utils.IsCapTanFp(cpart.Footprint) {
+				frType="CAP-Aluminum-Axial-LC"
+			} else if cpart.FValue >= 30*1e-06 && !utils.IsCapTanFp(cpart.Footprint) {
+				frType="CAP-TAN"
+			} else if cpart.FValue >= 1*1e-06 && !utils.IsCapTanFp(cpart.Footprint) {
+				frType="CAP-Ceramic-2"
 			}
 			if operatingTempInt>60 {
 				operatingTemp="60"

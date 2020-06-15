@@ -201,8 +201,7 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		strings.Contains(_capVAL, "0.5%") || strings.Contains(_capVAL, "0.1%")) {
 		propclass["part"] = "ResistorHR"
 	}
-	if propclass["part"] == "Capacitor" && (strings.Contains(strings.ToUpper(propfootprint), "3216") || strings.Contains(strings.ToUpper(propfootprint), "3528") ||
-		strings.Contains(strings.ToUpper(propfootprint), "6032") || strings.Contains(strings.ToUpper(propfootprint), "7343")) {
+	if propclass["part"] == "Capacitor" && (IsCapTanFp(strings.ToUpper(propfootprint))) {
 		propclass["part"] = "CapacitorTan"
 	}
 	if propclass["part"] == "Crystal" && strings.Contains(_capVAL, "OSC") {
