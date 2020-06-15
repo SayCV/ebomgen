@@ -110,7 +110,7 @@ func (b *EBOMFrPart) FrCalcDiodeBjt() (string, error) {
 	pi_s, _ := strconv.ParseFloat(strpi_s, 64)
 	pi_ch, _ := strconv.ParseFloat(strpi_ch, 64)
 
-	log.Info(lambda_b, pi_e, pi_q, pi_t, pi_s, pi_ch)
+	//log.Info(lambda_b, pi_e, pi_q, pi_t, pi_s, pi_ch)
 
 	reqValue := lambda_b * pi_e * pi_q * pi_t * pi_s * pi_ch
 	strreqValue := strconv.FormatFloat(reqValue, 'f', -1, 64)
@@ -322,9 +322,10 @@ func (b *EBOMFrPart) FrCalcIc() (string, error) {
 	pi_p, _ := strconv.ParseFloat(strpi_p, 64)
 	pi_a, _ := strconv.ParseFloat(strpi_a, 64)
 
-	log.Info(c1, pi_e, pi_q, pi_t, pi_p, pi_a)
+	//log.Info(c1, pi_t, pi_p, pi_a, c2, pi_e, pi_q)
 
 	reqValue := (c1*pi_t*pi_p*pi_a + c2*pi_e) * pi_q
+	//log.Info(reqValue)
 	strreqValue := strconv.FormatFloat(reqValue, 'f', -1, 64)
 	return strreqValue, nil
 }

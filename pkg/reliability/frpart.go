@@ -371,8 +371,8 @@ func (b *EBOMFrPart) GetFactorTemperatureImported() (string, error) {
 	//	reqValue = []string{"0"}
 	//}
 
-	log.Info(partTempType)
-	log.Info(reqTempValue)
+	//log.Info(partTempType)
+	//log.Info(reqTempValue)
 
 	// OperatingTemp support "GB" or "30"
 	queryTempStr := b.OperatingTemp
@@ -664,7 +664,7 @@ func (b *EBOMFrPart) GetFactorC1Imported() (string, error) {
 		partType = "CAP"
 	}
 
-	log.Info(partType)
+	//log.Info(partType)
 	reqValueMap := make(map[string]interface{})
 	reqValue, ok := tableData[partType].([]string)
 	if ok {
@@ -690,7 +690,7 @@ func (b *EBOMFrPart) GetFactorC1Imported() (string, error) {
 			reqValue = []string{"0"}
 		}
 	}
-	log.Info(partType)
+	//log.Info(partType)
 	reqValueMap, ok = tableData[partType].(map[string]interface{})
 	if !ok {
 		return "", errors.Errorf("%s not found in %v", reqValue[1], reflect.TypeOf(tableData))
@@ -716,8 +716,8 @@ func (b *EBOMFrPart) GetFactorC1Imported() (string, error) {
 	}
 	query_c1_indexStr := strconv.Itoa(query_c1_index)
 
-	log.Info(toc)
-	log.Info(query_c1_index)
+	//log.Info(toc)
+	//log.Info(query_c1_index)
 	return reqValueMap[query_c1_indexStr].([]string)[0], nil
 }
 
@@ -757,15 +757,17 @@ func (b *EBOMFrPart) GetFactorC2Imported() (string, error) {
 		fp_map_key = "unsealed" + "-" + partFp
 	}
 
+	//log.Infof("C2/pins: %d", pins)
 	pinsAvailabe := pins
 	for k, _ := range tableData {
 		valInt, _ := strconv.Atoi(k)
-		if pins >= valInt {
+		if pins >= valInt && pinsAvailabe < valInt {
 			pinsAvailabe = valInt
 			continue
 		}
 	}
 	pinsAvailabeStr := strconv.Itoa(pinsAvailabe)
+	//log.Infof("C2/pinsAvailabe: %s", pinsAvailabeStr)
 
 	reqValue, ok := tableData[pinsAvailabeStr].([]string)
 	if !ok {
