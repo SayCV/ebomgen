@@ -1,0 +1,3912 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 16.6.0 d001Jun-15-2020 at 10:41:55 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='DEMOJ';
+ POST_TIME='Feb 15 2016 19:53:59';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ C1 'CAP_CAPC1608X86N_DISCRETE_47 PF':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS909421@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins909421@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins909421@capacitors.\cap.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C10 'CAP_CAPC2012X71N_DISCRETE_3300':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882396@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882396@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882396@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C100 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70753@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70753@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70753@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C101 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS86803@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins86803@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins86803@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C102 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS86819@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins86819@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins86819@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C103 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS86835@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins86835@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins86835@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C104 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70493@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70493@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70493@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C105 'CAP_P_CAPMP7343X430N_DISCRETE_4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71205@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71205@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71205@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C106 'CAP_P_CAPMP7343X430N_DISCRETE_4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71429@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71429@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71429@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C107 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS74439@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins74439@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins74439@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C108 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS74455@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins74455@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins74455@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C109 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS74471@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins74471@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins74471@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C11 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310869@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310869@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310869@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C110 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS74487@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins74487@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins74487@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C111 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70017@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70017@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70017@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C112 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS74503@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins74503@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins74503@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C113 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS74519@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins74519@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins74519@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C114 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70689@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70689@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70689@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C115 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS74535@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins74535@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins74535@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C116 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70935@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70935@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70935@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C117 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS69217@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins69217@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins69217@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C118 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70415@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70415@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70415@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C119 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70441@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70441@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70441@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C12 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311265@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311265@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311265@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C120 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS69244@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins69244@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins69244@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C121 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70779@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70779@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70779@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C122 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70815@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70815@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70815@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C123 'CAP_P_CAPMP7343X430N_DISCRETE_4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70961@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70961@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70961@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C124 'CAP_P_CAPMP7343X430N_DISCRETE_4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS69271@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins69271@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins69271@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C125 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS69873@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins69873@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins69873@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C126 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS69889@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins69889@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins69889@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C127 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70309@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70309@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70309@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C128 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70325@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70325@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70325@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C129 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70033@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70033@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70033@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C13 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311445@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311445@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311445@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C130 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70623@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70623@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70623@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C131 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70575@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70575@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70575@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C132 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70559@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70559@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70559@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C133 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70831@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70831@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70831@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C134 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS76612@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins76612@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins76612@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C135 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS76628@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins76628@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins76628@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C136 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS76644@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins76644@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins76644@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C137 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS76660@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins76660@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins76660@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C138 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70373@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70373@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70373@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C139 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70389@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70389@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70389@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C14 'CAP_CAPC1608X86N_DISCRETE_0.01':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310969@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310969@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310969@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C140 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS76692@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins76692@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins76692@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C141 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS76676@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins76676@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins76676@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C142 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70903@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70903@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70903@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C143 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS76708@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins76708@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins76708@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C144 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS94816@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins94816@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins94816@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C145 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS94916@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins94916@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins94916@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C146 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS94932@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins94932@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins94932@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C147 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS94948@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins94948@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins94948@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C148 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95084@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95084@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95084@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C149 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95068@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95068@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95068@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C15 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310661@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310661@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310661@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C150 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95052@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95052@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95052@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C151 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95100@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95100@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95100@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C152 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95116@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95116@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95116@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C153 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95132@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95132@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95132@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C154 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95324@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95324@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95324@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C155 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95340@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95340@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95340@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C156 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95616@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95616@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95616@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C157 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95632@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95632@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95632@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C158 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95648@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95648@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95648@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C159 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95244@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95244@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95244@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C16 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311465@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311465@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311465@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C160 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95920@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95920@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95920@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C161 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95936@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95936@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95936@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C162 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95952@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95952@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95952@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C163 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95968@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95968@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95968@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C164 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95020@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95020@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95020@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C165 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95984@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95984@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95984@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C166 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS96000@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins96000@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins96000@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C167 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95308@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95308@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95308@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C168 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS96024@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins96024@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins96024@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C169 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95420@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95420@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95420@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C17 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310949@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310949@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310949@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C170 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS94832@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins94832@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins94832@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C171 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95212@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95212@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95212@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C172 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95228@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95228@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95228@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C173 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS94848@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins94848@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins94848@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C174 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95356@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95356@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95356@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C175 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95372@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95372@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95372@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C176 'CAP_P_CAPMP7343X430N_DISCRETE_4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95436@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95436@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95436@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C177 'CAP_P_CAPMP7343X430N_DISCRETE_4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS94864@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins94864@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins94864@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C178 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS94980@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins94980@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins94980@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C179 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS94996@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins94996@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins94996@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C18 'CAP_CAPC2012X70N_DISCRETE_100 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311345@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311345@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311345@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C180 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95148@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95148@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95148@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C181 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95164@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95164@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95164@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C182 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95036@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95036@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95036@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C183 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95292@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95292@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95292@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C184 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95276@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95276@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95276@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C185 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95260@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95260@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95260@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C186 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95388@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95388@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95388@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C187 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS96240@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins96240@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins96240@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C188 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS96264@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins96264@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins96264@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C189 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS96300@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins96300@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins96300@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C19 'CAP_CAPC2012X71N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311029@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311029@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311029@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C190 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS96324@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins96324@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins96324@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C191 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95180@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95180@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95180@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C192 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95196@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95196@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95196@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C193 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS96364@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins96364@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins96364@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C194 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS96348@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins96348@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins96348@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C195 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS95404@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins95404@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins95404@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C196 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS96380@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins96380@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins96380@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C197 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49353@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49353@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49353@capacitors.\cap.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C198 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49561@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49561@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49561@capacitors.\cap.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C199 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49581@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49581@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49581@capacitors.\cap.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2 'CAP_CAPC1608X86N_DISCRETE_47 PF':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS909437@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins909437@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins909437@capacitors.\cap.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C20 'CAP_CAPC1608X86N_DISCRETE_47 _1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310761@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310761@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310761@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C200 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49353@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49353@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49353@capacitors.\cap.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2000 'CAP_CAPC1608X86N_DISCRETE_33 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358575@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358575@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358575@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2001 'CAP_CAPC1608X86N_DISCRETE_33 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358559@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358559@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358559@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2002 'CAP_CAPC1608X86N_DISCRETE_33 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358591@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358591@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358591@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2003 'CAP_CAPC1608X86N_DISCRETE_33 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358613@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358613@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358613@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2004 'CAP_CAPC1608X86N_DISCRETE_33 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358645@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358645@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358645@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2005 'CAP_CAPC1608X86N_DISCRETE_33 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358629@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358629@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358629@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2006 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1480670@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1480670@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1480670@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2007 'CAP_CAPC1608X87N_DISCRETE_0.01':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1406298@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1406298@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1406298@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2008 'CAP_P_CAPMP3216X120N_DISCRETE_2':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1406702@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1406702@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1406702@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2009 'CAP_CAPC1608X87N_DISCRETE_0.01':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1406610@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1406610@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1406610@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C201 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49561@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49561@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49561@capacitors.\cap.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2010 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1474171@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1474171@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1474171@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2011 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1473835@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1473835@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1473835@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2012 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1473819@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1473819@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1473819@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2013 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1473803@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1473803@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1473803@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2014 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1473583@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1473583@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1473583@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2015 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1473567@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1473567@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1473567@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2016 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1474437@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1474437@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1474437@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C202 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49581@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49581@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49581@capacitors.\cap.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C21 'CAP_CAPC1608X86N_DISCRETE_47 _1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311305@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311305@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311305@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C22 'CAP_CAPC2012X71N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311245@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311245@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311245@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C23 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311325@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311325@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311325@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C24 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311285@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311285@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311285@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C25 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311049@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311049@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311049@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C26 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310889@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310889@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310889@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C27 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311529@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311529@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311529@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C28 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310989@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310989@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310989@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C29 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311009@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311009@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311009@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C3 'CAP_CAPC2012X71N_DISCRETE_3300':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882784@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882784@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882784@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C30 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310701@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310701@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310701@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C31 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310721@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310721@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310721@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C32 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310681@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310681@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310681@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C33 'CAP_CAPC1005X56N_DISCRETE_1000':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310909@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310909@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310909@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C34 'CAP_CAPC2012X88N_DISCRETE_3.3 P':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299366@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299366@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299366@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C35 'CAP_CAPC2012X140N_DISCRETE_8.2':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299324@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299324@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299324@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C36 'CAP_CAPC2012X71N_DISCRETE_22 PF':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299266@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299266@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299266@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C37 'CAP_CAPC2012X71N_DISCRETE_22 PF':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS298972@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins298972@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins298972@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C38 'CAP_CAPC2012X71N_DISCRETE_33 PF':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299246@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299246@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299246@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C39 'CAP_CAPC1608X86N_DISCRETE_0.01':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS298766@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins298766@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins298766@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C4 'CAP_CAPC2012X71N_DISCRETE_3300':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882620@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882620@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882620@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C40 'CAP_CAPC1005X56N_DISCRETE_1000':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299408@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299408@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299408@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C41 'CAP_CAPC1608X86N_DISCRETE_0.01':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299132@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299132@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299132@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C42 'CAP_CAPC1608X86N_DISCRETE_0.01':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299288@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299288@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299288@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C43 'CAP_CAPC1608X86N_DISCRETE_0.01':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299556@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299556@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299556@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C44 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1130626@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1130626@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1130626@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C45 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1129894@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1129894@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1129894@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C46 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1130058@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1130058@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1130058@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C47 'CAP_CAPC2012X100N_DISCRETE_0.1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1130186@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1130186@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1130186@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C48 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='BOTTOM_MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS473966@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins473966@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins473966@capacitors.\cap.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C49 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='BOTTOM_MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS473826@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins473826@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins473826@capacitors.\cap.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C5 'CAP_CAPC2012X71N_DISCRETE_3300':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882764@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882764@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882764@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C50 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='BOTTOM_MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS474106@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins474106@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins474106@capacitors.\cap.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C51 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='BOTTOM_MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS474546@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins474546@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins474546@capacitors.\cap.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C52 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='BOTTOM_MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS474366@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins474366@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins474366@capacitors.\cap.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C53 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='BOTTOM_MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS474566@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins474566@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins474566@capacitors.\cap.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C54 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='BOTTOM_MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS474386@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins474386@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins474386@capacitors.\cap.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C55 'CAP_CAPC2012X100N_DISCRETE_0.1':
+ ROOM='BOTTOM_MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS869724@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins869724@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins869724@capacitors.\cap.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C6 'CAP_CAPC2012X71N_DISCRETE_3300':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882528@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882528@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882528@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C62 'CAP_P_CAPMP7343X310N_DISCRETE_1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS886590@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins886590@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins886590@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C63 'CAP_P_CAPMP7343X310N_DISCRETE_2':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS886550@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins886550@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins886550@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C64 'CAP_CAPC2012X71N_DISCRETE_2.2 U':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS885381@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins885381@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins885381@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C65 'CAP_P_CAPMP6032X280N_DISCRETE_4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS885713@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins885713@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins885713@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C66 'CAP_P_CAPMP3216X180N_DISCRETE_4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS922885@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins922885@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins922885@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C67 'CAP_P_CAPMP7343X310N_DISCRETE_2':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS884170@CAPACITORS.CAP_P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins884170@capacitors.\cap_p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins884170@capacitors.\cap_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C68 'CAP_CAPC1608X86N_DISCRETE_0.01':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92745@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92745@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92745@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C69 'CAP_CAPC2012X71N_DISCRETE_0.47':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92941@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92941@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92941@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C7 'CAP_CAPC2012X71N_DISCRETE_3300':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882316@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882316@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882316@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C70 'CAP_CAPC2012X71N_DISCRETE_0.47':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92527@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92527@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92527@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C71 'CAP_CAPC2012X71N_DISCRETE_0.47':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92699@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92699@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92699@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C72 'CAP_CAPC2012X71N_DISCRETE_0.01':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92765@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92765@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92765@capacitors.\cap.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C73 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71157@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71157@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71157@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C74 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71221@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71221@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71221@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C75 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71237@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71237@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71237@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C76 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71253@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71253@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71253@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C77 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS100926@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins100926@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins100926@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C78 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS100942@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins100942@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins100942@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C79 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS100958@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins100958@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins100958@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C8 'CAP_CAPC2012X71N_DISCRETE_3300':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882416@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882416@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882416@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C80 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS100974@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins100974@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins100974@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C81 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71173@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71173@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71173@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C82 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71333@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71333@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71333@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C83 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71349@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71349@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71349@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C84 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71365@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71365@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71365@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C85 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71189@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71189@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71189@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C86 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71381@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71381@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71381@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C87 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71397@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71397@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71397@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C88 'CAP_CAPC1005X56N_DISCRETE_2200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS71413@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins71413@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins71413@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C89 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS69190@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins69190@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins69190@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C9 'CAP_CAPC2012X71N_DISCRETE_3300':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882568@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882568@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882568@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C90 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS69503@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins69503@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins69503@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C91 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS69529@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins69529@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins69529@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C92 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS69555@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins69555@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins69555@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C93 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70245@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70245@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70245@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C94 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70097@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70097@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70097@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C95 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70081@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70081@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70081@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C96 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70261@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70261@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70261@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C97 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70277@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70277@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70277@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C98 'CAP_CAPC1005X56N_DISCRETE_22 PF':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70293@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70293@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70293@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C99 'CAP_CAPC1005X56N_DISCRETE_220 P':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS70737@CAPACITORS.CAP.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins70737@capacitors.\cap.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins70737@capacitors.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D1 'LED_LEDC2012X120N_DISCRETE_GREE':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS876122@DIODES.LED.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins876122@diodes.\led.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins876122@diodes.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D2 'LED_LEDC2012X120N_DISCRETE_GREE':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874293@DIODES.LED.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874293@diodes.\led.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874293@diodes.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D3 'LED_LEDC2012X120N_DISCRETE_GREE':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS876160@DIODES.LED.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins876160@diodes.\led.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins876160@diodes.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D4 'LED_LEDC2012X120N_DISCRETE_GREE':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874081@DIODES.LED.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874081@diodes.\led.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874081@diodes.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D5 'DIODE_A_NC_C_SOT95P230X109-3N_D':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92833@DIODES.DIODE_A_NC_C.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92833@diodes.\diode_a_nc_c.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92833@diodes.\diode_a_nc_c.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J1 'BNC-4_SMB_90_IO_901-9894-RFX_PS':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS885100@LOCAL.BNC-4.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins885100@local.\bnc-4.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins885100@local.\bnc-4.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J2 'BNC-4_SMB_90_IO_901-9894-RFX_PS':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS885124@LOCAL.BNC-4.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins885124@local.\bnc-4.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins885124@local.\bnc-4.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J3 'BNC-4_SMB_90_IO_901-9894-RFX_PS':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS885732@LOCAL.BNC-4.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins885732@local.\bnc-4.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins885732@local.\bnc-4.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J5 'USB3A_FEMALE_USB3A_FEMALE_IO_AU':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358729@CONNECTORS.USB3A_FEMALE.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358729@connectors.\usb3a_female.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358729@connectors.\usb3a_female.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J6 'CONN_C1367550_6_C-1367550-6_IO_':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1600678@CONNECTORS.CONN_C1367550_6A.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1600678@connectors.\conn_c1367550_6a.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1600678@connectors.\conn_c1367550_6a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1600952@CONNECTORS.CONN_C1367550_6B.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1600952@connectors.\conn_c1367550_6b.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1600952@connectors.\conn_c1367550_6b.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+SECTION_NUMBER 3
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1601065@CONNECTORS.CONN_C1367550_6C.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1601065@connectors.\conn_c1367550_6c.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1601065@connectors.\conn_c1367550_6c.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='C';
+
+SECTION_NUMBER 4
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1601178@CONNECTORS.CONN_C1367550_6D.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1601178@connectors.\conn_c1367550_6d.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1601178@connectors.\conn_c1367550_6d.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='D';
+
+SECTION_NUMBER 5
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1601402@CONNECTORS.CONN_C1367550_6E.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1601402@connectors.\conn_c1367550_6e.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1601402@connectors.\conn_c1367550_6e.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='E';
+
+SECTION_NUMBER 6
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1601515@CONNECTORS.CONN_C1367550_6F.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1601515@connectors.\conn_c1367550_6f.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1601515@connectors.\conn_c1367550_6f.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='F';
+
+PART_NAME
+ J7 'CONN_DIMM_200_C_1_1473005_1_J1_':
+ ROOM='BOTTOM_MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS969112@CONNECTORS.CONN_DIMM_200A.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins969112@connectors.\conn_dimm_200a.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins969112@connectors.\conn_dimm_200a.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS969442@CONNECTORS.CONN_DIMM_200B.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins969442@connectors.\conn_dimm_200b.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins969442@connectors.\conn_dimm_200b.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+SECTION_NUMBER 3
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS969660@CONNECTORS.CONN_DIMM_200C.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins969660@connectors.\conn_dimm_200c.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins969660@connectors.\conn_dimm_200c.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='C';
+
+SECTION_NUMBER 4
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS969878@CONNECTORS.CONN_DIMM_200D.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins969878@connectors.\conn_dimm_200d.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins969878@connectors.\conn_dimm_200d.normal\(chips)',
+ ROOM='BOTTOM_MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='D';
+
+PART_NAME
+ L1 'IND_INDC2520X220N_DISCRETE_47 N':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS910495@INDUCTORS.IND.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins910495@inductors.\ind.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins910495@inductors.\ind.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L10 'IND_IND_CENTRAL_1008_DISCRETE_5':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49311@INDUCTORS.IND.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49311@inductors.\ind.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49311@inductors.\ind.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L2 'IND_INDC2520X220N_DISCRETE_47 N':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS910513@INDUCTORS.IND.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins910513@inductors.\ind.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins910513@inductors.\ind.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L3 'INDUCTOR3_TOROID01_3_DISCRETE_I':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS886243@LOCAL.INDUCTOR3.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins886243@local.\inductor3.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins886243@local.\inductor3.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L4 'INDUCTOR3_TOROID01_3_DISCRETE_I':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS886329@LOCAL.INDUCTOR3.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins886329@local.\inductor3.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins886329@local.\inductor3.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L5 'IND_INDC2520X220N_DISCRETE_1.0':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299492@INDUCTORS.IND.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299492@inductors.\ind.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299492@inductors.\ind.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L6 'IND_INDC1005X60N_DISCRETE_6.8 N':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299178@INDUCTORS.IND.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299178@inductors.\ind.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299178@inductors.\ind.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L7 'IND_IND_CENTRAL_1008_DISCRETE_5':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49405@INDUCTORS.IND.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49405@inductors.\ind.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49405@inductors.\ind.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L8 'IND_IND_CENTRAL_1008_DISCRETE_5':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49311@INDUCTORS.IND.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49311@inductors.\ind.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49311@inductors.\ind.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L9 'IND_IND_CENTRAL_1008_DISCRETE_5':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49405@INDUCTORS.IND.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49405@inductors.\ind.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49405@inductors.\ind.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ P1 'HDR_2X7_M_SAMTEC_TST-107-XX-X-D':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS945986@CONNECTORS.HDR_2X7_M.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins945986@connectors.\hdr_2x7_m.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins945986@connectors.\hdr_2x7_m.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q1 'BJT_NPN_BEC_SOT95P230X109-3N_DI':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311421@TRANSISTORS.BJT_NPN_BEC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311421@transistors.\bjt_npn_bec.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311421@transistors.\bjt_npn_bec.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q2 'MOSFET_I_EN_GSD_TO230P950X240-3':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311505@TRANSISTORS.MOSFET_I_EN_GSD.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311505@transistors.\mosfet_i_en_gsd.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311505@transistors.\mosfet_i_en_gsd.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q3 'BJT_NPN_BEC_TO92_DISCRETE_2N386':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299198@TRANSISTORS.BJT_NPN_BEC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299198@transistors.\bjt_npn_bec.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299198@transistors.\bjt_npn_bec.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q4 'BJT_NPN_BEC_SOT95P240X114-3N_DI':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874337@TRANSISTORS.BJT_NPN_BEC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874337@transistors.\bjt_npn_bec.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874337@transistors.\bjt_npn_bec.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q5 'BJT_NPN_BEC_SOT95P240X114-3N_DI':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874313@TRANSISTORS.BJT_NPN_BEC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874313@transistors.\bjt_npn_bec.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874313@transistors.\bjt_npn_bec.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q6 'BJT_NPN_BEC_SOT95P240X114-3N_DI':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS873973@TRANSISTORS.BJT_NPN_BEC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins873973@transistors.\bjt_npn_bec.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins873973@transistors.\bjt_npn_bec.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q7 'BJT_NPN_BEC_SOT95P240X114-3N_DI':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS873997@TRANSISTORS.BJT_NPN_BEC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins873997@transistors.\bjt_npn_bec.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins873997@transistors.\bjt_npn_bec.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q8 'BJT_PNP_BCE_SOT95P230X109-3N_DI':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92785@TRANSISTORS.BJT_PNP_BCE.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92785@transistors.\bjt_pnp_bce.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92785@transistors.\bjt_pnp_bce.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q9 'BJT_NPN_BEC_TO230P950X240-3N_DI':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92675@TRANSISTORS.BJT_NPN_BEC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92675@transistors.\bjt_npn_bec.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92675@transistors.\bjt_npn_bec.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R1 'RES_RESC2012X60N_DISCRETE_47.5':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882548@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882548@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882548@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R10 'RES_RESC1608X50N_DISCRETE_10 KO':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311089@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311089@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311089@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R11 'RES_RESC2012X70N_DISCRETE_97.6':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310929@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310929@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310929@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R12 'RES_RESC1608X55N_DISCRETE_2.0 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310741@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310741@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310741@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R13 'RES_RESC1608X50N_DISCRETE_10 KO':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311069@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311069@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311069@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R14 'RES_RESC2012X50N_DISCRETE_3.9 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311485@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311485@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311485@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R15 'RES_RESC1608X55N_DISCRETE_2.0 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311225@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311225@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311225@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R16 'RES_RESC2012X60N_DISCRETE_220 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310849@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310849@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310849@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R17 'RES_RESC2012X60N_DISCRETE_180 O':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299450@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299450@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299450@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R18 'RES_RESC2012X60N_DISCRETE_56 OH':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299534@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299534@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299534@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R19 'RES_RESC2012X70N_DISCRETE_97.6':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299472@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299472@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299472@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2 'RES_RESC2012X60N_DISCRETE_47.5':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882356@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882356@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882356@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2000 'RES_RESC1608X55N_DISCRETE_27.4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358827@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358827@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358827@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2001 'RES_RESC1608X55N_DISCRETE_27.4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358843@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358843@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358843@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2002 'RES_RESC1608X55N_DISCRETE_27.4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358795@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358795@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358795@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2003 'RES_RESC1608X55N_DISCRETE_27.4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358811@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358811@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358811@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2004 'RES_RESC1608X55N_DISCRETE_27.4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358763@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358763@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358763@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2005 'RES_RESC1608X55N_DISCRETE_27.4':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1358779@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1358779@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1358779@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2006 'RES_RESC1608X55N_DISCRETE_10_EM':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1406399@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1406399@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1406399@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2007 'RES_RESC1608X55N_DISCRETE_2.0 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1406921@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1406921@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1406921@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2008 'RES_RESC2012X60N_DISCRETE_100 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1438431@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1438431@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1438431@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2009 'RES_RESC1608X55N_DISCRETE_2.0 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1406157@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1406157@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1406157@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2010 'RES_RESC2012X60N_DISCRETE_10 KO':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1472363@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1472363@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1472363@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2011 'RES_RESC2012X60N_DISCRETE_10 KO':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1472385@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1472385@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1472385@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2012 'RES_RESC2012X60N_DISCRETE_100 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1472401@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1472401@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1472401@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R21 'RES_RESC1608X55N_DISCRETE_2.0 K':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299386@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299386@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299386@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R23 'RES_RESC2012X60N_DISCRETE_470 O':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299512@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299512@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299512@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R24 'RES_RESC2012X60N_DISCRETE_56 OH':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299428@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299428@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299428@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R25 'RES_RESC2012X60N_DISCRETE_56 OH':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS299344@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins299344@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins299344@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R26 'RES_RESC2012X60N_DISCRETE_49.9':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1127761@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1127761@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1127761@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R27 'RES_RESC2012X60N_DISCRETE_470 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874061@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874061@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874061@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R28 'RES_RESC2012X60N_DISCRETE_470 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874233@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874233@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874233@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R29 'RES_RESC2012X60N_DISCRETE_470 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874021@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874021@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874021@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R3 'RES_RESC2012X60N_DISCRETE_47.5':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882864@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882864@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882864@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R30 'RES_RESC2012X60N_DISCRETE_470 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874101@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874101@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874101@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R31 'RES_RESC2012X60N_DISCRETE_150 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874041@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874041@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874041@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R32 'RES_RESC2012X60N_DISCRETE_150 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS883698@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins883698@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins883698@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R33 'RES_RESC2012X60N_DISCRETE_150 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874213@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874213@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874213@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R34 'RES_RESC2012X60N_DISCRETE_150 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874253@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874253@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874253@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R39 'RES_RESC2012X60N_DISCRETE_105 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS886610@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins886610@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins886610@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R4 'RES_RESC2012X60N_DISCRETE_47.5':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882376@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882376@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882376@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R40 'RES_RESC2012X60N_DISCRETE_953 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS922237@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins922237@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins922237@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R41 'RES_RESC1608X55N_DISCRETE_61.9':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS885401@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins885401@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins885401@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R42 'RES_RESC1608X55N_DISCRETE_226 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS885733@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins885733@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins885733@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R43 'RES_RESC2012X60N_DISCRETE_118 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS884190@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins884190@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins884190@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R44 'RES_RESC1608X55N_DISCRETE_154 K':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS883672@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins883672@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins883672@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R45 'RES_RESC2012X60N_DISCRETE_470 O':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92811@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92811@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92811@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R46 'RES_RESC1608X50N_DISCRETE_3.0 K':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92653@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92653@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92653@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R47 'RES_RESC3225X70N_DISCRETE_270 O':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92631@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92631@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92631@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R48 'RES_RESC0603X26N_DISCRETE_24 KO':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92919@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92919@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92919@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R49 'RES_RESC2012X60N_DISCRETE_470 O':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92853@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92853@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92853@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R5 'RES_RESC2012X60N_DISCRETE_47.5':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882804@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882804@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882804@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R50 'RES_RESC0603X30N_DISCRETE_49.9':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92875@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92875@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92875@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R51 'RES_RESC2012X60N_DISCRETE_6.8 K':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92721@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92721@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92721@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R52 'RES_RESC1608X55N_DISCRETE_3.3 O':
+ ROOM='RF-AMP';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):DUT@DEMOJ.RF AMP(SCH_1):INS92897@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):dut@demoj.\rf amp\(sch_1):ins92897@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_dut@demoj.\rf amp\(sch_1):page1_ins92897@resistors.\res.normal\(chips)',
+ ROOM='RF-AMP',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R53 'RES_RESC2012X50N_DISCRETE_97.6':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49333@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49333@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49333@resistors.\res.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R54 'RES_RESC2012X70N_DISCRETE_97.6':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49291@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49291@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49291@resistors.\res.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R55 'RES_RESC2012X50N_DISCRETE_97.6':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49333@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49333@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49333@resistors.\res.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R56 'RES_RESC2012X70N_DISCRETE_97.6':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49291@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49291@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49291@resistors.\res.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R6 'RES_RESC2012X60N_DISCRETE_47.5':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882824@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882824@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882824@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R7 'RES_RESC2012X60N_DISCRETE_47.5':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882336@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882336@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882336@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R8 'RES_RESC2012X60N_DISCRETE_47.5':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882844@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882844@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882844@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R9 'RES_RESC2012X60N_DISCRETE_330 O':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311365@RESISTORS.RES.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311365@resistors.\res.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311365@resistors.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ RN1 'RES_NET_8_RESNET_8_DISCRETE_100':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS1491557@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins1491557@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins1491557@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):INS1491573@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins1491573@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins1491573@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+SECTION_NUMBER 3
+ '@DEMOJ.ROOT(SCH_1):INS1491589@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins1491589@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins1491589@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='C';
+
+SECTION_NUMBER 4
+ '@DEMOJ.ROOT(SCH_1):INS1491605@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins1491605@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins1491605@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='D';
+
+PART_NAME
+ RN2 'RES_NET_8_RESNET_8_DISCRETE_100':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1226408@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1226408@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1226408@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1226424@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1226424@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1226424@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+SECTION_NUMBER 3
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1226392@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1226392@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1226392@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='C';
+
+SECTION_NUMBER 4
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1226376@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1226376@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1226376@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='D';
+
+PART_NAME
+ RN3 'RES_NET_8_RESNET_8_DISCRETE_100':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1226488@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1226488@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1226488@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1226472@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1226472@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1226472@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+SECTION_NUMBER 3
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1226456@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1226456@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1226456@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='C';
+
+SECTION_NUMBER 4
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1226440@LOCAL.RES_NET_8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1226440@local.\res_net_8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1226440@local.\res_net_8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='D';
+
+PART_NAME
+ SW1 'SW DIP-4/SM_SOIC254P1077X800-8M':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):INS885636@LOCAL.SW DIP-4/SM.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):ins885636@local.\sw dip-4/sm.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_ins885636@local.\sw dip-4/sm.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ SW2 'SW_SPST_13_24_SW_EVQ-PH_NO_GND_':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1437900@SWITCHES.SW_SPST_13_24.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1437900@switches.\sw_spst_13_24.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1437900@switches.\sw_spst_13_24.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U1 'DEMOG_INTERFACE_FT256_IC_(S1+S2':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS1477112@LOCAL.DEMOG_INTERFACEA.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins1477112@local.\demog_interfacea.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins1477112@local.\demog_interfacea.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS1469557@LOCAL.DEMOG_INTERFACEB.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins1469557@local.\demog_interfaceb.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins1469557@local.\demog_interfaceb.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+SECTION_NUMBER 3
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS1477237@LOCAL.DEMOG_INTERFACEC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins1477237@local.\demog_interfacec.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins1477237@local.\demog_interfacec.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='C';
+
+SECTION_NUMBER 4
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS1472763@LOCAL.DEMOG_INTERFACED.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins1472763@local.\demog_interfaced.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins1472763@local.\demog_interfaced.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='D';
+
+SECTION_NUMBER 5
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS1468771@LOCAL.DEMOG_INTERFACEE.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins1468771@local.\demog_interfacee.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins1468771@local.\demog_interfacee.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='E';
+
+SECTION_NUMBER 6
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA1@DEMOJ.INTERFACE FPGA(SCH_1):INS1459073@LOCAL.DEMOG_INTERFACEF.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga1@demoj.\interface fpga\(sch_1):ins1459073@local.\demog_interfacef.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga1@demoj.\interface fpga\(sch_1):page1_ins1459073@local.\demog_interfacef.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='F';
+
+PART_NAME
+ U10 'XCF01SVOG20_XCF01SVOG20_IC_XCF0':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS25664@LOCAL.XCF01SVOG20.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins25664@local.\xcf01svog20.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins25664@local.\xcf01svog20.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U11 'XCF01SVOG20_XCF01SVOG20_IC_XC_1':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS883587@LOCAL.XCF01SVOG20.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins883587@local.\xcf01svog20.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins883587@local.\xcf01svog20.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U12 'MT47H64M16_MT47H128M_IC_(S1+S2)':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS8699@LOCAL.MT47H64M16-1.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins8699@local.\mt47h64m16-1.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins8699@local.\mt47h64m16-1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='-1';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS17557@LOCAL.MT47H64M16-2.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins17557@local.\mt47h64m16-2.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins17557@local.\mt47h64m16-2.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='-2';
+
+PART_NAME
+ U13 'MT47H64M16_MT47H128M_IC_(S1+S2)':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS8805@LOCAL.MT47H64M16-1.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins8805@local.\mt47h64m16-1.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins8805@local.\mt47h64m16-1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='-1';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS17643@LOCAL.MT47H64M16-2.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins17643@local.\mt47h64m16-2.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins17643@local.\mt47h64m16-2.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='-2';
+
+PART_NAME
+ U2 'DEMOG_COPROC_FT256_IC_(S1+S2+S3':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS1404955@LOCAL.DEMOG_COPROCA.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins1404955@local.\demog_coproca.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins1404955@local.\demog_coproca.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS1401259@LOCAL.DEMOG_COPROCB.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins1401259@local.\demog_coprocb.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins1401259@local.\demog_coprocb.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+SECTION_NUMBER 3
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS1412846@LOCAL.DEMOG_COPROCC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins1412846@local.\demog_coprocc.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins1412846@local.\demog_coprocc.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='C';
+
+SECTION_NUMBER 4
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS1405348@LOCAL.DEMOG_COPROCD.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins1405348@local.\demog_coprocd.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins1405348@local.\demog_coprocd.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='D';
+
+SECTION_NUMBER 5
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS1400564@LOCAL.DEMOG_COPROCE.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins1400564@local.\demog_coproce.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins1400564@local.\demog_coproce.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='E';
+
+SECTION_NUMBER 6
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):FPGA2@DEMOJ.CO-PROC FPGA(SCH_1):INS1399474@LOCAL.DEMOG_COPROCF.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):fpga2@demoj.\co-proc fpga\(sch_1):ins1399474@local.\demog_coprocf.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_fpga2@demoj.\co-proc fpga\(sch_1):page1_ins1399474@local.\demog_coprocf.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='F';
+
+PART_NAME
+ U22 'FF_D_8X_OE3S_20P_SOIC127P1032X2':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):LED0@DEMOJ.LED(SCH_1):INS874121@INTEGRATED_CIRCUITS.FF_D_8X_OE3S_20P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):led0@demoj.led(sch_1):ins874121@integrated_circuits.\ff_d_8x_oe3s_20p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_led0@demoj.led(sch_1):page1_ins874121@integrated_circuits.\ff_d_8x_oe3s_20p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U29 'LTM8025_LTUMODULE7X11_IC_LTM802':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS886258@LOCAL.LTM8025.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins886258@local.\ltm8025.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins886258@local.\ltm8025.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U3 'LM78L05_SO8_SOIC127P600X175-8N_':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311549@INTEGRATED_CIRCUITS.LM78L05_SO8.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311549@integrated_circuits.\lm78l05_so8.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311549@integrated_circuits.\lm78l05_so8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U30 'LTM8025_LTUMODULE7X11_IC_LTM802':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS885421@LOCAL.LTM8025.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins885421@local.\ltm8025.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins885421@local.\ltm8025.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U31 'LTM8025_LTUMODULE7X11_IC_LTM802':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):POWER0@DEMOJ.REGULATORS(SCH_1):INS883878@LOCAL.LTM8025.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):power0@demoj.regulators(sch_1):ins883878@local.\ltm8025.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_power0@demoj.regulators(sch_1):page1_ins883878@local.\ltm8025.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U32 'TLC5602A_SOIC127P1028X265-20N_I':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49469@LOCAL.TLC5602A.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49469@local.\tlc5602a.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49469@local.\tlc5602a.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U33 'DG419A_SOG0508WG244L225_IC_DG41':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49425@LOCAL.DG419A.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49425@local.\dg419a.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49425@local.\dg419a.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U34 'TLE2037A_TO99_IC_TLE2037AQDRG4Q':
+ ROOM='CHAN1';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP0@DEMOJ.OUTPUTS(SCH_1):INS49373@LOCAL.TLE2037A.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp0@demoj.outputs(sch_1):ins49373@local.\tle2037a.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp0@demoj.outputs(sch_1):page1_ins49373@local.\tle2037a.normal\(chips)',
+ ROOM='CHAN1',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U35 'TLC5602A_SOIC127P1028X265-20N_I':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49469@LOCAL.TLC5602A.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49469@local.\tlc5602a.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49469@local.\tlc5602a.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U36 'DG419A_SOG0508WG244L225_IC_DG41':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49425@LOCAL.DG419A.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49425@local.\dg419a.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49425@local.\dg419a.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U37 'TLE2037A_TO99_IC_TLE2037AQDRG4Q':
+ ROOM='CHAN2';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):DAAMP1@DEMOJ.OUTPUTS(SCH_1):INS49373@LOCAL.TLE2037A.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):daamp1@demoj.outputs(sch_1):ins49373@local.\tle2037a.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_daamp1@demoj.outputs(sch_1):page1_ins49373@local.\tle2037a.normal\(chips)',
+ ROOM='CHAN2',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U38 'FF_D_8X_OE3S_20P_SOIC127P1032X2':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882436@INTEGRATED_CIRCUITS.FF_D_8X_OE3S_20P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882436@integrated_circuits.\ff_d_8x_oe3s_20p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882436@integrated_circuits.\ff_d_8x_oe3s_20p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U39 'FF_D_8X_OE3S_20P_SOIC127P1032X2':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):OUTPUTS0@DEMOJ.DATA SCHEMATIC(SCH_1):INS882640@INTEGRATED_CIRCUITS.FF_D_8X_OE3S_20P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):outputs0@demoj.\data schematic\(sch_1):ins882640@integrated_circuits.\ff_d_8x_oe3s_20p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_outputs0@demoj.\data schematic\(sch_1):page1_ins882640@integrated_circuits.\ff_d_8x_oe3s_20p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U4 'AD9850_SOP65P780X200-28N_IC_AD9':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311133@LOCAL.AD9850A.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311133@local.\ad9850a.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311133@local.\ad9850a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS310781@LOCAL.AD9850B.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins310781@local.\ad9850b.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins310781@local.\ad9850b.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+PART_NAME
+ U40 'UPD431000AGW-B15_SOJ127P866X375':
+ ROOM='MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS771029@LOCAL.UPD431000AGW-B15.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins771029@local.\upd431000agw-b15.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins771029@local.\upd431000agw-b15.normal\(chips)',
+ ROOM='MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U41 'UPD431000AGW-B15_SOJ127P866X375':
+ ROOM='MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS772337@LOCAL.UPD431000AGW-B15.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins772337@local.\upd431000agw-b15.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins772337@local.\upd431000agw-b15.normal\(chips)',
+ ROOM='MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U42 'UPD431000AGW-B15_SOJ127P866X375':
+ ROOM='MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS773320@LOCAL.UPD431000AGW-B15.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins773320@local.\upd431000agw-b15.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins773320@local.\upd431000agw-b15.normal\(chips)',
+ ROOM='MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U43 'UPD431000AGW-B15_SOJ127P866X375':
+ ROOM='MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS773990@LOCAL.UPD431000AGW-B15.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins773990@local.\upd431000agw-b15.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins773990@local.\upd431000agw-b15.normal\(chips)',
+ ROOM='MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U44 'UPD431000AGW-B15_SOJ127P866X375':
+ ROOM='MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS771607@LOCAL.UPD431000AGW-B15.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins771607@local.\upd431000agw-b15.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins771607@local.\upd431000agw-b15.normal\(chips)',
+ ROOM='MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U45 'UPD431000AGW-B15_SOJ127P866X375':
+ ROOM='MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS772078@LOCAL.UPD431000AGW-B15.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins772078@local.\upd431000agw-b15.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins772078@local.\upd431000agw-b15.normal\(chips)',
+ ROOM='MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U46 'UPD431000AGW-B15_SOJ127P866X375':
+ ROOM='MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS772941@LOCAL.UPD431000AGW-B15.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins772941@local.\upd431000agw-b15.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins772941@local.\upd431000agw-b15.normal\(chips)',
+ ROOM='MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U47 'UPD431000AGW-B15_SOJ127P866X375':
+ ROOM='MEM';
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):I_0@DEMOJ.HSRAM(SCH_1):INS773761@LOCAL.UPD431000AGW-B15.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):i_0@demoj.hsram(sch_1):ins773761@local.\upd431000agw-b15.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_i_0@demoj.hsram(sch_1):page1_ins773761@local.\upd431000agw-b15.normal\(chips)',
+ ROOM='MEM',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U48 '74-245_20P_SOIC127P1028X265-20N':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1479018@INTEGRATED_CIRCUITS.74-245_20P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1479018@integrated_circuits.\74-245_20p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1479018@integrated_circuits.\74-245_20p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U49 'MAX6711_SOT343N_IC_MAX6711S_EMA':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1437754@INTEGRATED_CIRCUITS.MAX6711.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1437754@integrated_circuits.\max6711.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1437754@integrated_circuits.\max6711.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U5 'VREG_TGND_TO254P1410X464-4N_IC_':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311593@LOCAL.VREG_TGND.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311593@local.\vreg_tgnd.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311593@local.\vreg_tgnd.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U50 'NBC12429_QFN50P500X500X100-33N_':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1405979@INTEGRATED_CIRCUITS.NBC12429.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1405979@integrated_circuits.\nbc12429.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1405979@integrated_circuits.\nbc12429.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U51 'TPS51200_DRC10_2P4X1P65_IC_TPS5':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1471168@LOCAL.TPS51200.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1471168@local.\tps51200.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1471168@local.\tps51200.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U6 'FCT16245_SOP50P810X110-48N_IC_7':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1243672@LOCAL.FCT16245.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1243672@local.\fct16245.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1243672@local.\fct16245.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1243781@LOCAL.FCT16245.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1243781@local.\fct16245.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1243781@local.\fct16245.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+PART_NAME
+ U7 '74-245_20P_SOIC127P1028X265-20N':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1129802@INTEGRATED_CIRCUITS.74-245_20P.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1129802@integrated_circuits.\74-245_20p.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1129802@integrated_circuits.\74-245_20p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U8 'FCT16245_SOP50P810X110-48N_IC_7':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1245050@LOCAL.FCT16245.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1245050@local.\fct16245.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1245050@local.\fct16245.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1244941@LOCAL.FCT16245.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1244941@local.\fct16245.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1244941@local.\fct16245.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+PART_NAME
+ U9 'FCT16245_SOP50P810X110-48N_IC_7':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1246928@LOCAL.FCT16245.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1246928@local.\fct16245.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1246928@local.\fct16245.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@DEMOJ.ROOT(SCH_1):USER_DESIGN@DEMOJ.DGUIDE(SCH_1):INS1246656@LOCAL.FCT16245.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):user_design@demoj.dguide(sch_1):ins1246656@local.\fct16245.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_user_design@demoj.dguide(sch_1):page1_ins1246656@local.\fct16245.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+PART_NAME
+ XTAL1 'OSC_SEL383_OSCSC254P500X700X200':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):DDS@DEMOJ.DDS(SCH_1):INS311385@LOCAL.OSC_SEL383.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):dds@demoj.dds(sch_1):ins311385@local.\osc_sel383.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_dds@demoj.dds(sch_1):page1_ins311385@local.\osc_sel383.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Y1 'OSC4_24NC_OSCCC350X600X120N_DIS':;
+
+SECTION_NUMBER 1
+ '@DEMOJ.ROOT(SCH_1):BLK1@DEMOJ.FPGA(SCH_1):INS1406128@XTALS.OSC4_24NC.NORMAL(CHIPS)':
+ C_PATH='@demoj.root(sch_1):blk1@demoj.fpga(sch_1):ins1406128@xtals.\osc4_24nc.normal\(chips)',
+ P_PATH='@demoj.root(sch_1):page1_blk1@demoj.fpga(sch_1):page1_ins1406128@xtals.\osc4_24nc.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.
