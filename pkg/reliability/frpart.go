@@ -757,8 +757,8 @@ func (b *EBOMFrPart) GetFactorC2Imported() (string, error) {
 		fp_map_key = "unsealed" + "-" + partFp
 	}
 
-	//log.Infof("C2/pins: %d", pins)
-	pinsAvailabe := pins
+	log.Infof("C2/pins: %d", pins)
+	pinsAvailabe := 0
 	for k, _ := range tableData {
 		valInt, _ := strconv.Atoi(k)
 		if pins >= valInt && pinsAvailabe < valInt {
@@ -767,7 +767,7 @@ func (b *EBOMFrPart) GetFactorC2Imported() (string, error) {
 		}
 	}
 	pinsAvailabeStr := strconv.Itoa(pinsAvailabe)
-	//log.Infof("C2/pinsAvailabe: %s", pinsAvailabeStr)
+	log.Infof("C2/pinsAvailabe: %s", pinsAvailabeStr)
 
 	reqValue, ok := tableData[pinsAvailabeStr].([]string)
 	if !ok {

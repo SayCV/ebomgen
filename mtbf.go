@@ -87,15 +87,42 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 		voltageStress := config.FrDegrade
 		powerStress := config.FrDegrade
 
+		operatingTempInt, _ := strconv.Atoi(operatingTemp)
+		currentStressFloat, _ := strconv.ParseFloat(currentStress, 64)
+
 		if strings.HasPrefix(cpart.Desc, "Capacitor") {
 			frType = "CAP-Ceramic-1"
 			if strings.HasPrefix(cpart.Desc, "CapacitorTan") {
 				frType = "CAP-TAN"
 			}
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
+			if currentStressFloat>0.7 {
+				currentStress="0.7"
+				voltageStress="0.7"
+				powerStress="0.7"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Resistor") {
 			frType = "RES-Film-Carbon"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
+			if currentStressFloat>0.7 {
+				currentStress="0.7"
+				voltageStress="0.7"
+				powerStress="0.7"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Inductor") {
 			frType = "IND"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
+			if currentStressFloat>0.7 {
+				currentStress="0.7"
+				voltageStress="0.7"
+				powerStress="0.7"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Fuse") {
 			frType = "RES-Wirewound-Power"
 		} else if strings.HasPrefix(cpart.Desc, "LED") {
@@ -117,18 +144,44 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 			}
 		} else if strings.HasPrefix(cpart.Desc, "Crystal") {
 			frType = "XTAL"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
+			if currentStressFloat>0.7 {
+				currentStress="0.7"
+				voltageStress="0.7"
+				powerStress="0.7"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Oscillator") {
 			frType = "OSC"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "ConnRJ") {
 			frType = "CONN-PCB"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "ConnUSB") {
 			frType = "CONN-PCB"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Connector") {
 			frType = "CONN-PCB"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Switch") {
 			frType = "Switch"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "XFRM") {
 			frType = "XFMR-LF"
+			if operatingTempInt>60 {
+				operatingTemp="60"
+			}
 		} else if strings.HasPrefix(cpart.Desc, "IC") {
 			frType = "DIC-MOS"
 			pins, _ := utils.GetPinsFromFp(cpart.Desc, cpart.Footprint)
@@ -163,10 +216,18 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 			if err != nil {
 				log.Errorf("Error: %v", err)
 			}
+			if strings.HasPrefix(cpart.Desc, "CapacitorArray") {
+				valfloat, _ := strconv.ParseFloat(cpart.FrUnit, 64)
+				cpart.FrUnit = strconv.FormatFloat(valfloat*4.0, 'f', -1, 64)
+			}
 		} else if strings.HasPrefix(cpart.Desc, "Resistor") {
 			cpart.FrUnit, err = cpart.FrCalcRes()
 			if err != nil {
 				log.Errorf("Error: %v", err)
+			}
+			if strings.HasPrefix(cpart.Desc, "ResistorArray") {
+				valfloat, _ := strconv.ParseFloat(cpart.FrUnit, 64)
+				cpart.FrUnit = strconv.FormatFloat(valfloat*4.0, 'f', -1, 64)
 			}
 		} else if strings.HasPrefix(cpart.Desc, "Inductor") {
 			cpart.FrUnit, err = cpart.FrCalcInd()

@@ -322,10 +322,10 @@ func (b *EBOMFrPart) FrCalcIc() (string, error) {
 	pi_p, _ := strconv.ParseFloat(strpi_p, 64)
 	pi_a, _ := strconv.ParseFloat(strpi_a, 64)
 
-	//log.Info(c1, pi_t, pi_p, pi_a, c2, pi_e, pi_q)
+	log.Info(c1, pi_t, pi_p, pi_a, c2, pi_e, pi_q)
 
 	reqValue := (c1*pi_t*pi_p*pi_a + c2*pi_e) * pi_q
-	//log.Info(reqValue)
+	log.Info(reqValue)
 	strreqValue := strconv.FormatFloat(reqValue, 'f', -1, 64)
 	return strreqValue, nil
 }
