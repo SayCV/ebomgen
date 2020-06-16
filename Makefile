@@ -1,4 +1,4 @@
-# Makefile for the `libasciidoc` project
+# Makefile for the `ebomgen` project
 
 # tools
 CUR_DIR=$(shell pwd)
