@@ -7,13 +7,15 @@ import (
 	//"strings"
 	//"regexp"
 	//"strconv"
+	"net/url"
+	
 	"log"
 	"testing"
 )
 
 func TestSzlcscQueryCall(t *testing.T) {
 	hc := NewSzlcscClient()
-	result, err := hc.QueryCall("MAX706TESA")
+	result, err := hc.QueryCall(url.QueryEscape("MAX706TESA"))
 	if err != nil {
 		t.Errorf("Error with query call: " + err.Error())
 	}

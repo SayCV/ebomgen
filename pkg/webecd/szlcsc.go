@@ -108,15 +108,17 @@ func (hc *SzlcscClient) QueryCall(mpn string) (types.EBOMWebPart, error) {
 						_val = utils.DeleteExtraSpace(_val)
 						_val = strings.TrimSpace(_val)
 						//log.Printf(_val)
-						_vallist := strings.Split(_val, " ")
-						priceBreak, _ := strconv.Atoi(strings.Replace(_vallist[0], "+：", "", -1))
-						_valPrice := strings.Replace(_vallist[1], "￥", "", -1)
-						if priceBreak <= 1000 {
-							valPrice = _valPrice
-						} else if valPrice == "" {
-							valPrice = _valPrice
+						if (_val != "") {
+							_vallist := strings.Split(_val, " ")
+							priceBreak, _ := strconv.Atoi(strings.Replace(_vallist[0], "+：", "", -1))
+							_valPrice := strings.Replace(_vallist[1], "￥", "", -1)
+							if priceBreak <= 1000 {
+								valPrice = _valPrice
+							} else if valPrice == "" {
+								valPrice = _valPrice
+							}
+							lastPrice = _valPrice
 						}
-						lastPrice = _valPrice
 					}
 				})
 				if valPrice == "" {
