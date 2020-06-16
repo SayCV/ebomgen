@@ -81,8 +81,8 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			strings.HasPrefix(ipart.Attributes["Description"], "TestPoint") {
 			continue
 		}
-		value := ipart.Value
-		fp := ipart.Footprint
+		value := strings.TrimSpace(ipart.Value)
+		fp := strings.TrimSpace(ipart.Footprint)
 		regVal, err := regexp.Compile("[^a-zA-Z0-9%\\.]+")
 		value = regVal.ReplaceAllString(value, " ")
 		if strings.HasPrefix(ipart.Attributes["Description"], "Conn") {
@@ -90,6 +90,11 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			value = regVal2.ReplaceAllString(value, "${1}.${2}")
 			regVal3, _ := regexp.Compile(`.HDR`)
 			value = regVal3.ReplaceAllString(value, " header ")
+
+			_vallist := strings.Split(value, " ")
+			if len(_vallist) > 2 {
+				value = strings.Join(_vallist[:2], " ")
+			}
 		}
 
 		reg, err := regexp.Compile("[^0-9]+")
@@ -116,7 +121,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			if fvalue == "-1E+00" {
 				querympn = strings.Join([]string{valPref, "0.1uF", digitfp}, " ")
 			}
-		}  else if strings.HasPrefix(ipart.Attributes["Description"], "Resistor") {
+		} else if strings.HasPrefix(ipart.Attributes["Description"], "Resistor") {
 			fvalue := strconv.FormatFloat(utils.GetFValFromEVal(value), 'E', -1, 64)
 			log.Println(fvalue)
 			valPref := ""

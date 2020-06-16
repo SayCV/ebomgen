@@ -4,7 +4,7 @@ import (
 	//"flag"
 	//"fmt"
 	//"strconv"
-	//"strings"
+	"strings"
 	//"regexp"
 	//"strconv"
 
@@ -39,10 +39,17 @@ func TestMouserQueryWDCall(t *testing.T) {
 func TestMisc1(t *testing.T) {
 	result := utils.GetUaHeaders()
 	log.Println(result)
+
+	value := "RN4-0402"
+	_vallist := strings.Split(value, "-")
+	if len(_vallist) > 2 {
+		value = strings.Join(_vallist[:2], "-")
+	}
+	log.Println(value)
 }
 
 func TestMisc2(t *testing.T) {
-	example := "rn4-0402"
+	example := "RN4-0402"
 	example = example[3:]
 	log.Println(example)
 	reg, err := regexp.Compile("[^0-9]+")
