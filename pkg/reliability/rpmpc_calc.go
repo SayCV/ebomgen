@@ -83,6 +83,7 @@ func (b *EBOMFrPart) FrCalcInd() (string, error) {
 	pi_s, _ := strconv.ParseFloat(strpi_s, 64)
 	pi_ch, _ := strconv.ParseFloat(strpi_ch, 64)
 
+	//log.Info(lambda_b, pi_e, pi_q, pi_t, pi_s, pi_ch)
 	reqValue := lambda_b * pi_e * pi_q * pi_t * pi_s * pi_ch
 	strreqValue := strconv.FormatFloat(reqValue, 'f', -1, 64)
 	return strreqValue, nil
