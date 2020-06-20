@@ -15,7 +15,7 @@ func TestExtractEagleComponents(t *testing.T) {
 	exfile := "../../test/eagle/SCH/ex7.sch"
 
 	t.Logf("Testing Eagle netlist Parser")
-	if _, e := ExtractEagleComponents(exfile); e != nil {
+	if _, e := ExtractEagleSchComponents(exfile); e != nil {
 		t.Errorf("ExtractEagleComponents error: %v", e)
 	}
 	t.Logf("ExtractEagleComponents test done.")

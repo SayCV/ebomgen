@@ -15,7 +15,7 @@ func TestExtractKicadComponents(t *testing.T) {
 	exfile := "../../test/kicad/SCH/ex9.sch"
 
 	t.Logf("Testing Kicad netlist Parser")
-	if _, e := ExtractKicadComponents(exfile); e != nil {
+	if _, e := ExtractKicadSchComponents(exfile); e != nil {
 		t.Errorf("ExtractKicadComponents error: %v", e)
 	}
 	t.Logf("ExtractKicadComponents test done.")

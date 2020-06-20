@@ -427,6 +427,11 @@ func ExtractComponents(config configuration.Configuration) error {
 			return err
 		}
 		outputFilenameAppend = "_PCBBOM"
+	} else if strings.ToUpper(config.EDATool) == "ORCADSCH" {
+		bomParts, err = parser.ExtractOrcadSchComponents(config.InputFile)
+		if err != nil {
+			return err
+		}
 	} else {
 		err = errors.Errorf("unknown tools %v", config.EDATool)
 		return err
