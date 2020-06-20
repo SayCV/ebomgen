@@ -30,14 +30,14 @@ ebomgen -t altiumpcb -i test/altium/PCB/ex4.PcbDoc -o test/altium/BOM
 - [x] Process Altium file
 - [ ] Process Eagle file
 - [ ] Process Kicad file
-- [ ] Process OrCAD file
+- [x] Process OrCAD file
 - [x] Process PADSLogic or PADSPCB file
 - [x] Export CSV file
 - [ ] Export Exls file
 - [x] Sorted Components
 - [x] Sorted References
 - [x] Calc BOMCOST based WEB
-- [ ] Calc MTBF based PCP
+- [x] Calc BOMMTBF based PCP
 - [ ] More humane
 - [ ] More smart
 

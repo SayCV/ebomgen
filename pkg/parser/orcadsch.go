@@ -38,7 +38,7 @@ func parseField(field string) ([]string, error) {
         fieldvalue := stripQuotes(field[ind + 1:])
 		return []string{fieldkey, fieldvalue}, nil
 	}
-	log.Errorf("No validate fileld")
+	//log.Errorf("No validate fileld")
 	return []string{""}, errors.Errorf("No validate fileld")
 }
 
@@ -183,8 +183,8 @@ func ParseChip(filename string) (map[string]types.EBOMItem, error) {
 		}
 		ignoreReadLine = false
         if err == nil && strings.HasPrefix(strVal, "primitive") {
-            byteVal, _, err = reader.ReadLine()
-			strVal = strings.TrimSpace(string(byteVal))
+            //byteVal, _, err = reader.ReadLine()
+			//strVal = strings.TrimSpace(string(byteVal))
 			//log.Infof(strVal)
 			vallist := OrcadSplit(strVal)
 			if len(vallist) < 2 {
@@ -207,7 +207,9 @@ func ParseChip(filename string) (map[string]types.EBOMItem, error) {
 					if err == nil {
 						if propLine[0] == "PIN_NUMBER" {
 							pin,_ := parsePin(propLine[1])
-							part.Attributes[propLine[0]] = pin + ","
+							pin = strings.Replace(pin, "(", "", -1)
+							pin = strings.Replace(pin, ")", "", -1)
+							part.Attributes[propLine[0]] = part.Attributes[propLine[0]] + pin + ","
 						} else if propLine[0] == "PART_NAME" {
 							part.Attributes[propLine[0]] = propLine[1]
 						} else if propLine[0] != "PINUSE" {
