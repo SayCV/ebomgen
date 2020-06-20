@@ -90,6 +90,9 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 	// Step2 - process biliteral References
 	if strings.HasPrefix(_capREF, "FB") {
 		propclass["part"] = "FerritBead"
+	} else if strings.HasPrefix(_capREF, "RV") {
+		propclass["part"] = "TVS"
+		propclass["group"] = "Passive"
 	} else if strings.HasPrefix(_capREF, "RP") {
 		propclass["part"] = "ResistorArray"
 		propclass["group"] = "Passive"
@@ -123,6 +126,9 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		//
 	} else if strings.HasPrefix(_capREF, "ESD") {
 		propclass["part"] = "DiodeESD"
+		propclass["group"] = "Passive"
+	} else if strings.HasPrefix(_capREF, "TVS") {
+		propclass["part"] = "TVS"
 		propclass["group"] = "Passive"
 	} else if strings.HasPrefix(_capREF, "LED") {
 		propclass["part"] = "LED"
@@ -192,7 +198,8 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		propclass["part"] = "TestPoint"
 		propclass["group"] = "MOUNT"
 	} else if strings.HasPrefix(_capREF, "D") &&
-		(strings.Contains(_capVAL, "LED") || strings.Contains(_capVAL, "GRN") || strings.Contains(_capVAL, "RED") || strings.Contains(_capVAL, "YLW")) {
+		(strings.Contains(_capVAL, "LED") || strings.Contains(_capVAL, "GRN") || strings.Contains(_capVAL, "RED") || strings.Contains(_capVAL, "YLW") || 
+		strings.Contains(_capVAL, "GREEN") || strings.Contains(_capVAL, "YELLOW") || strings.Contains(propfootprint, "LED")) {
 		propclass["part"] = "LED"
 		propclass["group"] = "Passive"
 	}
@@ -203,10 +210,13 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 	}
 	if propclass["part"] == "Capacitor" && (IsCapTanFp(strings.ToUpper(propfootprint))) {
 		propclass["part"] = "CapacitorTan"
+	} else if propclass["part"] == "Capacitor" && IsCapAecFp(strings.ToUpper(propfootprint), _capVAL) {
+		propclass["part"] = "CapacitorAec"
 	}
 	if propclass["part"] == "Crystal" && strings.Contains(_capVAL, "OSC") {
 		propclass["part"] = "Oscillator"
 	}
+
 	if strings.HasPrefix(_capREF, "X") || strings.HasPrefix(_capREF, "Y") {
 		if propclass["part"] == "Connector" {
 			if strings.Contains(strings.ToUpper(propfootprint), "2016") || strings.Contains(strings.ToUpper(propfootprint), "2520") || strings.Contains(strings.ToUpper(propfootprint), "3225") ||

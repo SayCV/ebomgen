@@ -239,6 +239,8 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 			groupdef.Precedence = CAPSM8_PARTID
 		} else if groupdef.PartType == "CapacitorTan" {
 			groupdef.Precedence = CAPSMPOL_PARTID
+		} else if groupdef.PartType == "CapacitorAec" {
+			groupdef.Precedence = CAPSMPOL_PARTID
 		} else if groupdef.PartType == "Resistor" {
 			groupdef.Precedence = RESGEN_PARTID
 		} else if groupdef.PartType == "ResistorHR" {
@@ -255,7 +257,7 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 			groupdef.Precedence = DIODEGEN_PARTID
 		} else if groupdef.PartType == "DiodeESD" {
 			groupdef.Precedence = DIODEESD_PARTID
-		} else if groupdef.PartType == "TVS" {
+		} else if groupdef.PartType == "TVS" || groupdef.PartType == "MOV" || groupdef.PartType == "GDS" {
 			groupdef.Precedence = TVSGEN_PARTID
 		} else if groupdef.PartType == "LED" {
 			groupdef.Precedence = LEDGEN_PARTID
@@ -304,6 +306,7 @@ func createGroupsList(partgroups []types.EBOMGroup) []types.EBOMGroup {
 	partgroups = AddGroup(partgroups, "C", "Capacitor", "Passive", "f")
 	partgroups = AddGroup(partgroups, "CP", "CapacitorArray", "Passive", "f")
 	partgroups = AddGroup(partgroups, "TC", "CapacitorTan", "Passive", "f")
+	partgroups = AddGroup(partgroups, "C", "CapacitorAec", "Passive", "f")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "R")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "K")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "M")
@@ -319,6 +322,7 @@ func createGroupsList(partgroups []types.EBOMGroup) []types.EBOMGroup {
 	partgroups = AddGroup3(partgroups, "D", "Diode", "Passive")
 	partgroups = AddGroup3(partgroups, "ED", "DiodeESD", "Passive")
 	partgroups = AddGroup3(partgroups, "TVS", "TVS", "Passive")
+	partgroups = AddGroup3(partgroups, "RV", "TVS", "Passive")
 	partgroups = AddGroup3(partgroups, "LED", "LED", "Passive")
 	partgroups = AddGroup3(partgroups, "F", "Fuse", "Passive")
 	// Transistors

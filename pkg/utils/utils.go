@@ -213,3 +213,16 @@ func IsCapTanFp(fp string) bool {
 	}
 	return false
 }
+
+func IsCapAecFp(fp string, value string) bool {
+	fvalue := GetFValFromEVal(value)
+	if fvalue <= 22*1e-06 {
+		return false
+	}
+	reVal, _ := regexp.Compile(`([0-9]+)[X]([0-9]+)`)
+	fpvalue := reVal.FindAll([]byte(fp), -1)
+	if fpvalue != nil {
+		return true
+	}
+	return false
+}

@@ -62,7 +62,7 @@ func TestMisc2(t *testing.T) {
 }
 
 func TestMisc3(t *testing.T) {
-	example := "1*6PIN-2.54mm-CIR-VERT"
+	example := "1X6PIN-2.54mm-CIR-VERT"
 	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
 	if err != nil {
 		log.Fatal(err)
