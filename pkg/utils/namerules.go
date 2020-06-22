@@ -224,6 +224,8 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 				strings.Contains(strings.ToUpper(propfootprint), "6035") || strings.Contains(strings.ToUpper(propfootprint), "7050") ||
 				strings.Contains(strings.ToUpper(propfootprint), "8045") {
 				propclass["part"] = "Crystal"
+			} else if strings.Contains(_capVAL, "32.768") {
+				propclass["part"] = "Crystal"
 			}
 		}
 	}
