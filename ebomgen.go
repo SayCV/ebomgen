@@ -412,6 +412,9 @@ func ExtractComponents(config configuration.Configuration) error {
 	filenameWithSuffix := path.Base(config.InputFile)
 	fileSuffix := path.Ext(filenameWithSuffix)
 	prjname := strings.TrimSuffix(filenameWithSuffix, fileSuffix)
+	if strings.HasPrefix(prjname, "allegro-") {
+		prjname = prjname[8:]
+	}
 	log.Infof("Project Name %s", prjname)
 
 	if strings.ToUpper(config.EDATool) == "PADSLOGIC" {
