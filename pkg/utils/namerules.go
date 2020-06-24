@@ -149,7 +149,7 @@ func NamerulesProcess(part types.EBOMItem, propvalue string, propfootprint strin
 		propclass["part"] = "Connector"
 		propclass["group"] = "Connector"
 	} else if strings.HasPrefix(_capREF, "OSC") {
-		propclass["part"] = "Crystal"
+		propclass["part"] = "Oscillator"
 		propclass["group"] = "Clock"
 	} else if strings.HasPrefix(_capREF, "USB") {
 		propclass["part"] = "ConnUSB"
