@@ -204,7 +204,7 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 			if operatingTempInt>60 {
 				operatingTemp="60"
 			}
-		} else if strings.HasPrefix(cpart.Desc, "IC") {
+		} else if strings.HasPrefix(cpart.Desc, "IC") || strings.HasPrefix(cpart.Desc, "Reg") {
 			frType = "DIC-MOS"
 			pins, _ := utils.GetPinsFromFp(cpart.Desc, cpart.Footprint)
 			if pins >= 100 {
@@ -316,7 +316,7 @@ func CalcMtbfBasedPCPMain(config configuration.Configuration) error {
 			if err != nil {
 				log.Errorf("Error: %v", err)
 			}
-		} else if strings.HasPrefix(cpart.Desc, "IC") {
+		} else if strings.HasPrefix(cpart.Desc, "IC") || strings.HasPrefix(cpart.Desc, "Reg") {
 			cpart.FrUnit, err = cpart.FrCalcIc()
 			if err != nil {
 				log.Errorf("Error: %v", err)

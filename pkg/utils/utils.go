@@ -163,7 +163,7 @@ func GetPinsFromFp(desc string, fp string) (int, error) {
 		pins = 4
 	} else if strings.HasPrefix(desc, "Oscillator") {
 		pins = 4
-	} else if strings.HasPrefix(desc, "IC") || strings.HasPrefix(desc, "XFRM") {
+	} else if strings.HasPrefix(desc, "IC") || strings.HasPrefix(desc, "Reg") || strings.HasPrefix(desc, "XFRM") {
 		_val := 0
 		reVal := regexp.MustCompile("\\d*\\d+")
 		findRet := reVal.FindAll([]byte(fp), -1)
@@ -172,9 +172,7 @@ func GetPinsFromFp(desc string, fp string) (int, error) {
 		}
 		if strings.Contains(fp, "SOT23-6") {
 			_val = 6
-		} else if strings.Contains(fp, "SOT23-5") {
-			_val = 5
-		} else if strings.Contains(fp, "SC70-5") {
+		} else if strings.Contains(fp, "SOT23-5") || strings.Contains(fp, "SC70-5") || strings.Contains(fp, "TO263-5") {
 			_val = 5
 		} else if strings.Contains(fp, "SC70") ||
 			strings.Contains(fp, "SOT23") ||
