@@ -92,6 +92,7 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 	//RESTM8_PARTID := BASE_PARTID + 6*PARTID_FACTOR
 	//RESTMPOL_PARTID := BASE_PARTID + 7*PARTID_FACTOR
 	RESHR1_PARTID := BASE_PARTID + 8*PARTID_FACTOR
+	RESNTC_PARTID := BASE_PARTID + 9*PARTID_FACTOR
 
 	BASE_PARTID = BASE_PARTID + PARTID_NBRS*PARTID_FACTOR
 	INDGEN_PARTID := BASE_PARTID + 0*PARTID_FACTOR
@@ -245,6 +246,8 @@ func SetPrecedence(groupdeflist []types.EBOMGroup) []types.EBOMGroup {
 			groupdef.Precedence = RESGEN_PARTID
 		} else if groupdef.PartType == "ResistorHR" {
 			groupdef.Precedence = RESHR1_PARTID
+		} else if groupdef.PartType == "ResistorNTC" {
+			groupdef.Precedence = RESNTC_PARTID
 		} else if groupdef.PartType == "ResistorArray" {
 			groupdef.Precedence = RESSM8_PARTID
 		} else if groupdef.PartType == "Inductor" {
@@ -305,6 +308,7 @@ func createGroupsList(partgroups []types.EBOMGroup) []types.EBOMGroup {
 	// Passive Parts
 	partgroups = AddGroup(partgroups, "C", "Capacitor", "Passive", "f")
 	partgroups = AddGroup(partgroups, "CP", "CapacitorArray", "Passive", "f")
+	partgroups = AddGroup(partgroups, "CN", "CapacitorArray", "Passive", "f")
 	partgroups = AddGroup(partgroups, "TC", "CapacitorTan", "Passive", "f")
 	partgroups = AddGroup(partgroups, "C", "CapacitorAec", "Passive", "f")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "R")
@@ -312,6 +316,7 @@ func createGroupsList(partgroups []types.EBOMGroup) []types.EBOMGroup {
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "M")
 	partgroups = AddGroup(partgroups, "R", "Resistor", "Passive", "ohm")
 	partgroups = AddGroup3(partgroups, "R", "ResistorHR", "Passive")
+	partgroups = AddGroup3(partgroups, "RT", "ResistorNTC", "Passive")
 	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "R")
 	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "K")
 	partgroups = AddGroup(partgroups, "RP", "ResistorArray", "Passive", "M")
@@ -565,10 +570,28 @@ func (items *RefItems) Less(i, j int) bool {
 	reRef := regexp.MustCompile("[A-Z\\.]+")
 	reVal := regexp.MustCompile("\\d*\\d+")
 
-	refVal1 := string(reRef.FindAll([]byte(strings.ToUpper(a.FieldByName(items.field).String())), -1)[0])
-	numVal1, _ := strconv.Atoi(string(reVal.FindAll([]byte(a.FieldByName(items.field).String()), -1)[0]))
-	refVal2 := string(reRef.FindAll([]byte(strings.ToUpper(b.FieldByName(items.field).String())), -1)[0])
-	numVal2, _ := strconv.Atoi(string(reVal.FindAll([]byte(b.FieldByName(items.field).String()), -1)[0]))
+	refValList1 := reRef.FindAll([]byte(strings.ToUpper(a.FieldByName(items.field).String())), -1)
+	numValList1 := reVal.FindAll([]byte(a.FieldByName(items.field).String()), -1)
+	refValList2 := reRef.FindAll([]byte(strings.ToUpper(b.FieldByName(items.field).String())), -1)
+	numValList2 := reVal.FindAll([]byte(b.FieldByName(items.field).String()), -1)
+	if len(refValList1) < 1 {
+		refValList1 = [][]byte{{'A'}}
+	}
+	if len(numValList1) < 1 {
+		log.Infof("Detect invalidate data %s", a.FieldByName(items.field).String())
+		numValList1 = [][]byte{{'0'}}
+	}
+	if len(refValList2) < 1 {
+		refValList2 = [][]byte{{'A'}}
+	}
+	if len(numValList2) < 1 {
+		numValList2 = [][]byte{{'0'}}
+	}
+
+	refVal1 := string(refValList1[0])
+	numVal1, _ := strconv.Atoi(string(numValList1[0]))
+	refVal2 := string(refValList2[0])
+	numVal2, _ := strconv.Atoi(string(numValList2[0]))
 
 	return refVal1 < refVal2 || (refVal1 == refVal2 && numVal1 < numVal2)
 }
