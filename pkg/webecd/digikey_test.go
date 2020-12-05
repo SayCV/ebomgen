@@ -37,7 +37,7 @@ func TestDigikeyQueryCall(t *testing.T) {
 func TestDigikeyJson(t *testing.T) {
 	data, err := ioutil.ReadFile("dgkdata.json")
 	checkError(err)
-	prodPriceMap := &DigikeyPriceTier{}
+	prodPriceMap := &NgDgkData{}
 	err = json.Unmarshal(data, &prodPriceMap)
 	checkError(err)
 	PageProps := prodPriceMap.Props.PageProps
