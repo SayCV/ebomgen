@@ -675,6 +675,35 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	log.Println(dgkPageType)
 
 	if dgkPageType == "result-page" {
+		div, err := wePageType.FindElement(webdriver.CSS_Selector, "div>div>div>div:nth-child(2)")
+		if err != nil {
+			return partSpecs, err
+		}
+		//log.Println(div.GetAttribute("innerHTML"))
+		section, err := div.FindElement(webdriver.CSS_Selector, "section:nth-child(6)") // 6th elem is <section>
+		if err != nil {
+			return partSpecs, err
+		}
+		//log.Println(section.GetAttribute("innerHTML"))
+		ul, err := section.FindElement(webdriver.CSS_Selector, "div>ul")
+		if err != nil {
+			return partSpecs, err
+		}
+		hrefs, err := ul.FindElements(webdriver.CSS_Selector, "a")
+		if err != nil {
+			return partSpecs, err
+		}
+		href, err := hrefs[0].GetAttribute("href")
+		if err != nil {
+			return partSpecs, err
+		}
+		log.Printf(href)
+
+		err = hrefs[0].Click()
+		if err != nil {
+			return partSpecs, err
+		}
+		time.Sleep(2 * time.Second)
 		// expect to get filter-page
 	}
 	if dgkPageType == "category-page" {
@@ -701,7 +730,7 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	}
 
 	time.Sleep(1 * time.Second)
-	session.ExecuteScriptAsync("window.scrollBy(0, 400)", make([]interface{}, 0))
+	session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
 	wePageType, err = session.FindElement(webdriver.CSS_Selector, "section[data-testid='filter-page']")
 	if err != nil {
 		return partSpecs, errors.Errorf(digikeyHome + " not expect get filter-page")
@@ -736,7 +765,7 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	time.Sleep(2 * time.Second)
 	// expect to get detail-page
 
-	session.ExecuteScriptAsync("window.scrollBy(0, 400)", make([]interface{}, 0))
+	session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
 	wePageType, err = session.FindElement(webdriver.CSS_Selector, "div[data-testid='detail-page']")
 	if err != nil {
 		return partSpecs, errors.Errorf(digikeyHome + " not expect get detail-page")
@@ -744,7 +773,7 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 
 	// https://mholt.github.io/json-to-go/
 	// <script id="__NEXT_DATA__">
-	session.ExecuteScriptAsync("window.scrollBy(0, 400)", make([]interface{}, 0))
+	session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
 	session.Refresh()
 	time.Sleep(2 * time.Second)
 	ngDgkDataXML, err := session.FindElement(webdriver.CSS_Selector, "#__NEXT_DATA__")
