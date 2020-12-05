@@ -60,6 +60,12 @@ func InitChromeBrowser() (*webdriver.ChromeDriver, *webdriver.Session) {
 	}
 	desired := webdriver.Capabilities{"Platform": "Linux"}
 	required := webdriver.Capabilities{}
+	var args []string
+	// args = []string{"--headless", "--no-sandbox"}
+	args = []string{"--disable-notifications"}
+
+	desired["chromeOptions"] = webdriver.Capabilities{"args": args}
+
 	session, err := chromeDriver.NewSession(desired, required)
 	if err != nil {
 		log.Fatal(err)
