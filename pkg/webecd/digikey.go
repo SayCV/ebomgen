@@ -856,6 +856,8 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 		}
 	}
 
+	session.Refresh()
+	time.Sleep(2 * time.Second)
 	// https://mholt.github.io/json-to-go/
 	// <script id="__NEXT_DATA__">
 	prodPrice, err := session.FindElement(webdriver.CSS_Selector, "#__NEXT_DATA__")
@@ -863,9 +865,12 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	if err != nil {
 		return partSpecs, err
 	}
-	prodPriceText, _ := prodPrice.GetAttribute("innerHTML")
+	//prodPriceText, _ := prodPrice.GetAttribute("innerHTML")
+	prodPriceText, _ := prodPrice.GetAttribute("outerHTML")
 	//log.Println(prodPriceText)
 	//log.Println(prodPrice.GetAttribute("outerHTML"))
+	re, _ := regexp.Compile(`<script.*?>(.*)</script>`)
+	prodPriceText = re.ReplaceAllString(prodPriceText, "$1")
 
 	prodPriceMap := &DigikeyPriceTier{}
 	err = json.Unmarshal([]byte(prodPriceText), &prodPriceMap)
@@ -873,11 +878,14 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 		log.Println("Umarshal failed:", err)
 		return partSpecs, err
 	}
+	PageProps := prodPriceMap.Props.PageProps
+	Pricing := PageProps.Envelope.Data.PriceQuantity.Pricing
+	PricingTiers := Pricing[0].PricingTiers
 
 	valPrice := ""
 	lastPrice := ""
-	for _, pricing := range prodPriceMap.Props.PageProps.Envelope.Data.PriceQuantity.Pricing[0].PricingTiers {
-		qty, err := strconv.Atoi(pricing.BreakQty)
+	for _, pricing := range PricingTiers {
+		qty, err := strconv.Atoi(strings.ReplaceAll(pricing.BreakQty, ",", ""))
 		if err != nil {
 			return partSpecs, err
 		}
@@ -885,10 +893,12 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 			valPrice = pricing.UnitPrice
 		} else if valPrice == "" {
 			valPrice = pricing.UnitPrice
+		} else {
+			break
 		}
 		lastPrice = pricing.UnitPrice
+		//log.Println(lastPrice)
 	}
-
 	if valPrice == "" {
 		valPrice = lastPrice
 	}
