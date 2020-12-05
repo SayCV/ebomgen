@@ -594,7 +594,7 @@ func (hc *DigikeyClient) queryCall(mpn string) (types.EBOMWebPart, error) {
 
 func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	var partSpecs types.EBOMWebPart
-	//var detaillink webdriver.WebElement
+	var detaillink webdriver.WebElement
 	//var cookie webdriver.Cookie
 	reDigit := regexp.MustCompile("\\d*\\.?\\d+")
 
@@ -675,21 +675,32 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	log.Println(dgkPageType)
 
 	if dgkPageType == "result-page" {
-		div, err := wePageType.FindElement(webdriver.CSS_Selector, "div>div>div>div:nth-child(2)")
-		if err != nil {
-			return partSpecs, err
-		}
+		//div, err := wePageType.FindElement(webdriver.CSS_Selector, "div>div>div>div:nth-child(2)")
+		//if err != nil {
+		//	return partSpecs, err
+		//}
 		//log.Println(div.GetAttribute("innerHTML"))
-		section, err := div.FindElement(webdriver.CSS_Selector, "section:nth-child(6)") // 6th elem is <section>
-		if err != nil {
-			return partSpecs, err
-		}
+		//section, err := div.FindElement(webdriver.CSS_Selector, "section:nth-child(6)") // 6th elem is <section>
+		//section, err := div.FindElement(webdriver.CSS_Selector, "div:nth-child(3)") // 3th elem is <div>
+		//if err != nil {
+		//	return partSpecs, err
+		//}
 		//log.Println(section.GetAttribute("innerHTML"))
-		ul, err := section.FindElement(webdriver.CSS_Selector, "div>ul")
+
+		tbody, err := wePageType.FindElement(webdriver.CSS_Selector, "tbody.MuiTableBody-root")
 		if err != nil {
 			return partSpecs, err
 		}
-		hrefs, err := ul.FindElements(webdriver.CSS_Selector, "a")
+		trs, err := tbody.FindElements(webdriver.TagName, "tr")
+		if err != nil {
+			return partSpecs, err
+		}
+
+		td, err := trs[0].FindElement(webdriver.CSS_Selector, "td")
+		if err != nil {
+			return partSpecs, err
+		}
+		hrefs, err := td.FindElements(webdriver.CSS_Selector, "a")
 		if err != nil {
 			return partSpecs, err
 		}
@@ -744,21 +755,35 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	if err != nil {
 		return partSpecs, err
 	}
-	tds, err := trs[0].FindElements(webdriver.TagName, "td")
-	if err != nil {
-		return partSpecs, err
-	}
-	hrefs, err := tds[1].FindElements(webdriver.CSS_Selector, "a")
-	if err != nil {
-		return partSpecs, err
-	}
-	href, err := hrefs[2].GetAttribute("href")
-	if err != nil {
-		return partSpecs, err
-	}
-	log.Printf(href)
+	for _, tr := range trs {
+		tds, err := tr.FindElements(webdriver.TagName, "td")
+		if err != nil {
+			return partSpecs, err
+		}
 
-	err = hrefs[2].Click()
+		// Discontinued at Digi-Key
+		_PartStatus, err := tds[10].Text()
+		if err != nil {
+			return partSpecs, err
+		}
+		if strings.HasPrefix(_PartStatus, "Discontinued") {
+			continue
+		}
+
+		hrefs, err := tds[1].FindElements(webdriver.CSS_Selector, "a")
+		if err != nil {
+			return partSpecs, err
+		}
+		href, err := hrefs[1].GetAttribute("href")
+		if err != nil {
+			return partSpecs, err
+		}
+		log.Printf(href)
+		detaillink = hrefs[1]
+		break
+	}
+
+	err = detaillink.Click()
 	if err != nil {
 		return partSpecs, err
 	}
