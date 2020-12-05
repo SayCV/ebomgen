@@ -864,7 +864,7 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 		return partSpecs, err
 	}
 	prodPriceText, _ := prodPrice.GetAttribute("innerHTML")
-	log.Println(prodPriceText)
+	//log.Println(prodPriceText)
 	//log.Println(prodPrice.GetAttribute("outerHTML"))
 
 	prodPriceMap := &DigikeyPriceTier{}
