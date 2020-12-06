@@ -12,15 +12,20 @@ package ebomgen
 
 import (
 	"encoding/csv"
+	"encoding/json"
+	"fmt"
 	"io"
+	"io/ioutil"
 	"net/url"
 	"os"
 	"path"
 	"path/filepath"
+	"reflect"
 	"regexp"
 	"strconv"
 	"strings"
 
+	"github.com/pkg/errors"
 	"github.com/saycv/ebomgen/pkg/configuration"
 	"github.com/saycv/ebomgen/pkg/types"
 	"github.com/saycv/ebomgen/pkg/utils"
@@ -28,6 +33,37 @@ import (
 
 	log "github.com/sirupsen/logrus"
 )
+
+func UnmarshalRfqPPFile(filePath string) (map[string]interface{}, map[string]interface{}, error) {
+	var bytecodes []byte
+	var buying map[string]interface{}     // 1st - define
+	buying = make(map[string]interface{}) // 2nd - malloc
+
+	f, err := os.Open(filePath)
+	if err != nil {
+		return nil, nil, err
+	}
+	bytecodes, err = ioutil.ReadAll(f)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	err = json.Unmarshal(bytecodes, &buying)
+	if err != nil {
+		log.Printf("unmarshal failed\n")
+		return nil, nil, err
+	}
+	partsCny, ok := buying["CNY"].(map[string]interface{})
+	if !ok {
+		return nil, nil, errors.Errorf("%s not found in %v", "CNY", reflect.TypeOf(buying))
+	}
+	partsUsd, ok := buying["USD"].(map[string]interface{})
+	if !ok {
+		return nil, nil, errors.Errorf("%s not found in %v", "USD", reflect.TypeOf(buying))
+	}
+
+	return partsCny, partsUsd, err
+}
 
 func FetchPriceFromWebecd(config configuration.Configuration) error {
 	outputFilenameAppend := ""
@@ -72,6 +108,14 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		}
 
 		bomParts = append(bomParts, cpart)
+	}
+
+	// RFQ
+	var rfqCnyList map[string]interface{}
+	var rfqUsdList map[string]interface{}
+	rfqFn := os.Getenv("RFQ_FN")
+	if rfqFn != "" {
+		rfqCnyList, rfqUsdList, _ = UnmarshalRfqPPFile(rfqFn + ".json")
 	}
 
 	hcDigikey := webecd.NewDigikeyClient()
@@ -149,6 +193,28 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			webpart, err = FetchPriceFromSzlcsc(hcSzlcsc, url.QueryEscape(querympn))
 		}
 		ipart.Attributes["UnitPrice"] = webpart.UnitPrice.Value
+
+		// RFQ
+		if rfqCnyList != nil {
+			for name, price := range rfqCnyList {
+				//log.Println(name, price.(string))
+				if strings.Contains(querympn, name) {
+					priceCny, _ := strconv.ParseFloat(price.(string), 64)
+					priceUsd := priceCny / types.USD2CNY
+					valPrice := fmt.Sprintf("%.5f", priceUsd)
+					ipart.Attributes["UnitPrice"] = valPrice
+				}
+			}
+		}
+		if rfqUsdList != nil {
+			for name, price := range rfqUsdList {
+				//log.Println(name, price.(string))
+				if strings.Contains(querympn, name) {
+					ipart.Attributes["UnitPrice"] = price.(string)
+				}
+			}
+		}
+
 		log.Println(ipart)
 	}
 	hcDigikey.Close()
