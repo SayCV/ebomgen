@@ -43,6 +43,7 @@ func UnmarshalRfqPPFile(filePath string) (map[string]interface{}, map[string]int
 	if err != nil {
 		return nil, nil, err
 	}
+	defer f.Close()
 	bytecodes, err = ioutil.ReadAll(f)
 	if err != nil {
 		return nil, nil, err
@@ -198,7 +199,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		if rfqCnyList != nil {
 			for name, price := range rfqCnyList {
 				//log.Println(name, price.(string))
-				if strings.Contains(querympn, name) {
+				if strings.Contains(strings.ToLower(querympn), strings.ToLower(name)) {
 					priceCny, _ := strconv.ParseFloat(price.(string), 64)
 					priceUsd := priceCny / types.USD2CNY
 					valPrice := fmt.Sprintf("%.5f", priceUsd)
@@ -209,7 +210,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		if rfqUsdList != nil {
 			for name, price := range rfqUsdList {
 				//log.Println(name, price.(string))
-				if strings.Contains(querympn, name) {
+				if strings.Contains(strings.ToLower(querympn), strings.ToLower(name)) {
 					ipart.Attributes["UnitPrice"] = price.(string)
 				}
 			}

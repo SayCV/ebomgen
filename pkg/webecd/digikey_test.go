@@ -11,7 +11,6 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
-	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -70,36 +69,4 @@ func TestMisc(t *testing.T) {
 	data = re.ReplaceAllString(data, "$1")
 
 	log.Println(data)
-}
-
-func TestMisc20(t *testing.T) {
-	var bytecodes []byte
-	var buying map[string]interface{}     // 1st - define
-	buying = make(map[string]interface{}) // 2nd - malloc
-	//parts := map[string]string{}
-
-	f, err := os.Open("test.json")
-	if err != nil {
-		checkError(err)
-	}
-	bytecodes, err = ioutil.ReadAll(f)
-	if err != nil {
-		checkError(err)
-	}
-
-	err = json.Unmarshal(bytecodes, &buying)
-	if err != nil {
-		log.Printf("unmarshal failed\n")
-		checkError(err)
-	}
-	parts, ok := buying["CNY"].(map[string]interface{})
-	if !ok {
-		checkError(err)
-	}
-	//log.Println(parts)
-
-	for name, price := range parts {
-		log.Println(name, price.(string))
-	}
-
 }
