@@ -12,11 +12,12 @@ echo,
 set "PATH=../../bin;%PATH%"
 
 if not exist "BOM" mkdir BOM
-ebomgen -t padslogic -i SCH/ex1.txt -o BOM/ >BOM/ex1.convert.log 2>&1 && echo ok || echo fail && pause
+if "xy" == "xy" ebomgen -t padslogic -i SCH/ex1.txt -o BOM/ >BOM/ex1.convert.log 2>&1 && echo ok || echo fail && pause
 
-ebomgen bomcost -i BOM/ex1_BOM.csv -o BOM/ex1_BOM.bomcost.csv >BOM/ex1.bomcost.log 2>&1 && echo ok || echo fail && pause
+if "xy" == "xy" set "RFQ_FN=%cd:\=/%/rfq_ex1"
+if "xy" == "xy" ebomgen bomcost -i BOM/ex1_BOM.csv -o BOM/ex1_BOM.bomcost.csv >BOM/ex1.bomcost.log 2>&1 && echo ok || echo fail && pause
 
-call ebomgen bommtbf ^
+if "xy" == "xy" call ebomgen bommtbf ^
 		    -i BOM/ex1_BOM.csv ^
 		    -o BOM/ex1_BOM.mtbf.30.csv ^
             -q "C1" ^
@@ -25,7 +26,7 @@ call ebomgen bommtbf ^
             -d "0.7" ^
 		    >>BOM/ex1.bommtbf.30.log 2>&1 && echo ok || echo fail && pause
 
-call ebomgen bommtbf ^
+if "xy" == "xy" call ebomgen bommtbf ^
 		    -i BOM/ex1_BOM.csv ^
 		    -o BOM/ex1_BOM.mtbf.40.csv ^
             -q "C1" ^
@@ -34,7 +35,7 @@ call ebomgen bommtbf ^
             -d "0.7" ^
 		    >>BOM/ex1.bommtbf.40.log 2>&1 && echo ok || echo fail && pause
 
-call ebomgen bommtbf ^
+if "xy" == "xy" call ebomgen bommtbf ^
 		    -i BOM/ex1_BOM.csv ^
 		    -o BOM/ex1_BOM.mtbf.55.csv ^
             -q "C1" ^

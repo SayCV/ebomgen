@@ -124,6 +124,7 @@ endif
 .PHONY: install
 ## installs the binary executable in the $GOPATH/bin directory
 install: install-devtools build
+	@mkdir -p $(GOPATH)/bin
 	@cp $(BINARY_PATH) $(GOPATH)/bin
 
 .PHONY: quick-install

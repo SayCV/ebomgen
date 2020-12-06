@@ -115,9 +115,12 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 	var rfqCnyList map[string]interface{}
 	var rfqUsdList map[string]interface{}
 	rfqFn := os.Getenv("RFQ_FN")
+	log.Println("RFQ_FN=", rfqFn)
 	if rfqFn != "" {
 		rfqCnyList, rfqUsdList, _ = UnmarshalRfqPPFile(rfqFn + ".json")
 	}
+	log.Println(rfqCnyList)
+	log.Println(rfqUsdList)
 
 	hcDigikey := webecd.NewDigikeyClient()
 	hcSzlcsc := webecd.NewSzlcscClient()

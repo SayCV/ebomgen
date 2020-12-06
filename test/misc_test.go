@@ -38,7 +38,7 @@ func TestMisc20(t *testing.T) {
 	if rfqCnyList != nil {
 		for name, price := range rfqCnyList {
 			//log.Println(name, price.(string))
-			if strings.Contains(strings.ToLower("f207"), strings.ToLower(name)) {
+			if strings.Contains(strings.ToLower("26P"), strings.ToLower(name)) {
 				priceCny, _ := strconv.ParseFloat(price.(string), 64)
 				priceUsd := priceCny / types.USD2CNY
 				valPrice := fmt.Sprintf("%.5f", priceUsd)
@@ -50,7 +50,7 @@ func TestMisc20(t *testing.T) {
 	if rfqUsdList != nil {
 		for name, price := range rfqUsdList {
 			//log.Println(name, price.(string))
-			if strings.Contains(strings.ToLower("f207"), strings.ToLower(name)) {
+			if strings.Contains(strings.ToLower("XTAL1"), strings.ToLower(name)) {
 				//ipart.Attributes["UnitPrice"] = price.(string)
 				valPrice := price.(string)
 				log.Println("USD", valPrice)
