@@ -649,11 +649,15 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	//time.Sleep(10 * time.Second)
 
 	// How to process Choose Your Location
-	// Now Does not work, by add --disable-notifications argument
-	_, err = session.GetAlertText()
-	if err == nil {
-		err = session.DismissAlert()
+	// Now Does not work, by add --disable-notifications argument | NG
+	// Try click twice
+	el, err := session.FindElement("tag name", "body")
+	if err != nil {
+		return partSpecs, err
 	}
+	session.MoveTo(el, 20, 600)
+	session.Click(webdriver.LeftButton)
+	session.Click(webdriver.LeftButton)
 
 	// data-testid = result-page | category-page | filter-page | detail-page
 	// https://stackoverflow.com/questions/57101417/find-an-element-where-data-tb-test-id-attribute-is-present-instead-of-id-using-s
