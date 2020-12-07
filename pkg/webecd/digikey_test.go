@@ -25,7 +25,7 @@ func checkError(err error) {
 
 func TestDigikeyQueryCall(t *testing.T) {
 	hc := NewDigikeyClient()
-	result, err := hc.QueryWDCall("0R")
+	result, err := hc.QueryWDCall(".01UF")
 	if err != nil {
 		t.Errorf("Error with query call: " + err.Error())
 	}

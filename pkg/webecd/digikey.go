@@ -4,6 +4,7 @@ import (
 	//"fmt"
 	//"regexp"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -624,6 +625,11 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	//if err != nil {
 	//	log.Fatal(err)
 	//}
+	allWds, err := session.WindowHandles()
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Infof(fmt.Sprintf("WindowHandles: %d", len(allWds)))
 
 	wh := session.GetCurrentWindowHandle()
 	size, err := wh.GetSize()
@@ -653,11 +659,13 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	// Try click twice
 	el, err := session.FindElement("tag name", "body")
 	if err != nil {
+		log.Println("Not found tag name", "body")
 		return partSpecs, err
 	}
-	session.MoveTo(el, 20, 600)
-	session.Click(webdriver.LeftButton)
-	session.Click(webdriver.LeftButton)
+	session.MoveTo(el, 20, 200)
+	session.DoubleClick()
+	session.DoubleClick()
+	log.Println("DoubleClick()")
 
 	// data-testid = result-page | category-page | filter-page | detail-page
 	// https://stackoverflow.com/questions/57101417/find-an-element-where-data-tb-test-id-attribute-is-present-instead-of-id-using-s
@@ -745,6 +753,7 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	}
 
 	time.Sleep(1 * time.Second)
+	// window.scrollTo(0,document.body.scrollHeight)
 	session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
 	wePageType, err = session.FindElement(webdriver.CSS_Selector, "section[data-testid='filter-page']")
 	if err != nil {
