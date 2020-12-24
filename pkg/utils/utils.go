@@ -3,6 +3,7 @@ package utils
 import (
 	//"io"
 	//"fmt"
+	"fmt"
 	"math/rand"
 	"os"
 	"regexp"
@@ -229,4 +230,12 @@ func IsCapAecFp(fp string, value string) bool {
 		return true
 	}
 	return false
+}
+
+func ElapsedTime() func() {
+	start := time.Now()
+	return func() {
+		tc := time.Since(start)
+		fmt.Printf("Time elapsed = %v\n", tc)
+	}
 }

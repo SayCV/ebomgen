@@ -594,6 +594,8 @@ func (hc *DigikeyClient) queryCall(mpn string) (types.EBOMWebPart, error) {
 }
 
 func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
+	defer utils.ElapsedTime()()
+
 	var partSpecs types.EBOMWebPart
 	var detaillink webdriver.WebElement
 	//var cookie webdriver.Cookie

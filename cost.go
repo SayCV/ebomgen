@@ -67,6 +67,8 @@ func UnmarshalRfqPPFile(filePath string) (map[string]interface{}, map[string]int
 }
 
 func FetchPriceFromWebecd(config configuration.Configuration) error {
+	defer utils.ElapsedTime()()
+
 	outputFilenameAppend := ""
 
 	filenameWithSuffix := path.Base(config.InputFile)
