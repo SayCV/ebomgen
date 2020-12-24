@@ -918,25 +918,28 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 		}
 	}
 
-	Pricing := PageProps.Envelope.Data.PriceQuantity.Pricing
-	PricingTiers := Pricing[0].PricingTiers
-
 	valPrice := ""
 	lastPrice := ""
-	for _, pricing := range PricingTiers {
-		qty, err := strconv.Atoi(strings.ReplaceAll(pricing.BreakQty, ",", ""))
-		if err != nil {
-			return partSpecs, err
+
+	Pricing := PageProps.Envelope.Data.PriceQuantity.Pricing
+	if len(Pricing) >= 1 {
+		PricingTiers := Pricing[0].PricingTiers
+
+		for _, pricing := range PricingTiers {
+			qty, err := strconv.Atoi(strings.ReplaceAll(pricing.BreakQty, ",", ""))
+			if err != nil {
+				return partSpecs, err
+			}
+			if qty <= 1000 {
+				valPrice = pricing.UnitPrice
+			} else if valPrice == "" {
+				valPrice = pricing.UnitPrice
+			} else {
+				break
+			}
+			lastPrice = pricing.UnitPrice
+			//log.Println(lastPrice)
 		}
-		if qty <= 1000 {
-			valPrice = pricing.UnitPrice
-		} else if valPrice == "" {
-			valPrice = pricing.UnitPrice
-		} else {
-			break
-		}
-		lastPrice = pricing.UnitPrice
-		//log.Println(lastPrice)
 	}
 	if valPrice == "" {
 		valPrice = lastPrice
