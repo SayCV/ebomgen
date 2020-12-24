@@ -759,11 +759,12 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	if dgkPageType != "detail-page" {
 		time.Sleep(1 * time.Second)
 		// window.scrollTo(0,document.body.scrollHeight)
-		session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
+		session.ExecuteScriptAsync("window.scrollBy(0, 400)", make([]interface{}, 0))
 		wePageType, err = session.FindElement(webdriver.CSS_Selector, "section[data-testid='filter-page']")
 		if err != nil {
 			return partSpecs, errors.Errorf(digikeyHome + " not expect get filter-page")
 		}
+		log.Println("filter-page")
 
 		tbody, err := wePageType.FindElement(webdriver.CSS_Selector, "tbody.MuiTableBody-root")
 		if err != nil {
@@ -809,11 +810,13 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 		// expect to get detail-page
 	}
 
-	session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
+	session.ExecuteScriptAsync("window.scrollBy(0, 400)", make([]interface{}, 0))
 	wePageType, err = session.FindElement(webdriver.CSS_Selector, "div[data-testid='detail-page']")
 	if err != nil {
-		return partSpecs, errors.Errorf(digikeyHome + " #__NEXT_DATA__ not expect get detail-page")
+		url, _ := session.GetUrl()
+		return partSpecs, errors.Errorf(url + " #__NEXT_DATA__ not expect get detail-page")
 	}
+	log.Println("detail-page")
 
 	// https://mholt.github.io/json-to-go/
 	// <script id="__NEXT_DATA__">
