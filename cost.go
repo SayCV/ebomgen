@@ -200,6 +200,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 
 		// RFQ
 		if rfqCnyList != nil {
+		OuterRfqCnyListLoop:
 			for name, price := range rfqCnyList {
 				//log.Println(name, price.(string))
 				if strings.Contains(strings.ToLower(querympn), strings.ToLower(name)) {
@@ -207,14 +208,19 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 					priceUsd := priceCny / types.USD2CNY
 					valPrice := fmt.Sprintf("%.5f", priceUsd)
 					ipart.Attributes["UnitPrice"] = valPrice
+					log.Infof("Get price from rfqCnyList: %s", ipart.Attributes["UnitPrice"])
+					break OuterRfqCnyListLoop
 				}
 			}
 		}
 		if rfqUsdList != nil {
+		OuterRfqUsdListLoop:
 			for name, price := range rfqUsdList {
 				//log.Println(name, price.(string))
 				if strings.Contains(strings.ToLower(querympn), strings.ToLower(name)) {
 					ipart.Attributes["UnitPrice"] = price.(string)
+					log.Infof("Get price from rfqUsdList: %s", ipart.Attributes["UnitPrice"])
+					break OuterRfqUsdListLoop
 				}
 			}
 		}
