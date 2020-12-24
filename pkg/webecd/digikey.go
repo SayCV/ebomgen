@@ -680,7 +680,11 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 			dgkPageType = "filter-page"
 			wePageType, err = session.FindElement(webdriver.CSS_Selector, "section[data-testid='filter-page']")
 			if err != nil {
-				return partSpecs, errors.Errorf(digikeyHome + " get unknown page")
+				dgkPageType = "detail-page"
+				wePageType, err = session.FindElement(webdriver.CSS_Selector, "div[data-testid='detail-page']")
+				if err != nil {
+					return partSpecs, errors.Errorf(digikeyHome + " get unknown page")
+				}
 			}
 		}
 	}
@@ -752,56 +756,58 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 		// expect to get filter-page
 	}
 
-	time.Sleep(1 * time.Second)
-	// window.scrollTo(0,document.body.scrollHeight)
-	session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
-	wePageType, err = session.FindElement(webdriver.CSS_Selector, "section[data-testid='filter-page']")
-	if err != nil {
-		return partSpecs, errors.Errorf(digikeyHome + " not expect get filter-page")
-	}
+	if dgkPageType != "detail-page" {
+		time.Sleep(1 * time.Second)
+		// window.scrollTo(0,document.body.scrollHeight)
+		session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
+		wePageType, err = session.FindElement(webdriver.CSS_Selector, "section[data-testid='filter-page']")
+		if err != nil {
+			return partSpecs, errors.Errorf(digikeyHome + " not expect get filter-page")
+		}
 
-	tbody, err := wePageType.FindElement(webdriver.CSS_Selector, "tbody.MuiTableBody-root")
-	if err != nil {
-		return partSpecs, err
-	}
-	trs, err := tbody.FindElements(webdriver.TagName, "tr")
-	if err != nil {
-		return partSpecs, err
-	}
-	for _, tr := range trs {
-		tds, err := tr.FindElements(webdriver.TagName, "td")
+		tbody, err := wePageType.FindElement(webdriver.CSS_Selector, "tbody.MuiTableBody-root")
 		if err != nil {
 			return partSpecs, err
 		}
+		trs, err := tbody.FindElements(webdriver.TagName, "tr")
+		if err != nil {
+			return partSpecs, err
+		}
+		for _, tr := range trs {
+			tds, err := tr.FindElements(webdriver.TagName, "td")
+			if err != nil {
+				return partSpecs, err
+			}
 
-		// Discontinued at Digi-Key
-		_PartStatus, err := tds[10].Text()
-		if err != nil {
-			return partSpecs, err
-		}
-		if strings.HasPrefix(_PartStatus, "Discontinued") {
-			continue
+			// Discontinued at Digi-Key
+			_PartStatus, err := tds[10].Text()
+			if err != nil {
+				return partSpecs, err
+			}
+			if strings.HasPrefix(_PartStatus, "Discontinued") {
+				continue
+			}
+
+			hrefs, err := tds[1].FindElements(webdriver.CSS_Selector, "a")
+			if err != nil {
+				return partSpecs, err
+			}
+			href, err := hrefs[1].GetAttribute("href")
+			if err != nil {
+				return partSpecs, err
+			}
+			log.Printf(href)
+			detaillink = hrefs[1]
+			break
 		}
 
-		hrefs, err := tds[1].FindElements(webdriver.CSS_Selector, "a")
+		err = detaillink.Click()
 		if err != nil {
 			return partSpecs, err
 		}
-		href, err := hrefs[1].GetAttribute("href")
-		if err != nil {
-			return partSpecs, err
-		}
-		log.Printf(href)
-		detaillink = hrefs[1]
-		break
+		time.Sleep(2 * time.Second)
+		// expect to get detail-page
 	}
-
-	err = detaillink.Click()
-	if err != nil {
-		return partSpecs, err
-	}
-	time.Sleep(2 * time.Second)
-	// expect to get detail-page
 
 	session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
 	wePageType, err = session.FindElement(webdriver.CSS_Selector, "div[data-testid='detail-page']")
