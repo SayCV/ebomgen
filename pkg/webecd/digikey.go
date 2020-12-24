@@ -806,7 +806,7 @@ func (hc *DigikeyClient) QueryWDCall(mpn string) (types.EBOMWebPart, error) {
 	session.ExecuteScript("window.scrollBy(0, 400)", make([]interface{}, 0))
 	wePageType, err = session.FindElement(webdriver.CSS_Selector, "div[data-testid='detail-page']")
 	if err != nil {
-		return partSpecs, errors.Errorf(digikeyHome + " not expect get detail-page")
+		return partSpecs, errors.Errorf(digikeyHome + " #__NEXT_DATA__ not expect get detail-page")
 	}
 
 	// https://mholt.github.io/json-to-go/
