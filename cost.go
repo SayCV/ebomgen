@@ -234,13 +234,20 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		return err
 	}
 
-	output, err := os.Create(outputFilename)
-	if err != nil {
-		return err
+	tryOutputFilename := outputFilename
+
+	for tryloop := 0; tryloop < 10; tryloop++ {
+		output, err := os.Create(tryOutputFilename)
+		if err != nil {
+			tryOutputFilename = outputFilename + "." + strconv.Itoa(tryloop+1)
+			continue
+			// return err
+		}
+		defer output.Close()
+		BOM.WriteCSV(output)
+		log.Infof("Created BOM in '%s'", tryOutputFilename)
+		break
 	}
-	defer output.Close()
-	BOM.WriteCSV(output)
-	log.Infof("Created BOM in '%s'", outputFilename)
 
 	return nil
 }
