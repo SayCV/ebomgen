@@ -185,7 +185,15 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		} else if strings.HasPrefix(ipart.Attributes["Description"], "IC") {
 			if strings.Contains(value, " ") {
 				_val := strings.Split(value, " ")
-				querympn = _val[0]
+				regVal3, _ := regexp.Compile(`[0-9]+`)
+				_vallist := regVal3.FindAllString(_val[0], -1)
+				if len(_vallist) >= 1 {
+					querympn = _val[0]
+				} else if len(_val) >= 2 {
+					querympn = _val[0] + " " + _val[1]
+				} else {
+					querympn = _val[0]
+				}
 			}
 		} else if strings.HasPrefix(ipart.Attributes["Description"], "LED") {
 			querympn = strings.Join([]string{value, "LED"}, " ")
