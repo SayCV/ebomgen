@@ -496,7 +496,18 @@ func ExtractComponents(config configuration.Configuration) error {
 		//log.Infof("combinedBOMparts[%d]: %s, %s", k, combinedBOMparts[k].Attributes["group"], combinedBOMparts[k].Attributes["part"])
 	}
 
-	combinedBOMparts = sortComponentList(combinedBOMparts)
+	var mypart []types.EBOMItem
+	var pcbpart types.EBOMItem
+	pcbpart.Quantity = 1
+	pcbpart.Value = "PCB-FR4"
+	pcbpart.Desc = "PCB"
+	pcbpart.Attributes = map[string]string{
+		"Manufacturer Part Number": "",
+		"Description":              "PCB",
+		"part":                     "PCB",
+		"group":                    "PCB",
+	}
+	combinedBOMparts = append(append(mypart, pcbpart), sortComponentList(combinedBOMparts)...)
 
 	BOM, err := types.NewBOM(combinedBOMparts, config)
 	if err != nil {
