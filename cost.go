@@ -128,6 +128,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 	hcSzlcsc := webecd.NewSzlcscClient()
 	for _, ipart := range bomParts {
 		if strings.HasPrefix(ipart.Attributes["Description"], "DNP") ||
+			strings.HasPrefix(ipart.Attributes["Description"], "Mount") ||
 			strings.HasPrefix(ipart.Attributes["Description"], "TestPoint") {
 			continue
 		}
@@ -138,7 +139,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		if strings.HasPrefix(ipart.Attributes["Description"], "Conn") {
 			regVal2, _ := regexp.Compile(`([0-9]+)[dDpP]([0-9]+)`)
 			value = regVal2.ReplaceAllString(value, "${1}.${2}")
-			regVal3, _ := regexp.Compile(`.HDR`)
+			regVal3, _ := regexp.Compile(`?HDR`)
 			value = regVal3.ReplaceAllString(value, " header ")
 
 			_vallist := strings.Split(value, " ")
