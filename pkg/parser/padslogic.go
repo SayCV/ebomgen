@@ -78,6 +78,7 @@ func parseTextParts(filename string) (map[string]types.EBOMItem, error) {
 					}
 					if strings.HasPrefix(strings.ToUpper(strVal), "\"PCB DECAL\"") {
 						part.Footprint = strings.Replace(strings.ToUpper(strVal), "\"PCB DECAL\"", "", -1)
+						part.Footprint = strings.TrimSpace(part.Footprint)
 					}
 					if strings.HasPrefix(strings.ToUpper(strVal), "\"VALUE\"") {
 						//part.Value = strings.Replace(strings.ToUpper(strVal), "\"VALUE\"", "", -1)
@@ -153,7 +154,11 @@ func ExtractPADSLogicComponents(filename string) ([]types.EBOMItem, error) {
 			propvalue = part.Value
 		}
 		if part.Footprint != "" {
-			propfootprint = part.Footprint
+			if part.Footprint == "C0402_BGA" {
+				log.Infof("preprocess %v / %v / %v", part.Footprint, part.Value, part.References)
+				propfootprint = "C0402"
+				part.Footprint = propfootprint
+			}
 		}
 		if part.Attributes["Manufacturer Part Number"] != "" {
 			propclass["Manufacturer Part Number"] = part.Attributes["Manufacturer Part Number"]
