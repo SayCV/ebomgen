@@ -3,7 +3,6 @@ package parser
 import (
 	"bufio"
 	"bytes"
-	"fmt"
 	"io/ioutil"
 	"os"
 	"path"
@@ -162,9 +161,9 @@ func ExtractPADSLogicComponents(filename string) ([]types.EBOMItem, error) {
 
 	var fpmaps []interface{}
 	if tree, err := toml.LoadFile(configfile_toml); err != nil {
-		fmt.Println(err)
+		log.Infof("%s", err)
 	} else {
-		fmt.Printf("Try to prase metadata from %s", configfile_toml)
+		log.Infof("Try to prase metadata from %s", configfile_toml)
 		fpmaps = tree.Get("FpMap").([]interface{})
 	}
 
