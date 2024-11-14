@@ -158,6 +158,7 @@ func ExtractPADSLogicComponents(filename string) ([]types.EBOMItem, error) {
 	if _, err := os.Stat(configfile_toml); err != nil {
 		configfile_toml = path.Join(dirname, "metadata.toml")
 	}
+	configfile_toml = filepath.ToSlash(configfile_toml)
 
 	var fpmaps []interface{}
 	if tree, err := toml.LoadFile(configfile_toml); err != nil {
