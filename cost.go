@@ -119,13 +119,19 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 	rfqFn := os.Getenv("RFQ_FN")
 	log.Println("RFQ_FN=", rfqFn)
 	if rfqFn != "" {
-		rfqCnyList, rfqUsdList, _ = UnmarshalRfqPPFile(rfqFn + ".json")
+		rfqCnyList, rfqUsdList, _ = UnmarshalRfqPPFile(rfqFn)
 	}
+	rfqWebEnable := os.Getenv("RFQ_WEB_QUERY_ENABLE")
+	log.Println("rfqWebEnable=", rfqWebEnable)
 	log.Println(rfqCnyList)
 	log.Println(rfqUsdList)
 
-	hcDigikey := webecd.NewDigikeyClient()
-	hcSzlcsc := webecd.NewSzlcscClient()
+	var hcDigikey *webecd.DigikeyClient
+	var hcSzlcsc *webecd.SzlcscClient
+	if rfqWebEnable == "true" {
+		hcDigikey = webecd.NewDigikeyClient()
+		hcSzlcsc = webecd.NewSzlcscClient()
+	}
 	for _, ipart := range bomParts {
 		if strings.HasPrefix(ipart.Attributes["Description"], "DNP") ||
 			strings.HasPrefix(ipart.Attributes["Description"], "Mount") ||
@@ -134,12 +140,13 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		}
 		value := strings.TrimSpace(ipart.Value)
 		fp := strings.TrimSpace(ipart.Footprint)
-		regVal, err := regexp.Compile("[^a-zA-Z0-9%\\.]+")
+		regVal, _ := regexp.Compile(`[^a-zA-Z0-9%\.]+`)
 		value = regVal.ReplaceAllString(value, " ")
 		if strings.HasPrefix(ipart.Attributes["Description"], "Conn") {
 			regVal2, _ := regexp.Compile(`([0-9]+)[dDpP]([0-9]+)`)
 			value = regVal2.ReplaceAllString(value, "${1}.${2}")
-			regVal3, _ := regexp.Compile(`?HDR`)
+			regVal3, _ := regexp.Compile(`.?HDR`)
+			log.Println("value=", value)
 			value = regVal3.ReplaceAllString(value, " header ")
 
 			_vallist := strings.Split(value, " ")
@@ -161,6 +168,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		log.Println(digitfp)
 
 		querympn := value
+		loc_query_str := strings.TrimSpace(ipart.Value)
 		if strings.HasPrefix(ipart.Attributes["Description"], "Capacitor") {
 			fvalue := strconv.FormatFloat(utils.GetFValFromEVal(value), 'E', -1, 64)
 			log.Println(fvalue)
@@ -172,6 +180,9 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			if fvalue == "-1E+00" {
 				querympn = strings.Join([]string{valPref, "0.1uF", digitfp}, " ")
 			}
+
+			_val := strings.TrimSpace(ipart.Value)
+			loc_query_str = strings.Join([]string{_val, digitfp}, "-")
 		} else if strings.HasPrefix(ipart.Attributes["Description"], "Resistor") {
 			fvalue := strconv.FormatFloat(utils.GetFValFromEVal(value), 'E', -1, 64)
 			log.Println(fvalue)
@@ -183,6 +194,12 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			if fvalue == "-1E+00" {
 				querympn = strings.Join([]string{valPref, "22R", digitfp}, " ")
 			}
+
+			_val := strings.ToUpper(ipart.Value)
+			_val = strings.ReplaceAll(_val, "R", "Ω")
+			_val = strings.ReplaceAll(_val, "K", "KΩ")
+			_val = strings.ReplaceAll(_val, "M", "MΩ")
+			loc_query_str = strings.Join([]string{_val, digitfp}, "-")
 		} else if strings.HasPrefix(ipart.Attributes["Description"], "IC") {
 			if strings.Contains(value, " ") {
 				_val := strings.Split(value, " ")
@@ -200,21 +217,26 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			querympn = strings.Join([]string{value, "LED"}, " ")
 		}
 
-		log.Infof(querympn)
-		webpart, err := FetchPriceFromDigikey(hcDigikey, url.QueryEscape(querympn))
-		//log.Println(webpart)
-		if webpart.UnitPrice.Value == "" {
-			log.Infof("Try get from 2nd websource")
-			webpart, err = FetchPriceFromSzlcsc(hcSzlcsc, url.QueryEscape(querympn))
+		querympn = strings.TrimSpace(querympn)
+		log.Infof("querympn:%s", querympn)
+		if rfqWebEnable == "true" {
+			webpart, _ := FetchPriceFromDigikey(hcDigikey, url.QueryEscape(querympn))
+			//log.Println(webpart)
+			if webpart.UnitPrice.Value == "" {
+				log.Infof("Try get from 2nd websource")
+				webpart, err = FetchPriceFromSzlcsc(hcSzlcsc, url.QueryEscape(querympn))
+			}
+			ipart.Attributes["UnitPrice"] = webpart.UnitPrice.Value
 		}
-		ipart.Attributes["UnitPrice"] = webpart.UnitPrice.Value
 
 		// RFQ
+		loc_query_str = strings.ReplaceAll(loc_query_str, " ", "-")
+		log.Infof("loc_query_str:%s", loc_query_str)
 		if rfqCnyList != nil {
 		OuterRfqCnyListLoop:
 			for name, price := range rfqCnyList {
 				//log.Println(name, price.(string))
-				if strings.Contains(strings.ToLower(querympn), strings.ToLower(name)) {
+				if strings.Contains(strings.ToLower(loc_query_str), strings.ToLower(name)) {
 					priceCny, _ := strconv.ParseFloat(price.(string), 64)
 					priceUsd := priceCny / types.USD2CNY
 					valPrice := fmt.Sprintf("%.5f", priceUsd)
@@ -228,7 +250,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		OuterRfqUsdListLoop:
 			for name, price := range rfqUsdList {
 				//log.Println(name, price.(string))
-				if strings.Contains(strings.ToLower(querympn), strings.ToLower(name)) {
+				if strings.Contains(strings.ToLower(loc_query_str), strings.ToLower(name)) {
 					ipart.Attributes["UnitPrice"] = price.(string)
 					log.Infof("Get price from rfqUsdList: %s", ipart.Attributes["UnitPrice"])
 					break OuterRfqUsdListLoop
@@ -238,7 +260,9 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 
 		log.Println(ipart)
 	}
-	hcDigikey.Close()
+	if rfqWebEnable == "true" {
+		hcDigikey.Close()
+	}
 
 	BOM, err := types.NewBOM(bomParts, config)
 	if err != nil {
