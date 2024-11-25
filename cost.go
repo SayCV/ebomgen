@@ -215,6 +215,8 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			}
 		} else if strings.HasPrefix(ipart.Attributes["Description"], "LED") {
 			querympn = strings.Join([]string{value, "LED"}, " ")
+			_val := strings.TrimSpace(ipart.Value)
+			loc_query_str = strings.Join([]string{_val, digitfp}, "-")
 		}
 
 		querympn = strings.TrimSpace(querympn)
