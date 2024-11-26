@@ -8,6 +8,7 @@ import (
 	//"flag"
 	//"fmt"
 	"math"
+	"regexp"
 	"strconv"
 
 	//"strings"
@@ -90,4 +91,15 @@ func TestCase1(t *testing.T) {
 
 	result, _ := GetTocOfIc(value, desc, fp)
 	t.Log(result)
+}
+
+func TestCase2(t *testing.T) {
+	value := "2.2k"
+	re := regexp.MustCompile(`([0-9]+[KkMm]{1})[Rr]{1}$`)
+	result := re.ReplaceAllString(value, "${1}Ω")
+	println(result)
+	//value = "20K"
+	re = regexp.MustCompile(`([0-9]+[KkMm]{1})$`)
+	result = re.ReplaceAllString(result, "${1}Ω")
+	println(result)
 }
