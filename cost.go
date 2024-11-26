@@ -163,9 +163,12 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 		if strings.HasPrefix(ipart.Attributes["Description"], "CapacitorArray") || strings.HasPrefix(ipart.Attributes["Description"], "ResistorArray") {
 			digitfp = fp[3:]
 		}
-		log.Println(digitfp)
+		log.Infof(digitfp)
 		digitfp = reg.ReplaceAllString(digitfp, "")
-		log.Println(digitfp)
+		log.Infof(digitfp)
+		if digitfp == "" {
+			digitfp = fp
+		}
 
 		querympn := value
 		loc_query_str := strings.TrimSpace(ipart.Value)
@@ -175,6 +178,11 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			valPref := ""
 			if strings.HasPrefix(ipart.Attributes["Description"], "CapacitorArray") {
 				valPref = "Capacitor Array"
+				if strings.HasPrefix(ipart.Footprint, "CN4") {
+					digitfp = strings.Join([]string{digitfp, "4"}, "X")
+				} else if strings.HasPrefix(ipart.Footprint, "CN8") {
+					digitfp = strings.Join([]string{digitfp, "8"}, "X")
+				}
 			}
 			querympn = strings.Join([]string{valPref, value, digitfp}, " ")
 			if fvalue == "-1E+00" {
@@ -189,6 +197,11 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 			valPref := ""
 			if strings.HasPrefix(ipart.Attributes["Description"], "ResistorArray") {
 				valPref = "Resistor Array"
+				if strings.HasPrefix(ipart.Footprint, "RN4") {
+					digitfp = strings.Join([]string{digitfp, "4"}, "X")
+				} else if strings.HasPrefix(ipart.Footprint, "RN8") {
+					digitfp = strings.Join([]string{digitfp, "8"}, "X")
+				}
 			}
 			querympn = strings.Join([]string{valPref, value, digitfp}, " ")
 			if fvalue == "-1E+00" {
@@ -233,6 +246,7 @@ func FetchPriceFromWebecd(config configuration.Configuration) error {
 
 		// RFQ
 		loc_query_str = strings.ReplaceAll(loc_query_str, " ", "-")
+		loc_query_str = strings.ReplaceAll(loc_query_str, "--", "-")
 		log.Infof("loc_query_str:%s", loc_query_str)
 		if rfqCnyList != nil {
 		OuterRfqCnyListLoop:
