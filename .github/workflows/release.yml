@@ -1,0 +1,47 @@
+name: build
+
+on:
+  push:
+    tags:
+      - "ebomgen-v*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install build environments
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            p7zip
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 1.23
+          cache: true
+      - run: go mod tidy
+      - name: Build Windows
+        run: |
+          go version
+          GOOS=linux GOARCH=amd64 make install
+          cd ${{ github.workspace }}/bin
+          7z a -t7z ebomgen-win64.7z ebomgen.exe
+      - name: Generate Hashes
+        continue-on-error: true
+        working-directory: ${{ github.workspace }}/bin
+        run: |
+          echo "md5sum	"`md5sum -t $hash_file`         > $hash_file.hash
+          echo "sha1sum	"`sha1sum -t $hash_file`       >> $hash_file.hash
+          echo "sha256sum	"`sha256sum -t $hash_file`   >> $hash_file.hash
+          echo "sha512sum 	"`sha512sum -t $hash_file` >> $hash_file.hash
+        env:
+          hash_file: ebomgen-win64.7z
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ${{ github.workspace }}/bin/ebomgen-win64.7z
+            ${{ github.workspace }}/bin/*.hash
