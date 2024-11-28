@@ -31,7 +31,7 @@ jobs:
       - name: Build Windows
         run: |
           go version
-          GOOS=windows GOARCH=amd64 make install
+          GOOS=windows GOARCH=amd64 make build
           cd ${{ github.workspace }}/bin
           7z a -t7z ebomgen-win64.7z ebomgen.exe
       - name: Generate Hashes
