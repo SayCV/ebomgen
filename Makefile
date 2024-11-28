@@ -13,7 +13,6 @@ ifeq ($(OS),Windows_NT)
 BINARY_PATH=$(INSTALL_PREFIX)/ebomgen.exe
 else ifeq ($(GOOS),windows)
 BINARY_PATH=$(INSTALL_PREFIX)/ebomgen.exe
-endif
 else
 BINARY_PATH=$(INSTALL_PREFIX)/ebomgen
 endif
