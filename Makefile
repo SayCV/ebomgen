@@ -1,7 +1,7 @@
 # Makefile for the `ebomgen` project
 
 # tools
-CUR_DIR=$(shell cygpath -m $(shell pwd))
+CUR_DIR=$(shell pwd)
 INSTALL_PREFIX=$(CUR_DIR)/bin
 VENDOR_DIR=vendor
 SOURCE_DIR ?= .
